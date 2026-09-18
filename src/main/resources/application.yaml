@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/sercop_db
+    username: ismaeln
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
