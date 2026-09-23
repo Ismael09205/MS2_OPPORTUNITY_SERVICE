@@ -58,6 +58,12 @@ public class GraniteLocalClient implements GranitePort {
         solicitud.setModel(configuracionGranite.getModelo());
         solicitud.setStream(false);
         solicitud.setFormat(construirEsquemaRespuesta());
+        solicitud.setOptions(Map.of(
+                "think", false,
+                "temperature", 0
+        ));
+
+
 
         MensajeOllama mensaje = new MensajeOllama();
         mensaje.setRole("user");
@@ -73,45 +79,42 @@ public class GraniteLocalClient implements GranitePort {
         StringBuilder prompt = new StringBuilder();
 
         prompt.append("""
-                Analiza los siguientes procesos de contratación pública y determina cuáles representan
-                una oportunidad tecnológica real.
+            Analiza estos procesos y determina cuáles representan una oportunidad
+            de negocio potencialmente alineada con soluciones del catálogo IBM.
 
-                Tu criterio debe centrarse en el OBJETO PRINCIPAL de la contratación.
+            Evalúa principalmente el objeto principal de contratación.
 
-                Considera como oportunidad tecnológica cuando el objeto principal requiere directamente
-                tecnología, software, infraestructura tecnológica, servicios cloud, inteligencia artificial,
-                redes o telecomunicaciones.
+            APROBAR:
+            - Desarrollo o adquisición de soluciones de software especializadas.
+            - Implementación de plataformas o sistemas informáticos.
+            - Servicios o infraestructura cloud.
+            - Soluciones de inteligencia artificial.
+            - Soluciones para procesamiento, integración o análisis de datos, y software especializado para automatización de procesos.
+            - Soluciones de redes o telecomunicaciones relacionadas con capacidades IBM.
 
-                NO consideres una oportunidad tecnológica cuando la tecnología solamente sea utilizada
-                por la institución, por los proveedores o como apoyo para realizar otra actividad.
+            RECHAZAR:
+            - Software de uso general para usuarios, como Office o Windows.
+            - Licencias utilizadas únicamente para el funcionamiento cotidiano de equipos.
+            - Hardware general como computadores, laptops, impresoras o periféricos.
+            - Tecnología que sea solamente un componente secundario o incidental.
+            - Contrataciones cuyo objeto principal no sea una necesidad tecnológica
+              alineable con IBM.
 
-                Ejemplos:
+            No clasifiques únicamente por palabras clave. Interpreta el objeto principal.
+            Analiza cada proceso de forma independiente.
 
-                - "Adquisición de servidores informáticos" → aprobado.
-                - "Desarrollo de una aplicación web" → aprobado.
-                - "Implementación de infraestructura cloud" → aprobado.
-                - "Contratación de servidores públicos" → rechazado.
-                - "Compra de escritorios para oficinas" → rechazado.
-                - "Compra de lavavajillas" → rechazado.
-                - "Mantenimiento del Parque Virgen de la Nube" → rechazado.
+            Categorías permitidas:
+            software, cloud, inteligencia-artificial, redes.
 
-                No debes limitarte únicamente a buscar palabras clave. Debes interpretar el significado
-                y el objeto principal de cada contratación.
+            Si no corresponde, usa categoria: null.
 
-                Para cada proceso devuelve:
+            Devuelve exactamente un resultado por proceso.
+            La justificacion debe tener máximo 10 palabras.
+            No agregues texto fuera del JSON.
 
-                - ocid: identificador del proceso.
-                - aprobado: true si el objeto principal representa una oportunidad tecnológica real,
-                  false en caso contrario.
-                - categoria: una de estas categorías: software, cloud, inteligencia-artificial,
-                  infraestructura, redes. Si no corresponde, utiliza null.
-                - justificacion: explicación breve de la decisión.
+            Procesos:
 
-                Debes devolver exactamente un resultado por cada proceso recibido.
-
-                Procesos a analizar:
-
-                """);
+            """);
 
         for (ProcesoSercop proceso : procesos) {
             prompt.append("OCID: ").append(valor(proceso.getOcid())).append("\n");

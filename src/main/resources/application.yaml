@@ -60,4 +60,4 @@ filtro-oportunidades:
 granite:
   url: http://localhost:11434
   modelo: ibm/granite4.2:3b
-  tamano-lote: 10
+  tamano-lote: 5
