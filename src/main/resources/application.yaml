@@ -7,3 +7,57 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
+
+filtro-oportunidades:
+
+  categorias:
+
+    software:
+      terminos:
+        - software
+        - aplicacion
+        - sistema informatico
+        - desarrollo de software
+        - plataforma digital
+
+    cloud:
+      terminos:
+        - cloud
+        - nube
+        - saas
+        - paas
+        - iaas
+
+    inteligencia-artificial:
+      terminos:
+        - inteligencia artificial
+        - machine learning
+        - aprendizaje automatico
+        - ia generativa
+
+    infraestructura:
+      terminos:
+        - servidor
+        - servidores
+        - datacenter
+        - centro de datos
+        - virtualizacion
+
+    redes:
+      terminos:
+        - red informatica
+        - redes informaticas
+        - router
+        - switch
+        - telecomunicaciones
+
+  exclusiones:
+    - seguridad fisica
+    - vigilancia privada
+    - servidor publico
+    - servidores publicos
+    - red vial
+granite:
+  url: http://localhost:11434
+  modelo: ibm/granite4.2:3b
+  tamano-lote: 10
