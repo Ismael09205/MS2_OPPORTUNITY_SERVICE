@@ -3,12 +3,17 @@ package com.ibm.opportunity_analysis_service.application.service;
 import com.ibm.opportunity_analysis_service.application.port.out.GranitePort;
 import com.ibm.opportunity_analysis_service.domain.entity.ProcesoSercop;
 import com.ibm.opportunity_analysis_service.domain.entity.ResultadoAnalisisGranite;
+import org.springframework.data.domain.Slice;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class AnalizarOportunidadesGraniteService {
+
+    private static final int TAMANO_PAGINA = 100;
+    private static final int CANTIDAD_PROCESOS = 10;
 
     private final FiltrarProcesosSercopService filtrarProcesosSercopService;
     private final GranitePort granitePort;
@@ -20,12 +25,29 @@ public class AnalizarOportunidadesGraniteService {
 
     public List<ResultadoAnalisisGranite> analizar() {
 
-        List<ProcesoSercop> procesos = filtrarProcesosSercopService.filtrarProcesos();
+        List<ProcesoSercop> procesos = new ArrayList<>();
+        int numeroPagina = 0;
 
-        List<ProcesoSercop> lote = procesos.stream()
-                .limit(10)
-                .toList();
+        while (procesos.size() < CANTIDAD_PROCESOS) {
 
-        return granitePort.analizar(lote);
+            Slice<ProcesoSercop> pagina = filtrarProcesosSercopService.filtrarPagina(numeroPagina, TAMANO_PAGINA);
+
+            for (ProcesoSercop proceso : pagina.getContent()) {
+
+                if (procesos.size() >= CANTIDAD_PROCESOS) {
+                    break;
+                }
+
+                procesos.add(proceso);
+            }
+
+            if (!pagina.hasNext()) {
+                break;
+            }
+
+            numeroPagina++;
+        }
+
+        return granitePort.analizar(procesos);
     }
 }

@@ -3,8 +3,11 @@ package com.ibm.opportunity_analysis_service.application.service;
 import com.ibm.opportunity_analysis_service.domain.entity.MuestraCategoriaSercop;
 import com.ibm.opportunity_analysis_service.domain.entity.ProcesoSercop;
 import com.ibm.opportunity_analysis_service.domain.entity.ResultadoFiltroSercop;
+import org.springframework.data.domain.Slice;
+import org.springframework.data.domain.SliceImpl;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,72 +24,111 @@ public class FiltrarProcesosSercopService {
         this.filtrarOportunidadesService = filtrarOportunidadesService;
     }
 
-    public List<ProcesoSercop> filtrarProcesos() {
+    public Slice<ProcesoSercop> filtrarPagina(int numeroPagina, int tamanoPagina) {
 
-        List<ProcesoSercop> procesos = obtenerProcesosSercopService.obtenerTodos();
+        Slice<ProcesoSercop> pagina = obtenerProcesosSercopService.obtenerPagina(numeroPagina, tamanoPagina);
 
-        return procesos.stream()
+        List<ProcesoSercop> procesosFiltrados = pagina.getContent().stream()
                 .filter(filtrarOportunidadesService::esOportunidadTecnologica)
                 .toList();
+
+        return new SliceImpl<>(procesosFiltrados, pagina.getPageable(), pagina.hasNext());
     }
-    public List<ResultadoFiltroSercop> obtenerMuestraFiltrada(int cantidad) {
 
-        List<ProcesoSercop> procesosFiltrados = filtrarProcesos();
+    public List<ResultadoFiltroSercop> obtenerMuestraFiltrada(int cantidad, int tamanoPagina) {
 
-        return procesosFiltrados.stream()
-                .limit(cantidad)
-                .map(proceso -> {
-                    ResultadoFiltroSercop resultado = new ResultadoFiltroSercop();
+        List<ResultadoFiltroSercop> resultados = new ArrayList<>();
 
-                    resultado.setOcid(proceso.getOcid());
-                    resultado.setTitulo(proceso.getTitulo());
-                    resultado.setDescripcion(proceso.getDescripcion());
-                    resultado.setTipoInterno(proceso.getTipoInterno());
+        int numeroPagina = 0;
 
-                    String textoNormalizado = filtrarOportunidadesService.normalizarTexto(proceso);
+        while (resultados.size() < cantidad) {
 
-                    resultado.setCategorias(filtrarOportunidadesService.detectarCategorias(textoNormalizado));
+            Slice<ProcesoSercop> pagina = filtrarPagina(numeroPagina, tamanoPagina);
 
-                    return resultado;
-                })
-                .toList();
+            for (ProcesoSercop proceso : pagina.getContent()) {
+
+                if (resultados.size() >= cantidad) {
+                    break;
+                }
+
+                ResultadoFiltroSercop resultado = new ResultadoFiltroSercop();
+
+                resultado.setOcid(proceso.getOcid());
+                resultado.setTitulo(proceso.getTitulo());
+                resultado.setDescripcion(proceso.getDescripcion());
+                resultado.setTipoInterno(proceso.getTipoInterno());
+
+                String textoNormalizado = filtrarOportunidadesService.normalizarTexto(proceso);
+
+                resultado.setCategorias(filtrarOportunidadesService.detectarCategorias(textoNormalizado));
+
+                resultados.add(resultado);
+            }
+
+            if (!pagina.hasNext()) {
+                break;
+            }
+
+            numeroPagina++;
+        }
+
+        return resultados;
     }
-    public Map<String, Integer> contarCategorias() {
 
-        List<ProcesoSercop> procesosFiltrados = filtrarProcesos();
+    public Map<String, Integer> contarCategorias(int tamanoPagina) {
 
         Map<String, Integer> cantidades = new HashMap<>();
 
-        for (ProcesoSercop proceso : procesosFiltrados) {
+        int numeroPagina = 0;
 
-            String textoNormalizado = filtrarOportunidadesService.normalizarTexto(proceso);
+        while (true) {
 
-            Set<String> categorias = filtrarOportunidadesService.detectarCategorias(textoNormalizado);
+            Slice<ProcesoSercop> pagina = filtrarPagina(numeroPagina, tamanoPagina);
 
-            for (String categoria : categorias) {
-                cantidades.merge(categoria, 1, Integer::sum);
+            for (ProcesoSercop proceso : pagina.getContent()) {
+
+                String textoNormalizado = filtrarOportunidadesService.normalizarTexto(proceso);
+
+                Set<String> categorias = filtrarOportunidadesService.detectarCategorias(textoNormalizado);
+
+                for (String categoria : categorias) {
+                    cantidades.merge(categoria, 1, Integer::sum);
+                }
             }
+
+            if (!pagina.hasNext()) {
+                break;
+            }
+
+            numeroPagina++;
         }
 
         return cantidades;
     }
-    public Map<String, List<MuestraCategoriaSercop>> obtenerMuestrasPorCategoria(int cantidad) {
 
-        List<ProcesoSercop> procesosFiltrados = filtrarProcesos();
+    public Map<String, List<MuestraCategoriaSercop>> obtenerMuestrasPorCategoria(int cantidad, int tamanoPagina) {
 
         Map<String, List<MuestraCategoriaSercop>> muestras = new HashMap<>();
 
-        for (ProcesoSercop proceso : procesosFiltrados) {
+        int numeroPagina = 0;
 
-            String textoNormalizado = filtrarOportunidadesService.normalizarTexto(proceso);
+        while (true) {
 
-            Set<String> categorias = filtrarOportunidadesService.detectarCategorias(textoNormalizado);
+            Slice<ProcesoSercop> pagina = filtrarPagina(numeroPagina, tamanoPagina);
 
-            for (String categoria : categorias) {
+            for (ProcesoSercop proceso : pagina.getContent()) {
 
-                List<MuestraCategoriaSercop> muestra = muestras.computeIfAbsent(categoria, key -> new java.util.ArrayList<>());
+                String textoNormalizado = filtrarOportunidadesService.normalizarTexto(proceso);
 
-                if (muestra.size() < cantidad) {
+                Set<String> categorias = filtrarOportunidadesService.detectarCategorias(textoNormalizado);
+
+                for (String categoria : categorias) {
+
+                    List<MuestraCategoriaSercop> muestra = muestras.computeIfAbsent(categoria, key -> new ArrayList<>());
+
+                    if (muestra.size() >= cantidad) {
+                        continue;
+                    }
 
                     MuestraCategoriaSercop resultado = new MuestraCategoriaSercop();
 
@@ -98,8 +140,29 @@ public class FiltrarProcesosSercopService {
                     muestra.add(resultado);
                 }
             }
+
+            if (!pagina.hasNext()) {
+                break;
+            }
+
+            numeroPagina++;
         }
 
         return muestras;
+    }
+
+    public Map<String, Object> probarFiltroDeterministico() {
+
+        List<ProcesoSercop> procesos = obtenerProcesosSercopService.obtenerTodos();
+
+        List<ProcesoSercop> filtrados = procesos.stream()
+                .filter(filtrarOportunidadesService::esOportunidadTecnologica)
+                .toList();
+
+        return Map.of(
+                "totalProcesos", procesos.size(),
+                "totalProcesosFiltrados", filtrados.size(),
+                "primeros10", filtrados.stream().limit(10).toList()
+        );
     }
 }

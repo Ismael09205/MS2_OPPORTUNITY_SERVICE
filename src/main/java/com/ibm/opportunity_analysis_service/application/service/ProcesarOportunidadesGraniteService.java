@@ -4,6 +4,7 @@ import com.ibm.opportunity_analysis_service.application.port.out.GranitePort;
 import com.ibm.opportunity_analysis_service.application.service.config.ConfiguracionGranite;
 import com.ibm.opportunity_analysis_service.domain.entity.ProcesoSercop;
 import com.ibm.opportunity_analysis_service.domain.entity.ResultadoAnalisisGranite;
+import org.springframework.data.domain.Slice;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -24,22 +25,48 @@ public class ProcesarOportunidadesGraniteService {
 
     public List<ResultadoAnalisisGranite> procesar() {
 
-        List<ProcesoSercop> procesos = filtrarProcesosSercopService.filtrarProcesos();
-
         List<ResultadoAnalisisGranite> resultados = new ArrayList<>();
+        List<ProcesoSercop> lote = new ArrayList<>();
 
-        int tamanoLote = configuracionGranite.getTamanoLote();
+        int tamanoPagina = configuracionGranite.getTamanoLote();
+        int numeroPagina = 0;
 
-        for (int inicio = 0; inicio < procesos.size(); inicio += tamanoLote) {
+        while (true) {
 
-            int fin = Math.min(inicio + tamanoLote, procesos.size());
-            List<ProcesoSercop> lote = procesos.subList(inicio, fin);
-            List<ResultadoAnalisisGranite> resultadoLote = granitePort.analizar(lote);
-            validarResultados(lote, resultadoLote);
-            resultados.addAll(resultadoLote);
+            Slice<ProcesoSercop> pagina = filtrarProcesosSercopService.filtrarPagina(numeroPagina, tamanoPagina);
+
+            for (ProcesoSercop proceso : pagina.getContent()) {
+
+                lote.add(proceso);
+
+                if (lote.size() >= tamanoPagina) {
+
+                    procesarLote(lote, resultados);
+                    lote.clear();
+                }
+            }
+
+            if (!pagina.hasNext()) {
+                break;
+            }
+
+            numeroPagina++;
+        }
+
+        if (!lote.isEmpty()) {
+            procesarLote(lote, resultados);
         }
 
         return resultados;
+    }
+
+    private void procesarLote(List<ProcesoSercop> lote, List<ResultadoAnalisisGranite> resultados) {
+
+        List<ResultadoAnalisisGranite> resultadoLote = granitePort.analizar(lote);
+
+        validarResultados(lote, resultadoLote);
+
+        resultados.addAll(resultadoLote);
     }
 
     private void validarResultados(List<ProcesoSercop> lote, List<ResultadoAnalisisGranite> resultados) {

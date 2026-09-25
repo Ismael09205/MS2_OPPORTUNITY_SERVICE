@@ -6,4 +6,6 @@ import lombok.Setter;
 @Setter
 public class RespuestaOllama {
     private MensajeOllama message;
+    private Integer promptEvalEntrada;
+    private Integer evalTokensSalida;
 }
