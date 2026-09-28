@@ -21,7 +21,6 @@ public class GuardarCandidatoTecnologicoService {
                 .map(candidatoExistente -> {
                     candidatoExistente.setTitulo(candidatoTecnologico.getTitulo());
                     candidatoExistente.setDescripcion(candidatoTecnologico.getDescripcion());
-                    candidatoExistente.setFechaDeteccion(OffsetDateTime.now());
                     candidatoExistente.setEstado(candidatoTecnologico.getEstado());
 
                     return persistencePort.guardar(candidatoExistente);
