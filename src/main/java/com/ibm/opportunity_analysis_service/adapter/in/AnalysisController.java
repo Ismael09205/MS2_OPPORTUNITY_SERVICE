@@ -28,12 +28,6 @@ import java.util.Map;
             this.analizarOportunidadesGraniteService = analizarOportunidadesGraniteService;
         }
 
-        @GetMapping("/salud")
-        public String salud() {
-            return "Saludable";
-        }
-
-
         @GetMapping("/muestra")
         public List<ResultadoFiltroSercop> obtenerMuestra() {
         return filtrarProcesosSercopService.obtenerMuestraFiltrada(20, 100);
@@ -61,6 +55,14 @@ import java.util.Map;
         public List<ResultadoAnalisisGranite> analizarGranite() {
             return analizarOportunidadesGraniteService.analizar();
         }
+
+        @GetMapping("/oportunidad-tecnologica")
+        public Map<String, Object> persistirCandidatosTecnologicos() {
+        int totalCandidatos = filtrarProcesosSercopService.filtrarYPersistirCandidatos(100);
+        return Map.of(
+                "totalCandidatosProcesados", totalCandidatos
+        );
+    }
     }
 
 
