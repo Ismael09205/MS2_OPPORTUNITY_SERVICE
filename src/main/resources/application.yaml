@@ -15,7 +15,9 @@ filtro-oportunidades:
     software:
       terminos:
         - software
-        - aplicacion
+        - aplicaciones web
+        - aplicaciones moviles
+        - informatica
         - sistema informatico
         - desarrollo de software
         - plataforma digital
@@ -58,6 +60,6 @@ filtro-oportunidades:
     - servidores publicos
     - red vial
 granite:
-  url: http://localhost:11434
-  modelo: ibm/granite4.2:3b
+  url: http://localhost:11435
+  modelo: granite-embedding:278m
   tamano-lote: 5

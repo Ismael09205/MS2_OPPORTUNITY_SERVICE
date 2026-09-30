@@ -1,0 +1,3655 @@
+[
+  {
+    "product_name": "AI coding agent",
+    "description": "IBM® Bob es un agente de codificación con IA y un socio de desarrollo impulsado por IA que automatiza todo el ciclo de vida del desarrollo de software.",
+    "category": [
+      "Inteligencia artificial"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "SQL",
+      "Java",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "artificial-intelligence",
+      "automation",
+      "integration",
+      "security",
+      "analytics",
+      "data-pipeline",
+      "optimization",
+      "scheduling",
+      "incident-management"
+    ],
+    "keywords": [
+      "automatización de procesos",
+      "seguridad informática",
+      "integración de sistemas",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/ai-coding-agent"
+  },
+  {
+    "product_name": "Maximo Application Suite",
+    "description": "IBM Maximo ayuda a las organizaciones a gestionar, mantener y optimizar sus activos utilizando perspectivas basadas en IA para reducir el tiempo de inactividad, controlar los costes y mejorar la fiabilidad.",
+    "category": [
+      "Inteligencia artificial"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "ELT"
+    ],
+    "integrations": [],
+    "tags": [
+      "artificial-intelligence",
+      "automation",
+      "integration",
+      "security",
+      "compliance",
+      "analytics",
+      "ai",
+      "storage",
+      "optimization",
+      "scheduling",
+      "workflow",
+      "incident-management"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "integración de sistemas",
+      "flujos de trabajo",
+      "automatización de procesos",
+      "almacenamiento",
+      "gestión de registros",
+      "gestión de APIs",
+      "inteligencia artificial"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/maximo"
+  },
+  {
+    "product_name": "watsonx",
+    "description": "IBM watsonx es una cartera de productos de IA que acelera el impacto de la IA generativa en los flujos de trabajo principales para impulsar la productividad.",
+    "category": [
+      "Inteligencia artificial"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Ansible",
+      "LLM",
+      "IA Generativa",
+      "Aprendizaje automático",
+      "SIEM",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "artificial-intelligence",
+      "automation",
+      "integration",
+      "compliance",
+      "analytics",
+      "governance",
+      "networking",
+      "optimization",
+      "virtual-assistant"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "gobierno de datos",
+      "integración de sistemas",
+      "automatización de procesos",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/watsonx"
+  },
+  {
+    "product_name": "watsonx Orchestrate",
+    "description": "Watsonx Orchestrate reúne a los agentes de IA para automatizar el trabajo en todas las aplicaciones y flujos de trabajo, con un gobierno centralizado que se escala de forma segura en toda la empresa.",
+    "category": [
+      "Inteligencia artificial"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "ELT",
+      "AWS",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "artificial-intelligence",
+      "automation",
+      "integration",
+      "monitoring",
+      "security",
+      "compliance",
+      "scheduling",
+      "no-code"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/watsonx-orchestrate"
+  },
+  {
+    "product_name": "watsonx.data",
+    "description": "Watsonx.data es un lakehouse de datos híbrido y abierto que unifica el acceso a datos y automatiza el gobierno para sacar el máximo partido a sus datos para IA y BI.",
+    "category": [
+      "Inteligencia artificial"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Apache Spark",
+      "SQL",
+      "NoSQL",
+      "ELT",
+      "IA Generativa",
+      "Embeddings vectoriales",
+      "Multinube",
+      "SaaS",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "artificial-intelligence",
+      "automation",
+      "integration",
+      "security",
+      "compliance",
+      "analytics",
+      "governance",
+      "database",
+      "optimization"
+    ],
+    "keywords": [
+      "base de datos",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "gobierno de datos",
+      "integración de sistemas",
+      "computación en la nube",
+      "automatización de procesos",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/watsonx-data"
+  },
+  {
+    "product_name": "watsonx.data integration",
+    "description": "Convierta los datos dispersos en combustible para la IA sin ralentizar a los equipos ni inflar los costes para que todos los datos fiables funcionen más rápido con el software de integración watsonx.data integration.",
+    "category": [
+      "Inteligencia artificial"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "ETL",
+      "ELT",
+      "IA Generativa",
+      "IBM Cloud",
+      "AWS",
+      "Nube híbrida",
+      "Multinube",
+      "SaaS"
+    ],
+    "integrations": [],
+    "tags": [
+      "artificial-intelligence",
+      "automation",
+      "integration",
+      "monitoring",
+      "observability",
+      "compliance",
+      "analytics",
+      "data-pipeline",
+      "optimization",
+      "incident-management"
+    ],
+    "keywords": [
+      "observabilidad",
+      "monitoreo de infraestructura",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/watsonx-data-integration"
+  },
+  {
+    "product_name": "watsonx.data intelligence",
+    "description": "IBM watsonx.data intelligence aprovecha los metadatos para descubrir, seleccionar y gobernar activos de datos en entornos de nube pública, privada, híbrida o local.",
+    "category": [
+      "Inteligencia artificial"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "SQL"
+    ],
+    "integrations": [],
+    "tags": [
+      "artificial-intelligence",
+      "automation",
+      "integration",
+      "compliance",
+      "analytics",
+      "governance"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "cumplimiento normativo",
+      "analítica de datos",
+      "gobierno de datos",
+      "integración de sistemas",
+      "computación en la nube",
+      "automatización de procesos",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/watsonx-data-intelligence"
+  },
+  {
+    "product_name": "watsonx.governance",
+    "description": "IBM® watsonx.governance ayuda a las empresas a gobernar la IA a lo largo del ciclo de vida al proporcionar visibilidad, control y responsabilidad en cualquier IA, en cualquier lugar, impulsado por un gobierno nativo de la IA y GRC de nivel empresarial.",
+    "category": [
+      "Inteligencia artificial"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "AWS"
+    ],
+    "integrations": [],
+    "tags": [
+      "artificial-intelligence",
+      "automation",
+      "integration",
+      "monitoring",
+      "compliance"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/watsonx-governance"
+  },
+  {
+    "product_name": "Cloud Databases for Elasticsearch",
+    "description": "IBM Cloud Databases for Elasticsearch es una oferta de servicio de Elasticsearch totalmente gestionada en IBM Cloud. Combina la flexibilidad de un motor de búsqueda semántica con la potencia de indexación de una base de datos de documentos JSON y las capacidades de Vector DB a través de una serie de características integradas.",
+    "category": [
+      "Datos y analítica"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Terraform",
+      "Ansible",
+      "SQL",
+      "JSON",
+      "IA Generativa",
+      "Aprendizaje automático",
+      "PLN",
+      "IBM Cloud",
+      "PaaS"
+    ],
+    "integrations": [],
+    "tags": [
+      "data-analytics",
+      "automation",
+      "integration",
+      "monitoring",
+      "security",
+      "analytics",
+      "database",
+      "networking"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "base de datos",
+      "seguridad informática",
+      "computación en la nube",
+      "redes y conectividad",
+      "integración de sistemas",
+      "automatización de procesos",
+      "gestión de registros",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/databases-for-elasticsearch"
+  },
+  {
+    "product_name": "Cloud Pak for Data",
+    "description": "IBM Cloud Pak for Data es un conjunto modular de componentes de software integrados para el análisis, organización y gestión de los datos.",
+    "category": [
+      "Datos y analítica"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "ETL",
+      "IBM Cloud",
+      "Nube híbrida",
+      "Multinube"
+    ],
+    "integrations": [],
+    "tags": [
+      "data-analytics",
+      "integration",
+      "analytics",
+      "governance",
+      "storage"
+    ],
+    "keywords": [
+      "analítica de datos",
+      "computación en la nube",
+      "gobierno de datos",
+      "integración de sistemas",
+      "almacenamiento"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/cloud-pak-for-data"
+  },
+  {
+    "product_name": "Cloudant",
+    "description": "Basado en la tecnología CouchDB, IBM Cloudant admite el almacenamiento de documentos JSON flexible y sin esquemas, lo que es ideal para aplicaciones que necesitan un desarrollo rápido e iterativo.",
+    "category": [
+      "Datos y analítica"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "JSON",
+      "IBM Cloud",
+      "Nube híbrida",
+      "Multinube",
+      "PaaS"
+    ],
+    "integrations": [],
+    "tags": [
+      "data-analytics",
+      "automation",
+      "database",
+      "storage",
+      "disaster-recovery",
+      "encryption"
+    ],
+    "keywords": [
+      "recuperación ante desastres",
+      "base de datos",
+      "computación en la nube",
+      "cifrado de datos",
+      "automatización de procesos",
+      "almacenamiento",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/cloudant"
+  },
+  {
+    "product_name": "Cognos Analytics",
+    "description": "IBM Cognos Analytics le ayuda a explorar datos, elaborar informes y crear paneles de control con perspectivas impulsadas por IA, lo que le permite comprender las tendencias y tomar decisiones fundamentadas.",
+    "category": [
+      "Datos y analítica"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Kubernetes",
+      "AWS"
+    ],
+    "integrations": [],
+    "tags": [
+      "data-analytics",
+      "automation",
+      "integration",
+      "security",
+      "compliance",
+      "analytics",
+      "ai",
+      "optimization",
+      "workflow"
+    ],
+    "keywords": [
+      "seguridad informática",
+      "cumplimiento normativo",
+      "analítica de datos",
+      "integración de sistemas",
+      "computación en la nube",
+      "flujos de trabajo",
+      "automatización de procesos",
+      "gestión de registros",
+      "gestión de APIs",
+      "inteligencia artificial"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/cognos-analytics"
+  },
+  {
+    "product_name": "DataStage",
+    "description": "IBM DataStage es una herramienta de integración de datos que ofrece una interfaz visual para diseñar, desarrollar e implementar canalizaciones de datos.",
+    "category": [
+      "Datos y analítica"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "ETL",
+      "ELT",
+      "IA Generativa",
+      "AWS",
+      "Multinube",
+      "Python",
+      "IAM"
+    ],
+    "integrations": [],
+    "tags": [
+      "data-analytics",
+      "integration",
+      "observability",
+      "security",
+      "analytics",
+      "governance",
+      "data-pipeline",
+      "storage",
+      "chatbot",
+      "low-code",
+      "no-code"
+    ],
+    "keywords": [
+      "observabilidad",
+      "seguridad informática",
+      "computación en la nube",
+      "gobierno de datos",
+      "integración de sistemas",
+      "almacenamiento"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/datastage"
+  },
+  {
+    "product_name": "Db2",
+    "description": "IBM Db2 es la base de datos para ejecutar sus cargas de trabajo de misión crítica. Podrá hacer transacciones de baja latencia y análisis en tiempo real en cualquier nube, entorno híbrido o entorno local.",
+    "category": [
+      "Datos y analítica"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Kubernetes",
+      "Red Hat OpenShift",
+      "SQL",
+      "IBM Cloud",
+      "AWS",
+      "Azure",
+      "Nube híbrida",
+      "SaaS",
+      "PaaS",
+      "IaaS"
+    ],
+    "integrations": [],
+    "tags": [
+      "data-analytics",
+      "automation",
+      "integration",
+      "security",
+      "compliance",
+      "analytics",
+      "database",
+      "storage",
+      "networking",
+      "optimization"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "base de datos",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "integración de sistemas",
+      "redes y conectividad",
+      "automatización de procesos",
+      "almacenamiento",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/db2"
+  },
+  {
+    "product_name": "EDB Postgres Enterprise and Standard with IBM",
+    "description": "Desarrolle y ejecute aplicaciones en una base de datos empresarial rica en seguridad basada en PostgreSQL de código abierto.",
+    "category": [
+      "Datos y analítica"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "SQL",
+      "JSON",
+      "XML",
+      "IBM Cloud",
+      "Python",
+      "Java"
+    ],
+    "integrations": [],
+    "tags": [
+      "data-analytics",
+      "automation",
+      "integration",
+      "security",
+      "analytics",
+      "data-warehouse",
+      "database",
+      "scheduling"
+    ],
+    "keywords": [
+      "base de datos",
+      "seguridad informática",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos",
+      "gestión de registros"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/postgres-enterprise"
+  },
+  {
+    "product_name": "ILOG CPLEX Optimization Studio",
+    "description": "IBM ILOG CPLEX Optimization Studio es un software de optimización de decisiones para construir y resolver modelos de optimización complejos.",
+    "category": [
+      "Datos y analítica"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Apache Spark",
+      "IBM Cloud",
+      "Linux",
+      "Windows",
+      "Python",
+      "Java",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "data-analytics",
+      "automation",
+      "integration",
+      "analytics",
+      "optimization",
+      "scheduling"
+    ],
+    "keywords": [
+      "analítica de datos",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/ilog-cplex-optimization-studio"
+  },
+  {
+    "product_name": "ILOG CPLEX Optimizer",
+    "description": "Produzca decisiones precisas y lógicas para problemas de planificación y asignación de recursos utilizando los potentes algoritmos de IBM ILOG CPLEX Optimizer.",
+    "category": [
+      "Datos y analítica"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Multinube"
+    ],
+    "integrations": [],
+    "tags": [
+      "data-analytics",
+      "analytics",
+      "optimization",
+      "scheduling"
+    ],
+    "keywords": [
+      "analítica de datos",
+      "computación en la nube"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/ilog-cplex-optimization-studio/cplex-optimizer"
+  },
+  {
+    "product_name": "Planning Analytics",
+    "description": "De los planes a las decisiones con herramientas de planificación y análisis con IA y con tecnología del motor IBM® TM1",
+    "category": [
+      "Datos y analítica"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "SaaS"
+    ],
+    "integrations": [],
+    "tags": [
+      "data-analytics",
+      "integration",
+      "security",
+      "analytics",
+      "database",
+      "scheduling"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "base de datos",
+      "seguridad informática",
+      "analítica de datos",
+      "integración de sistemas"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/planning-analytics"
+  },
+  {
+    "product_name": "SPSS",
+    "description": "Encuentre oportunidades, mejore la eficiencia y minimice el riesgo gracias a las capacidades avanzadas de análisis estadístico del software IBM® SPSS.",
+    "category": [
+      "Datos y analítica"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Aprendizaje automático",
+      "IBM Cloud",
+      "IAM"
+    ],
+    "integrations": [],
+    "tags": [
+      "data-analytics",
+      "automation",
+      "integration",
+      "analytics"
+    ],
+    "keywords": [
+      "automatización de procesos",
+      "analítica de datos",
+      "integración de sistemas",
+      "computación en la nube"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/spss"
+  },
+  {
+    "product_name": "StreamSets",
+    "description": "Cree pipelines de datos en streaming robustos e inteligentes para mejorar la toma de decisiones en tiempo real y mitigar los riesgos asociados al flujo de datos en toda su organización con IBM StreamSets.",
+    "category": [
+      "Datos y analítica"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "AWS",
+      "Azure",
+      "Google Cloud",
+      "Multinube",
+      "SaaS",
+      "Python",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "data-analytics",
+      "automation",
+      "integration",
+      "compliance",
+      "analytics",
+      "data-pipeline",
+      "low-code"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "cumplimiento normativo",
+      "analítica de datos",
+      "computación en la nube",
+      "integración de sistemas",
+      "canalizaciones de datos",
+      "automatización de procesos",
+      "gestión de registros"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/streamsets"
+  },
+  {
+    "product_name": "Cloud Pak for AIOps",
+    "description": "IBM Cloud Pak for AIOps es una plataforma de AIOps y una solución de gestión de operaciones de TI que les permite a los operadores de TI ubicar la IA en el centro de la cadena de herramientas de ITOps.",
+    "category": [
+      "DevOps"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "IBM Cloud"
+    ],
+    "integrations": [],
+    "tags": [
+      "devops",
+      "automation",
+      "monitoring",
+      "observability",
+      "analytics",
+      "ai",
+      "incident-management"
+    ],
+    "keywords": [
+      "observabilidad",
+      "monitoreo de infraestructura",
+      "computación en la nube",
+      "automatización de procesos",
+      "gestión de APIs",
+      "inteligencia artificial"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/cloud-pak-for-aiops"
+  },
+  {
+    "product_name": "Cloud Pak for Applications",
+    "description": "IBM Cloud Pak for Applications ofrece una completa colección de tiempos de ejecución nativos de la nube, herramientas de modernización de aplicaciones impulsadas por Al y una plataforma Kubernetes.",
+    "category": [
+      "DevOps"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Kubernetes",
+      "Red Hat OpenShift",
+      "IBM Cloud",
+      "Nube híbrida",
+      "Java",
+      "Node.js"
+    ],
+    "integrations": [],
+    "tags": [
+      "devops",
+      "integration",
+      "networking"
+    ],
+    "keywords": [
+      "redes y conectividad",
+      "computación en la nube",
+      "integración de sistemas",
+      "monitoreo de infraestructura"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/cloud-pak-for-applications"
+  },
+  {
+    "product_name": "Concert",
+    "description": "IBM Concert es una plataforma de automatización tecnológica impulsada por IA generativa que racionaliza la gestión de aplicaciones y genera conocimientos de IA sobre los que puede actuar.",
+    "category": [
+      "DevOps"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Kubernetes",
+      "IA Generativa",
+      "Nube híbrida",
+      "Multinube"
+    ],
+    "integrations": [],
+    "tags": [
+      "devops",
+      "automation",
+      "integration",
+      "observability",
+      "security",
+      "compliance",
+      "networking",
+      "optimization",
+      "incident-management",
+      "low-code"
+    ],
+    "keywords": [
+      "observabilidad",
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/concert"
+  },
+  {
+    "product_name": "DevOps Code ClearCase",
+    "description": "IBM DevOps ClearCase proporciona acceso controlado a una variedad de activos de software.",
+    "category": [
+      "DevOps"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "DevOps"
+    ],
+    "integrations": [],
+    "tags": [
+      "devops",
+      "integration",
+      "security",
+      "compliance",
+      "authentication"
+    ],
+    "keywords": [
+      "desarrollo y operaciones",
+      "monitoreo de infraestructura",
+      "cumplimiento normativo",
+      "seguridad informática",
+      "integración de sistemas",
+      "gestión de registros"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/devops-code-clearcase"
+  },
+  {
+    "product_name": "DevOps Test",
+    "description": "Consiga implementaciones de software más satisfactorias realizando pruebas antes y con mayor frecuencia con las soluciones de IBM.",
+    "category": [
+      "DevOps"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Docker",
+      "JDBC",
+      "Aprendizaje automático",
+      "PLN",
+      "z/OS",
+      "DevOps"
+    ],
+    "integrations": [],
+    "tags": [
+      "devops",
+      "automation",
+      "integration",
+      "analytics",
+      "messaging",
+      "no-code"
+    ],
+    "keywords": [
+      "desarrollo y operaciones",
+      "mensajería empresarial",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/devops-test"
+  },
+  {
+    "product_name": "Engineering Lifecycle Management",
+    "description": "IBM Engineering Lifecycle Management (ELM) es una completa solución de ingeniería integral que se sitúa a la vanguardia del mercado. Le guía de manera fluida desde los requisitos hasta el diseño de sistemas, el flujo de trabajo y la gestión de pruebas, y amplía la funcionalidad de las herramientas ALM para un mejor desarrollo de sistemas complejos.",
+    "category": [
+      "DevOps"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [],
+    "integrations": [],
+    "tags": [
+      "devops",
+      "automation",
+      "integration",
+      "compliance",
+      "analytics",
+      "governance",
+      "workflow"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "gobierno de datos",
+      "integración de sistemas",
+      "flujos de trabajo",
+      "automatización de procesos"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/engineering-lifecycle-management"
+  },
+  {
+    "product_name": "Instana Observability",
+    "description": "IBM Instana Observability proporciona perspectivas en tiempo real sobre las aplicaciones, lo que permite rastrear las solicitudes, detectar problemas en toda la pila de aplicaciones y acelerar la resolución de incidencias.",
+    "category": [
+      "DevOps"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Kubernetes",
+      "LLM",
+      "IA Generativa",
+      "SaaS",
+      "DevOps"
+    ],
+    "integrations": [],
+    "tags": [
+      "devops",
+      "automation",
+      "integration",
+      "monitoring",
+      "observability",
+      "analytics",
+      "optimization",
+      "incident-management"
+    ],
+    "keywords": [
+      "desarrollo y operaciones",
+      "observabilidad",
+      "monitoreo de infraestructura",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/instana"
+  },
+  {
+    "product_name": "Kubecost",
+    "description": "IBM Kubecost provides a comprehensive cost monitoring and optimization solution for teams running Kubernetes that you can install in 5 minutes or less.",
+    "category": [
+      "DevOps"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Kubernetes",
+      "ETL",
+      "SaaS",
+      "DevOps"
+    ],
+    "integrations": [],
+    "tags": [
+      "devops",
+      "integration",
+      "networking"
+    ],
+    "keywords": [
+      "desarrollo y operaciones",
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "integración de sistemas",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.apptio.com/products/kubecost"
+  },
+  {
+    "product_name": "Terraform",
+    "description": "Maximize infrastructure investments using a standardized automated workflow from Terraform to provision and manage cloud, on-premises, and SaaS infrastructure.",
+    "category": [
+      "DevOps"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Terraform",
+      "Nube híbrida",
+      "En premisas",
+      "SaaS",
+      "CI/CD"
+    ],
+    "integrations": [],
+    "tags": [
+      "devops",
+      "integration",
+      "networking"
+    ],
+    "keywords": [
+      "redes y conectividad",
+      "integración de sistemas",
+      "monitoreo de infraestructura"
+    ],
+    "source_url": "https://www.hashicorp.com/en/products/terraform"
+  },
+  {
+    "product_name": "API Connect",
+    "description": "API Connect ayuda a los equipos a crear, gestionar y proteger las API a lo largo de su ciclo de vida con un gobierno sólido, seguridad integrada y opciones de implementación flexibles.",
+    "category": [
+      "Integración"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "LLM",
+      "IA Generativa",
+      "IBM Cloud",
+      "AWS",
+      "Multinube",
+      "En premisas",
+      "SaaS",
+      "SOC",
+      "DevOps"
+    ],
+    "integrations": [],
+    "tags": [
+      "integration",
+      "automation",
+      "security",
+      "compliance",
+      "analytics",
+      "api-management",
+      "authentication"
+    ],
+    "keywords": [
+      "desarrollo y operaciones",
+      "monitoreo de infraestructura",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/api-connect"
+  },
+  {
+    "product_name": "App Connect",
+    "description": "IBM App Connect es un software de integración de aplicaciones que conecta aplicaciones y fuentes de datos, y que además permite crear conectores personalizados. Puede implementarse en el entorno local, en cualquier nube o como un servicio totalmente gestionado en AWS.",
+    "category": [
+      "Integración"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Apache Kafka",
+      "SQL",
+      "IBM Cloud",
+      "AWS",
+      "SaaS",
+      "Java"
+    ],
+    "integrations": [],
+    "tags": [
+      "integration",
+      "automation",
+      "security",
+      "governance",
+      "messaging",
+      "optimization",
+      "low-code",
+      "no-code"
+    ],
+    "keywords": [
+      "mensajería empresarial",
+      "monitoreo de infraestructura",
+      "seguridad informática",
+      "computación en la nube",
+      "gobierno de datos",
+      "integración de sistemas",
+      "automatización de procesos",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/app-connect"
+  },
+  {
+    "product_name": "Aspera",
+    "description": "IBM Aspera proporciona una transferencia rápida y segura de archivos de gran tamaño que elimina el movimiento de datos lento y poco fiable y admite flujos de trabajo exigentes en entornos híbridos y multinube.",
+    "category": [
+      "Integración"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "AWS",
+      "Multinube",
+      "SaaS",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "integration",
+      "automation",
+      "security",
+      "compliance",
+      "data-pipeline",
+      "storage",
+      "networking",
+      "optimization"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos",
+      "almacenamiento",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/aspera"
+  },
+  {
+    "product_name": "Cloud Pak for Integration",
+    "description": "Conecte aplicaciones, servicios y datos con la plataforma IBM Cloud Pak for Integration, la solución de software de integración más completa.",
+    "category": [
+      "Integración"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Apache Kafka",
+      "IBM Cloud",
+      "SaaS",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "integration",
+      "automation",
+      "security",
+      "messaging",
+      "encryption",
+      "low-code",
+      "no-code"
+    ],
+    "keywords": [
+      "mensajería empresarial",
+      "seguridad informática",
+      "computación en la nube",
+      "integración de sistemas",
+      "cifrado de datos",
+      "automatización de procesos",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/cloud-pak-for-integration"
+  },
+  {
+    "product_name": "Event Automation",
+    "description": "IBM Event Automation ayuda a los equipos a procesar eventos en tiempo real, controlar los costes de Kafka y crear arquitecturas de transmisión flexibles sin dependencia del proveedor.",
+    "category": [
+      "Integración"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Apache Kafka",
+      "PaaS"
+    ],
+    "integrations": [],
+    "tags": [
+      "integration",
+      "automation",
+      "security",
+      "analytics",
+      "networking",
+      "optimization"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "seguridad informática",
+      "analítica de datos",
+      "integración de sistemas",
+      "automatización de procesos",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/event-automation"
+  },
+  {
+    "product_name": "MQ",
+    "description": "IBM MQ es una familia de productos middleware para mensajería de punto a punto y de publicación/suscripción. MQ está disponible como SaaS en IBM Cloud, como dispositivo de hardware y como solución autoalojada, incluido en z/OS.",
+    "category": [
+      "Integración"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Apache Kafka",
+      "IBM Cloud",
+      "Multinube",
+      "SaaS",
+      "z/OS",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "integration",
+      "security",
+      "compliance",
+      "messaging",
+      "disaster-recovery",
+      "networking",
+      "encryption"
+    ],
+    "keywords": [
+      "mensajería empresarial",
+      "recuperación ante desastres",
+      "cumplimiento normativo",
+      "seguridad informática",
+      "computación en la nube",
+      "integración de sistemas",
+      "redes y conectividad",
+      "cifrado de datos",
+      "gestión de registros"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/mq"
+  },
+  {
+    "product_name": "NS1 Connect",
+    "description": "IBM NS1 Connect proporciona DNS autoritativo gestionado con enrutamiento anycast y conmutación por error automatizada para reducir la latencia, mejorar la resiliencia y mantener las aplicaciones disponibles.",
+    "category": [
+      "Integración"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Terraform",
+      "Ansible",
+      "ETL",
+      "Embeddings vectoriales",
+      "Multinube",
+      "DevOps",
+      "CI/CD"
+    ],
+    "integrations": [],
+    "tags": [
+      "integration",
+      "automation",
+      "monitoring",
+      "observability",
+      "networking"
+    ],
+    "keywords": [
+      "desarrollo y operaciones",
+      "observabilidad",
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/ns1-connect"
+  },
+  {
+    "product_name": "Sterling B2B Integration SaaSâ",
+    "description": "IBM Sterling B2B Integration SaaS, anteriormente conocido como IBM Sterling Supply Chain Business Network, forma parte de la cartera de soluciones IBM Sterling Data Exchange.",
+    "category": [
+      "Integración"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "SaaS",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "integration",
+      "automation",
+      "compliance"
+    ],
+    "keywords": [
+      "cumplimiento normativo",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/b2b-integration-saas"
+  },
+  {
+    "product_name": "Sterling B2B Integration Value-Added Network",
+    "description": "IBM Sterling B2B Integration Value-Added Network (VAN) forma parte de la cartera de soluciones IBM Sterling Data Exchange que da soporte a las transacciones EDI, lo que le permite intercambiar de forma fiable datos estructurados con clientes, proveedores, distribuidores u otros socios comerciales.",
+    "category": [
+      "Integración"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Nube híbrida",
+      "SaaS",
+      "PaaS",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "integration",
+      "automation",
+      "networking"
+    ],
+    "keywords": [
+      "redes y conectividad",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/b2b-integration-van"
+  },
+  {
+    "product_name": "Sterling Secure File Transferâ",
+    "description": "IBM Sterling Secure File Transfer proporciona una plataforma unificada de transferencia de archivos gestionada para compartir y rastrear de forma segura el movimiento de información de misión crítica.",
+    "category": [
+      "Integración"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "integration",
+      "automation",
+      "monitoring",
+      "security",
+      "networking",
+      "authentication",
+      "encryption"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "seguridad informática",
+      "integración de sistemas",
+      "cifrado de datos",
+      "automatización de procesos",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/secure-file-transfer"
+  },
+  {
+    "product_name": "webMethods B2B Integration",
+    "description": "IBM webMethods B2B ayuda a las empresas a automatizar el EDI y las integraciones de socios, mejorando la visibilidad, la velocidad y la fiabilidad en todos los procesos B2B.",
+    "category": [
+      "Integración"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "LLM",
+      "AWS",
+      "Azure",
+      "Multinube",
+      "En premisas",
+      "SaaS",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "integration",
+      "automation",
+      "security",
+      "networking"
+    ],
+    "keywords": [
+      "redes y conectividad",
+      "seguridad informática",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos",
+      "gestión de registros",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/webmethods-b2b"
+  },
+  {
+    "product_name": "webMethods Hybrid Integration",
+    "description": "IBM webMethods Hybrid Integration unifica la integración híbrida en una iPaaS, conectando aplicaciones, API y B2B con un gobierno centralizado para reducir la proliferación.",
+    "category": [
+      "Integración"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Apache Kafka",
+      "LLM",
+      "IA Generativa",
+      "Multinube",
+      "SaaS",
+      "PaaS",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "integration",
+      "automation",
+      "observability",
+      "security",
+      "compliance",
+      "governance",
+      "api-management",
+      "identity",
+      "no-code",
+      "low-code"
+    ],
+    "keywords": [
+      "observabilidad",
+      "gestión de identidades",
+      "monitoreo de infraestructura",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "gobierno de datos",
+      "integración de sistemas",
+      "computación en la nube",
+      "automatización de procesos",
+      "gestión de registros",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/webmethods-hybrid-integration"
+  },
+  {
+    "product_name": "webMethods Managed File Transfer",
+    "description": "IBM® webMethods MFT automatiza y protege las transferencias de archivos en toda su empresa para reducir el riesgo, respaldar el cumplimiento y ofrecer visibilidad de extremo a extremo.",
+    "category": [
+      "Integración"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "ELT",
+      "AWS",
+      "Azure",
+      "SaaS",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "integration",
+      "automation",
+      "monitoring",
+      "compliance",
+      "analytics",
+      "encryption"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "integración de sistemas",
+      "cifrado de datos",
+      "automatización de procesos",
+      "gestión de registros",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/webmethods-mft"
+  },
+  {
+    "product_name": "Cloud App ID",
+    "description": "App ID es un servicio en la nube de IBM que le permite agregar autenticación a la web y a las aplicaciones móviles, incluso a través del inicio de sesión social.",
+    "category": [
+      "Seguridad"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Kubernetes",
+      "IBM Cloud",
+      "PaaS",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "security",
+      "compliance",
+      "identity",
+      "authentication"
+    ],
+    "keywords": [
+      "gestión de identidades",
+      "monitoreo de infraestructura",
+      "cumplimiento normativo",
+      "seguridad informática",
+      "computación en la nube",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/app-id"
+  },
+  {
+    "product_name": "Cloud Cyber Recovery",
+    "description": "Las soluciones de ciberrecuperación de IBM ofrecen una infraestructura resiliente, sencilla y aislada con air gaps, recuperación ante desastres y un plan de continuidad del negocio frente al ransomware.",
+    "category": [
+      "Seguridad"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Red Hat OpenShift",
+      "IBM Cloud",
+      "IBM Z"
+    ],
+    "integrations": [],
+    "tags": [
+      "security",
+      "integration",
+      "compliance",
+      "storage",
+      "disaster-recovery",
+      "networking",
+      "incident-management"
+    ],
+    "keywords": [
+      "recuperación ante desastres",
+      "redes y conectividad",
+      "cumplimiento normativo",
+      "seguridad informática",
+      "monitoreo de infraestructura",
+      "integración de sistemas",
+      "almacenamiento",
+      "gestión de registros"
+    ],
+    "source_url": "https://www.ibm.com/es-es/solutions/cyber-recovery"
+  },
+  {
+    "product_name": "Guardium",
+    "description": "IBM Guardium ayuda a las organizaciones a detectar, analizar y responder a los riesgos de seguridad de datos, protege la información confidencial y garantiza el cumplimiento de los requisitos normativos.",
+    "category": [
+      "Seguridad"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Multinube"
+    ],
+    "integrations": [],
+    "tags": [
+      "security",
+      "automation",
+      "integration",
+      "compliance",
+      "analytics",
+      "encryption"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "integración de sistemas",
+      "cifrado de datos",
+      "automatización de procesos"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/guardium"
+  },
+  {
+    "product_name": "Guardium Data Encryption",
+    "description": "IBM Guardium Data Encryption es una gama de software de cifrado de datos y gestión de claves que se usa para gestionar políticas, configuraciones y claves de cifrado.",
+    "category": [
+      "Seguridad"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Multinube"
+    ],
+    "integrations": [],
+    "tags": [
+      "security",
+      "automation",
+      "integration",
+      "compliance",
+      "storage",
+      "encryption"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "integración de sistemas",
+      "cifrado de datos",
+      "automatización de procesos",
+      "almacenamiento",
+      "gestión de registros"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/guardium-data-encryption"
+  },
+  {
+    "product_name": "Guardium Data Protection",
+    "description": "IBM® Guardium Data Protection descubre, clasifica y protege los datos estructurados y datos no estructurados en entornos híbridos.",
+    "category": [
+      "Seguridad"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "SQL",
+      "Embeddings vectoriales",
+      "AWS",
+      "SaaS",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "security",
+      "automation",
+      "integration",
+      "compliance"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/guardium-data-protection"
+  },
+  {
+    "product_name": "Guardium Key Lifecycle Manager",
+    "description": "IBM Guardium Key Lifecycle Manager centraliza, simplifica y automatiza la gestión de claves de cifrado.",
+    "category": [
+      "Seguridad"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "VMware"
+    ],
+    "integrations": [],
+    "tags": [
+      "security",
+      "automation",
+      "integration",
+      "storage",
+      "identity",
+      "encryption"
+    ],
+    "keywords": [
+      "gestión de identidades",
+      "monitoreo de infraestructura",
+      "seguridad informática",
+      "computación en la nube",
+      "integración de sistemas",
+      "cifrado de datos",
+      "automatización de procesos",
+      "almacenamiento"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/guardium-key-lifecycle-manager"
+  },
+  {
+    "product_name": "Guardium Vulnerability Assessment",
+    "description": "IBM Guardium Vulnerability Assessment explora su entorno de datos para detectar vulnerabilidades y sugerir acciones correctivas.",
+    "category": [
+      "Seguridad"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "En premisas"
+    ],
+    "integrations": [],
+    "tags": [
+      "security",
+      "integration",
+      "analytics",
+      "database",
+      "workflow"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "base de datos",
+      "seguridad informática",
+      "computación en la nube",
+      "integración de sistemas",
+      "flujos de trabajo",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/guardium-vulnerability-assessment"
+  },
+  {
+    "product_name": "MaaS360",
+    "description": "IBM MaaS360 le ayuda a gestionar y proteger los endpoints desde una única consola, unificando la gestión de dispositivos con protección contra amenazas integrada y perspectivas impulsadas por IA.",
+    "category": [
+      "Seguridad"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [],
+    "integrations": [],
+    "tags": [
+      "security",
+      "automation",
+      "integration",
+      "compliance",
+      "analytics",
+      "identity",
+      "chatbot"
+    ],
+    "keywords": [
+      "gestión de identidades",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "integración de sistemas",
+      "automatización de procesos",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/maas360"
+  },
+  {
+    "product_name": "QRadar",
+    "description": "IBM QRadar, una suite de seguridad modular, ayuda a los equipos de seguridad a obtener visibilidad para detectar, investigar y responder rápidamente a las amenazas.",
+    "category": [
+      "Seguridad"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Aprendizaje automático",
+      "IAM",
+      "SIEM",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "security",
+      "automation",
+      "integration",
+      "analytics",
+      "networking",
+      "incident-management"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "seguridad informática",
+      "integración de sistemas",
+      "automatización de procesos",
+      "gestión de registros",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/qradar"
+  },
+  {
+    "product_name": "Secrets Manager",
+    "description": "IBM Cloud Secrets Manager es un servicio centralizado de gestión de secretos que ofrece aislamiento de datos de un solo inquilino para una mayor seguridad y control.",
+    "category": [
+      "Seguridad"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Kubernetes",
+      "IBM Cloud",
+      "Multinube",
+      "PaaS",
+      "IAM",
+      "DevOps"
+    ],
+    "integrations": [],
+    "tags": [
+      "security",
+      "automation",
+      "integration",
+      "compliance",
+      "storage",
+      "identity",
+      "authentication",
+      "encryption"
+    ],
+    "keywords": [
+      "desarrollo y operaciones",
+      "gestión de identidades",
+      "monitoreo de infraestructura",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "integración de sistemas",
+      "cifrado de datos",
+      "automatización de procesos",
+      "almacenamiento",
+      "gestión de registros",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/secrets-manager"
+  },
+  {
+    "product_name": "Trusteer",
+    "description": "Autenticar clientes, detectar fraudes y proteger contra usuarios malintencionados en todos los canales",
+    "category": [
+      "Seguridad"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Aprendizaje automático",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "security",
+      "networking",
+      "identity",
+      "incident-management"
+    ],
+    "keywords": [
+      "gestión de identidades",
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "seguridad informática",
+      "computación en la nube",
+      "aprendizaje automático"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/trusteer"
+  },
+  {
+    "product_name": "Vault",
+    "description": "Standardize secrets management with identity-based security from Vault that lets you centrally discover, store, access, rotate, and distribute dynamic secrets.",
+    "category": [
+      "Seguridad"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Terraform",
+      "LLM",
+      "CI/CD"
+    ],
+    "integrations": [],
+    "tags": [
+      "security",
+      "data-pipeline",
+      "networking"
+    ],
+    "keywords": [
+      "redes y conectividad",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.hashicorp.com/en/products/vault"
+  },
+  {
+    "product_name": "Verify",
+    "description": "IBM Verify proporciona una gestión de identidades y accesos que protege el acceso de los usuarios, aplica políticas de autenticación y reduce el riesgo basado en la identidad en entornos de nube y locales.",
+    "category": [
+      "Seguridad"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Multinube",
+      "SaaS",
+      "IAM",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "security",
+      "automation",
+      "integration",
+      "observability",
+      "compliance",
+      "analytics",
+      "governance",
+      "identity",
+      "authentication",
+      "no-code"
+    ],
+    "keywords": [
+      "observabilidad",
+      "gestión de identidades",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "gobierno de datos",
+      "integración de sistemas",
+      "computación en la nube",
+      "automatización de procesos",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/verify"
+  },
+  {
+    "product_name": "Apptio",
+    "description": "Align technology, finance, and business with IBM Apptio. Enhance cost transparency, streamline IT budgeting, and drive better outcomes with comprehensive financial tools.",
+    "category": [
+      "Gestión tecnológica empresarial"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Nube híbrida"
+    ],
+    "integrations": [],
+    "tags": [
+      "technology-business-management",
+      "integration",
+      "networking"
+    ],
+    "keywords": [
+      "redes y conectividad",
+      "integración de sistemas"
+    ],
+    "source_url": "https://www.apptio.com/products/ibm-apptio"
+  },
+  {
+    "product_name": "Cloudability",
+    "description": "IBM Cloudability is a cloud financial management platform that improves visibility, optimization, governance and more across cloud environments.",
+    "category": [
+      "Gestión tecnológica empresarial"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Kubernetes",
+      "IA Generativa",
+      "IBM Cloud",
+      "SaaS",
+      "DevOps"
+    ],
+    "integrations": [],
+    "tags": [
+      "technology-business-management",
+      "integration",
+      "networking"
+    ],
+    "keywords": [
+      "redes y conectividad",
+      "desarrollo y operaciones",
+      "integración de sistemas",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.apptio.com/products/cloudability"
+  },
+  {
+    "product_name": "Targetprocess",
+    "description": "Support diverse working methods, accommodating teams not fully transitioned to Agile or using a combination of methodologies.",
+    "category": [
+      "Gestión tecnológica empresarial"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Azure",
+      "DevOps"
+    ],
+    "integrations": [],
+    "tags": [
+      "technology-business-management",
+      "integration",
+      "networking"
+    ],
+    "keywords": [
+      "redes y conectividad",
+      "desarrollo y operaciones",
+      "integración de sistemas",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.apptio.com/products/targetprocess"
+  },
+  {
+    "product_name": "Turbonomic",
+    "description": "Automatice la gestión de recursos para garantizar el rendimiento en entornos multinube y, al mismo tiempo, reducir los costes de TI. ¡Pruebe hoy mismo el software de gestión de recursos IBM Turbonomic!",
+    "category": [
+      "Gestión tecnológica empresarial"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Kubernetes",
+      "Red Hat OpenShift",
+      "VMware",
+      "AWS",
+      "Azure",
+      "Google Cloud",
+      "Multinube"
+    ],
+    "integrations": [],
+    "tags": [
+      "technology-business-management",
+      "automation",
+      "integration",
+      "security",
+      "storage",
+      "networking",
+      "optimization"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "seguridad informática",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos",
+      "almacenamiento",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/turbonomic"
+  },
+  {
+    "product_name": "Cloud Bare Metal Servers",
+    "description": "Los IBM Cloud Bare Metal Servers son servidores nativos 100% dedicados y seguros. Los servidores están disponibles con arquitecturas Intel, Z o LinuxONE en un entorno compartido o VPC.",
+    "category": [
+      "Nube"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Red Hat OpenShift",
+      "VMware",
+      "Aprendizaje automático",
+      "IBM Cloud",
+      "SaaS",
+      "IaaS",
+      "Linux",
+      "SIEM",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "cloud",
+      "integration",
+      "security",
+      "analytics",
+      "storage",
+      "networking"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "seguridad informática",
+      "computación en la nube",
+      "integración de sistemas",
+      "almacenamiento"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/bare-metal-servers"
+  },
+  {
+    "product_name": "Cloud Code Engine",
+    "description": "IBM Cloud Code Engine es una plataforma totalmente gestionada y sin servidor. Reúna las imágenes de su contenedor, los trabajos por lotes, el código fuente o la función en un solo lugar.",
+    "category": [
+      "Nube"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Kubernetes",
+      "Red Hat OpenShift",
+      "ETL",
+      "IA Generativa",
+      "IBM Cloud",
+      "PaaS"
+    ],
+    "integrations": [],
+    "tags": [
+      "cloud",
+      "security",
+      "storage",
+      "networking",
+      "encryption"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "seguridad informática",
+      "computación en la nube",
+      "cifrado de datos",
+      "almacenamiento"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/code-engine"
+  },
+  {
+    "product_name": "Cloud Container Registry",
+    "description": "Almacene y distribuya imágenes de contenedores en un registro privado totalmente gestionado. Envíe imágenes privadas para ejecutarlas en IBM Cloud Kubernetes Service y en otros entornos de tiempo de ejecución.",
+    "category": [
+      "Nube"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Kubernetes",
+      "Red Hat OpenShift",
+      "Docker",
+      "Aprendizaje automático",
+      "IBM Cloud",
+      "PaaS",
+      "SIEM"
+    ],
+    "integrations": [],
+    "tags": [
+      "cloud",
+      "automation",
+      "integration",
+      "security",
+      "compliance",
+      "analytics",
+      "networking",
+      "encryption"
+    ],
+    "keywords": [
+      "redes y conectividad",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "integración de sistemas",
+      "cifrado de datos",
+      "automatización de procesos",
+      "gestión de registros"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/container-registry"
+  },
+  {
+    "product_name": "Cloud for SAP",
+    "description": "SAP for IBM Cloud es un conjunto de ofertas de infraestructura y servicios gestionados que simplifican y aceleran la entrega de software SAP en la nube.",
+    "category": [
+      "Nube"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "IA Generativa",
+      "IBM Cloud",
+      "IaaS",
+      "IBM Power",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "cloud",
+      "automation"
+    ],
+    "keywords": [
+      "automatización de procesos",
+      "computación en la nube",
+      "monitoreo de infraestructura"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/cloud/sap"
+  },
+  {
+    "product_name": "Cloud Internet Services",
+    "description": "IBM Cloud Internet Services ofrece funciones de seguridad, fiabilidad y rendimiento diseñadas para proteger el contenido y las aplicaciones web de cara al público.",
+    "category": [
+      "Nube"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Kubernetes",
+      "Embeddings vectoriales",
+      "IBM Cloud",
+      "IaaS",
+      "IAM",
+      "SIEM"
+    ],
+    "integrations": [],
+    "tags": [
+      "cloud",
+      "integration",
+      "security",
+      "storage",
+      "networking",
+      "optimization"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "seguridad informática",
+      "computación en la nube",
+      "integración de sistemas",
+      "almacenamiento",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/cloud-internet-services"
+  },
+  {
+    "product_name": "Cloud Kubernetes Service",
+    "description": "IBM Cloud Kubernetes Service proporciona un servicio de contenedores totalmente gestionado para contenedores Docker, para que pueda implementar y gestionar aplicaciones en contenedores en IBM Cloud.",
+    "category": [
+      "Nube"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Kubernetes",
+      "Red Hat OpenShift",
+      "Docker",
+      "IBM Cloud",
+      "Multinube",
+      "PaaS",
+      "CI/CD"
+    ],
+    "integrations": [],
+    "tags": [
+      "cloud",
+      "integration",
+      "monitoring",
+      "security",
+      "compliance",
+      "analytics",
+      "data-pipeline",
+      "networking",
+      "scheduling"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "cumplimiento normativo",
+      "seguridad informática",
+      "computación en la nube",
+      "integración de sistemas",
+      "gestión de registros",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/kubernetes-service"
+  },
+  {
+    "product_name": "Cloud Object Storage",
+    "description": "IBM Cloud Object Storage es un servicio de datos gestionados escalable y resiliente en IBM Cloud, que ofrece una alternativa al almacenamiento de bloques y archivos.",
+    "category": [
+      "Nube"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "IA Generativa",
+      "IBM Cloud",
+      "Nube híbrida",
+      "IaaS",
+      "SIEM",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "cloud",
+      "integration",
+      "security",
+      "compliance",
+      "analytics",
+      "data-warehouse",
+      "storage",
+      "disaster-recovery",
+      "encryption"
+    ],
+    "keywords": [
+      "recuperación ante desastres",
+      "monitoreo de infraestructura",
+      "cumplimiento normativo",
+      "seguridad informática",
+      "computación en la nube",
+      "integración de sistemas",
+      "cifrado de datos",
+      "almacenamiento",
+      "gestión de registros",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/cloud-object-storage"
+  },
+  {
+    "product_name": "Cloud Pak for Business Automation",
+    "description": "IBM Cloud Pak for Business Automation es un conjunto modular de componentes de software integrados para la gestión y automatización de operaciones.",
+    "category": [
+      "Nube"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "IBM Cloud",
+      "Nube híbrida"
+    ],
+    "integrations": [],
+    "tags": [
+      "cloud",
+      "automation",
+      "integration",
+      "compliance",
+      "analytics",
+      "workflow",
+      "no-code"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "integración de sistemas",
+      "flujos de trabajo",
+      "automatización de procesos"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/cloud-pak-for-business-automation"
+  },
+  {
+    "product_name": "Cloud Paks",
+    "description": "Pásese a la nube más rápido con las soluciones IBM Cloud Pak que se ejecutan en el software Red Hat OpenShift: soluciones integradas, abiertas y en contenedores certificadas por IBM.",
+    "category": [
+      "Nube"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Red Hat OpenShift",
+      "Aprendizaje automático",
+      "IBM Cloud",
+      "Nube híbrida",
+      "SaaS",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "cloud",
+      "automation",
+      "integration",
+      "security",
+      "analytics",
+      "networking",
+      "optimization"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "seguridad informática",
+      "analítica de datos",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/cloud-paks"
+  },
+  {
+    "product_name": "Cloud Satellite",
+    "description": "Ejecute aplicaciones de forma coherente en entorno local, en el edge y en la nube pública con IBM Cloud Satellite. Esta solución ofrece servicios en la nube comunes, API y controles de seguridad.",
+    "category": [
+      "Nube"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Red Hat OpenShift",
+      "IBM Cloud",
+      "AWS",
+      "Azure",
+      "Google Cloud",
+      "PaaS",
+      "SOC",
+      "DevOps"
+    ],
+    "integrations": [],
+    "tags": [
+      "cloud",
+      "integration",
+      "monitoring",
+      "observability",
+      "security",
+      "analytics",
+      "storage",
+      "networking"
+    ],
+    "keywords": [
+      "desarrollo y operaciones",
+      "observabilidad",
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "seguridad informática",
+      "computación en la nube",
+      "integración de sistemas",
+      "almacenamiento",
+      "gestión de registros",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/satellite"
+  },
+  {
+    "product_name": "Cloud Virtual Servers for VPC",
+    "description": "Los IBM Cloud Virtual Servers for VPC son máquinas virtuales configurables de un cliente o multicliente, disponibles con las arquitecturas Intel, IBM zSystems e IBM LinuxONE.",
+    "category": [
+      "Nube"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Red Hat OpenShift",
+      "IA Generativa",
+      "IBM Cloud",
+      "Nube híbrida",
+      "Multinube",
+      "SaaS",
+      "IaaS",
+      "IBM Z",
+      "Linux",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "cloud",
+      "automation",
+      "integration",
+      "security",
+      "analytics",
+      "storage",
+      "backup",
+      "networking"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "seguridad informática",
+      "computación en la nube",
+      "integración de sistemas",
+      "respaldo de datos",
+      "automatización de procesos",
+      "almacenamiento",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/virtual-servers"
+  },
+  {
+    "product_name": "GPUs and AI Accelerators on IBM Cloud",
+    "description": "El procesamiento de GPU diseñado para la infraestructura de IBM Cloud aborda grandes cargas de trabajo e impulsa la IA. Utilice Bare Metal Server con hardware GPU para carga de trabajo intensiva.",
+    "category": [
+      "Nube"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Red Hat OpenShift",
+      "IA Generativa",
+      "IBM Cloud",
+      "Nube híbrida",
+      "IBM Z",
+      "SOC",
+      "DevOps"
+    ],
+    "integrations": [],
+    "tags": [
+      "cloud",
+      "automation",
+      "integration",
+      "security",
+      "compliance",
+      "data-pipeline",
+      "storage",
+      "networking",
+      "encryption"
+    ],
+    "keywords": [
+      "desarrollo y operaciones",
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "integración de sistemas",
+      "cifrado de datos",
+      "automatización de procesos",
+      "almacenamiento"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/gpu-ai-accelerator"
+  },
+  {
+    "product_name": "Power Virtual Server",
+    "description": "IBM® Power Virtual Server es una familia de servidores IBM Power virtuales configurables, multiusuario y con acceso a los servicios IBM Cloud, web, DevOps e IBM Db2.",
+    "category": [
+      "Nube"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "IBM Cloud",
+      "Nube híbrida",
+      "IBM Power",
+      "AIX",
+      "Linux",
+      "SOC",
+      "DevOps"
+    ],
+    "integrations": [],
+    "tags": [
+      "cloud",
+      "automation",
+      "integration",
+      "security",
+      "storage",
+      "disaster-recovery",
+      "optimization"
+    ],
+    "keywords": [
+      "desarrollo y operaciones",
+      "recuperación ante desastres",
+      "monitoreo de infraestructura",
+      "seguridad informática",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos",
+      "almacenamiento",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/power-virtual-server"
+  },
+  {
+    "product_name": "Red Hat OpenShift",
+    "description": "Lleve al mercado aplicaciones críticas para la misión e iniciativas de IA con Red Hat OpenShift on IBM Cloud, una oferta segura y gestionada de OpenShift Container Platform.",
+    "category": [
+      "Nube"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Kubernetes",
+      "Red Hat OpenShift",
+      "VMware",
+      "IBM Cloud",
+      "Nube híbrida",
+      "PaaS",
+      "IAM",
+      "SIEM",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "cloud",
+      "integration",
+      "observability",
+      "security",
+      "ai",
+      "data-pipeline",
+      "networking",
+      "identity",
+      "workflow"
+    ],
+    "keywords": [
+      "observabilidad",
+      "gestión de identidades",
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "seguridad informática",
+      "computación en la nube",
+      "integración de sistemas",
+      "flujos de trabajo",
+      "gestión de APIs",
+      "inteligencia artificial"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/openshift"
+  },
+  {
+    "product_name": "AIX",
+    "description": "IBM AIX es el sistema operativo Unix propietario de IBM diseñado para ejecutarse en servidores IBM Power.",
+    "category": [
+      "Cómputo"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "IA Generativa",
+      "Aprendizaje automático",
+      "Nube híbrida",
+      "IBM Power",
+      "AIX",
+      "SIEM"
+    ],
+    "integrations": [],
+    "tags": [
+      "compute",
+      "automation",
+      "integration",
+      "security",
+      "compliance",
+      "disaster-recovery"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "recuperación ante desastres",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "integración de sistemas",
+      "aprendizaje automático",
+      "automatización de procesos"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/aix"
+  },
+  {
+    "product_name": "Confidential Computing Container Runtime",
+    "description": "IBM Confidential Computing Container Runtime ofrece seguridad a nivel de hardware para servidores virtuales en IBM Z y LinuxONE, disponible en servidores locales y ofertas gestionadas en IBM Cloud.",
+    "category": [
+      "Cómputo"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Docker",
+      "IBM Cloud",
+      "En premisas",
+      "PaaS",
+      "IBM Z",
+      "Linux",
+      "CI/CD"
+    ],
+    "integrations": [],
+    "tags": [
+      "compute",
+      "integration",
+      "security",
+      "storage",
+      "networking",
+      "encryption"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "seguridad informática",
+      "integración de sistemas",
+      "cifrado de datos",
+      "almacenamiento",
+      "gestión de registros"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/confidential-computing-container-runtime"
+  },
+  {
+    "product_name": "DataPower Gateway",
+    "description": "IBM DataPower Gateway es una plataforma de integración y seguridad diseñada para cargas de trabajo en la nube, móviles, web, API, SOA y B2B.",
+    "category": [
+      "Cómputo"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Apache Kafka",
+      "OAuth 2.0",
+      "IBM Cloud",
+      "Nube híbrida"
+    ],
+    "integrations": [],
+    "tags": [
+      "compute",
+      "integration",
+      "security",
+      "messaging",
+      "api-management",
+      "storage",
+      "authentication",
+      "optimization"
+    ],
+    "keywords": [
+      "mensajería empresarial",
+      "seguridad informática",
+      "computación en la nube",
+      "integración de sistemas",
+      "almacenamiento",
+      "gestión de registros",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/datapower-gateway"
+  },
+  {
+    "product_name": "Digital Asset Haven",
+    "description": "IBM Digital Asset Haven proporciona una base segura y escalable que ofrece custodia, transacciones, gobierno y liquidación de recursos digitales a través de múltiples blockchains.",
+    "category": [
+      "Cómputo"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "PaaS",
+      "IBM Z",
+      "Linux"
+    ],
+    "integrations": [],
+    "tags": [
+      "compute",
+      "automation",
+      "integration",
+      "security",
+      "compliance",
+      "storage",
+      "identity",
+      "optimization"
+    ],
+    "keywords": [
+      "gestión de identidades",
+      "monitoreo de infraestructura",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "integración de sistemas",
+      "automatización de procesos",
+      "almacenamiento",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/digital-asset-haven"
+  },
+  {
+    "product_name": "IBM i",
+    "description": "IBM i es un sistema operativo para servidores IBM Power.",
+    "category": [
+      "Cómputo"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "IBM Power",
+      "AIX",
+      "Linux",
+      "Java",
+      "IAM"
+    ],
+    "integrations": [],
+    "tags": [
+      "compute",
+      "automation",
+      "integration",
+      "security",
+      "messaging",
+      "database",
+      "storage",
+      "authentication"
+    ],
+    "keywords": [
+      "mensajería empresarial",
+      "monitoreo de infraestructura",
+      "seguridad informática",
+      "computación en la nube",
+      "base de datos",
+      "integración de sistemas",
+      "automatización de procesos",
+      "almacenamiento"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/ibm-i"
+  },
+  {
+    "product_name": "LinuxOne",
+    "description": "IBM LinuxONE es un servidor Linux de nivel empresarial que combina la experiencia de IBM en la creación de sistemas mainframe Z con la apertura del sistema operativo Linux.",
+    "category": [
+      "Cómputo"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Red Hat OpenShift",
+      "IA Generativa",
+      "Nube híbrida",
+      "IBM Z",
+      "Linux",
+      "SOC",
+      "DevOps"
+    ],
+    "integrations": [],
+    "tags": [
+      "compute",
+      "integration",
+      "security",
+      "compliance",
+      "networking",
+      "encryption"
+    ],
+    "keywords": [
+      "desarrollo y operaciones",
+      "redes y conectividad",
+      "cumplimiento normativo",
+      "seguridad informática",
+      "computación en la nube",
+      "integración de sistemas",
+      "cifrado de datos"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/linuxone"
+  },
+  {
+    "product_name": "Oracle on IBM Power",
+    "description": "IBM Power está diseñado para soportar las cargas de trabajo más exigentes para su Oracle entorno de nube híbrida",
+    "category": [
+      "Cómputo"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Nube híbrida",
+      "IBM Power",
+      "AIX",
+      "Linux"
+    ],
+    "integrations": [],
+    "tags": [
+      "compute",
+      "automation",
+      "integration",
+      "security",
+      "compliance",
+      "database",
+      "disaster-recovery",
+      "optimization"
+    ],
+    "keywords": [
+      "recuperación ante desastres",
+      "base de datos",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "integración de sistemas",
+      "monitoreo de infraestructura",
+      "automatización de procesos"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/power/oracle"
+  },
+  {
+    "product_name": "Power",
+    "description": "IBM Power es una familia de servidores de alto rendimiento creada para responder a los retos del presente y del futuro. Los servidores Power, altamente escalables y fiables para soportar incluso las cargas de trabajo más exigentes, están diseñados para ayudarle a responder más rápidamente a los cambios.",
+    "category": [
+      "Cómputo"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "IBM Cloud",
+      "Nube híbrida",
+      "IBM Power",
+      "AIX",
+      "Linux"
+    ],
+    "integrations": [],
+    "tags": [
+      "compute",
+      "automation",
+      "integration",
+      "security",
+      "compliance",
+      "networking"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/power"
+  },
+  {
+    "product_name": "Quantum",
+    "description": "IBM Quantum ofrece el hardware y software de computación cuántica más avanzados, junto con el ecosistema más amplio para llevar la computación cuántica útil al mundo.",
+    "category": [
+      "Cómputo"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Python",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "compute",
+      "integration",
+      "networking"
+    ],
+    "keywords": [
+      "redes y conectividad",
+      "integración de sistemas"
+    ],
+    "source_url": "https://www.ibm.com/quantum"
+  },
+  {
+    "product_name": "Application Discovery and Delivery Intelligence",
+    "description": "Software para analizar y visualizar aplicaciones, datos y trabajos en z/OS.",
+    "category": [
+      "IBM Z"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Nube híbrida",
+      "z/OS",
+      "IBM Z",
+      "Java",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "ibm-z",
+      "automation",
+      "security",
+      "analytics"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "seguridad informática",
+      "computación en la nube",
+      "automatización de procesos",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/app-discovery-and-delivery-intelligence"
+  },
+  {
+    "product_name": "CICS Transaction Server for z/OS",
+    "description": "IBM CICS Transaction Server for z/OS impulsa la eficiencia operativa a la vez que aumenta la agilidad del servicio, con una plataforma de prestación de servicios para la computación en la nube.",
+    "category": [
+      "IBM Z"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Ansible",
+      "Nube híbrida",
+      "z/OS",
+      "IBM Z",
+      "Java",
+      "Node.js",
+      "SIEM",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "ibm-z",
+      "automation",
+      "integration",
+      "monitoring",
+      "observability",
+      "security",
+      "compliance",
+      "analytics",
+      "networking",
+      "encryption",
+      "scheduling",
+      "workflow"
+    ],
+    "keywords": [
+      "observabilidad",
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "integración de sistemas",
+      "flujos de trabajo",
+      "cifrado de datos",
+      "automatización de procesos",
+      "gestión de registros"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/cics-transaction-server"
+  },
+  {
+    "product_name": "Db2 for z/OS",
+    "description": "IBM Db2 for z/OS es un sistema de gestión de bases de datos relacionales para z/OS.",
+    "category": [
+      "IBM Z"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "SQL",
+      "Aprendizaje automático",
+      "Nube híbrida",
+      "z/OS",
+      "IBM Z"
+    ],
+    "integrations": [],
+    "tags": [
+      "ibm-z",
+      "integration",
+      "security",
+      "analytics",
+      "database"
+    ],
+    "keywords": [
+      "base de datos",
+      "seguridad informática",
+      "computación en la nube",
+      "integración de sistemas",
+      "aprendizaje automático",
+      "gestión de registros",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/db2-for-zos"
+  },
+  {
+    "product_name": "Developer for z/OS Enterprise Edition",
+    "description": "IBM Developer for z/OS Enterprise Edition ofrece herramientas de VS Code, depuración completa, nube e IA, basadas en el núcleo Eclipse de IBM Developer for z/OS (anteriormente Rational Developer for z Systems (RDz)).",
+    "category": [
+      "IBM Z"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "z/OS",
+      "IBM Z",
+      "Java",
+      "DevOps",
+      "CI/CD"
+    ],
+    "integrations": [],
+    "tags": [
+      "ibm-z",
+      "automation",
+      "integration",
+      "security",
+      "analytics",
+      "data-pipeline"
+    ],
+    "keywords": [
+      "desarrollo y operaciones",
+      "seguridad informática",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos",
+      "gestión de registros"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/developer-for-zos"
+  },
+  {
+    "product_name": "OMEGAMON",
+    "description": "Los productos IBM OMEGAMON son un conjunto de productos que se utilizan para monitorizar y gestionar sofisticados entornos y aplicaciones de mainframe.",
+    "category": [
+      "IBM Z"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "z/OS",
+      "IBM Z",
+      "Linux",
+      "Java"
+    ],
+    "integrations": [],
+    "tags": [
+      "ibm-z",
+      "integration",
+      "observability",
+      "storage",
+      "networking"
+    ],
+    "keywords": [
+      "observabilidad",
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "integración de sistemas",
+      "almacenamiento",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/omegamon"
+  },
+  {
+    "product_name": "watsonx Assistant for Z",
+    "description": "IBM watsonx Assistant for Z simplifica la forma en que los usuarios interactúan y gestionan el mainframe con la IA.",
+    "category": [
+      "IBM Z"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "LLM",
+      "IBM Z",
+      "IAM"
+    ],
+    "integrations": [],
+    "tags": [
+      "ibm-z",
+      "automation",
+      "integration",
+      "security",
+      "compliance",
+      "authentication",
+      "workflow",
+      "no-code"
+    ],
+    "keywords": [
+      "seguridad informática",
+      "cumplimiento normativo",
+      "integración de sistemas",
+      "flujos de trabajo",
+      "automatización de procesos",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/watsonx-assistant-for-z"
+  },
+  {
+    "product_name": "watsonx Code Assistant for Z",
+    "description": "Acelere el ciclo de vida de las aplicaciones de mainframe con IA generativa y automatización con IBM watsonx Code Assistant for Z.",
+    "category": [
+      "IBM Z"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "LLM",
+      "IA Generativa",
+      "IBM Z",
+      "Java",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "ibm-z",
+      "automation",
+      "integration",
+      "analytics",
+      "optimization"
+    ],
+    "keywords": [
+      "automatización de procesos",
+      "integración de sistemas",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/watsonx-code-assistant-z"
+  },
+  {
+    "product_name": "Z Development and Test Environment",
+    "description": "IBM Z Development and Test Environment le permite desarrollar y probar aplicaciones de sistemas IBM Z en hardware basado en Intel.",
+    "category": [
+      "IBM Z"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Docker",
+      "En premisas",
+      "z/OS",
+      "IBM Z",
+      "Linux",
+      "Java",
+      "DevOps"
+    ],
+    "integrations": [],
+    "tags": [
+      "ibm-z",
+      "automation",
+      "integration",
+      "security",
+      "data-pipeline"
+    ],
+    "keywords": [
+      "desarrollo y operaciones",
+      "seguridad informática",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/z-development-test-environment"
+  },
+  {
+    "product_name": "Z IntelliMagic Vision",
+    "description": "IBM Z IntelliMagic Vision es un software avanzado de análisis de rendimiento para IBM Z. Proporciona un análisis de datos flexible a través de visualizaciones personalizadas y no-code que permiten a los analistas identificar riesgos y ajustar las cargas de trabajo. Moderniza el análisis del rendimiento del mainframe con inteligencia del siguiente nivel.",
+    "category": [
+      "IBM Z"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "SaaS",
+      "z/OS",
+      "IBM Z"
+    ],
+    "integrations": [],
+    "tags": [
+      "ibm-z",
+      "automation",
+      "integration",
+      "analytics",
+      "ai",
+      "storage",
+      "optimization",
+      "scheduling",
+      "no-code"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "analítica de datos",
+      "integración de sistemas",
+      "automatización de procesos",
+      "almacenamiento",
+      "inteligencia artificial"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/z-intellimagic-vision"
+  },
+  {
+    "product_name": "z/OS",
+    "description": "{ \"widths\": [320,384,512,640,768,960,1024,1152,1280,1536,1584], \"maximagesize\": \"5000\", \"aspectratio\": \"4x3|4x3|original|original|original\", \"urls\": { \"dynamicmedia\": \"https://assets.ibm.com/is/image/ibm/zos-leadspace?fmt=png-alpha\", \"adaptiveservlet\": \"/content/adobe-cms/es/es/products/zos/jcr:content/root/leadspace_container/leadspace/image.coreimg.png/1753987890071/zos-leadspace.png\", \"assetdelivery\": \"/adobe/dynamicmedia/deliver/dm-aid--cd4dea60-1a7e-46d3-820b-3cceb2311922/zos-leadspace.png?",
+    "category": [
+      "IBM Z"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Ansible",
+      "SQL",
+      "NoSQL",
+      "JSON",
+      "Nube híbrida",
+      "Multinube",
+      "z/OS",
+      "IBM Z",
+      "Linux"
+    ],
+    "integrations": [],
+    "tags": [
+      "ibm-z",
+      "automation",
+      "integration",
+      "security",
+      "storage",
+      "encryption",
+      "workflow"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "seguridad informática",
+      "computación en la nube",
+      "integración de sistemas",
+      "flujos de trabajo",
+      "cifrado de datos",
+      "automatización de procesos",
+      "almacenamiento",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/zos"
+  },
+  {
+    "product_name": "z16",
+    "description": "IBM z16 es el último mainframe IBM Z con inferencias de IA en chip y tecnologías quantum-safe, impulsado por el procesador IBM Telum.",
+    "category": [
+      "IBM Z"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "IBM Z",
+      "Linux"
+    ],
+    "integrations": [],
+    "tags": [
+      "ibm-z",
+      "integration",
+      "security",
+      "compliance",
+      "storage",
+      "encryption",
+      "optimization"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "cumplimiento normativo",
+      "seguridad informática",
+      "integración de sistemas",
+      "cifrado de datos",
+      "almacenamiento",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/z16"
+  },
+  {
+    "product_name": "z17",
+    "description": "IBM z17 es el mainframe de nueva generación con IA.",
+    "category": [
+      "IBM Z"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "LLM",
+      "IA Generativa",
+      "Nube híbrida",
+      "z/OS",
+      "IBM Z",
+      "Linux"
+    ],
+    "integrations": [],
+    "tags": [
+      "ibm-z",
+      "automation",
+      "integration",
+      "security",
+      "compliance",
+      "ai",
+      "storage",
+      "networking"
+    ],
+    "keywords": [
+      "redes y conectividad",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos",
+      "almacenamiento",
+      "gestión de APIs",
+      "inteligencia artificial"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/z17"
+  },
+  {
+    "product_name": "FlashSystem",
+    "description": "IBM Storage FlashSystem son soluciones de almacenamiento flash híbridas y all-flash de alta velocidad diseñadas para ayudar a las empresas a mejorar la resiliencia de los datos, los esfuerzos de modernización y la eficiencia del almacenamiento.",
+    "category": [
+      "Almacenamiento"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "IBM Power"
+    ],
+    "integrations": [],
+    "tags": [
+      "storage",
+      "integration",
+      "security",
+      "compliance",
+      "analytics",
+      "ai",
+      "database",
+      "networking",
+      "optimization"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "base de datos",
+      "cumplimiento normativo",
+      "seguridad informática",
+      "analítica de datos",
+      "integración de sistemas",
+      "computación en la nube",
+      "redes y conectividad",
+      "almacenamiento",
+      "inteligencia artificial"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/flashsystem"
+  },
+  {
+    "product_name": "Fusion",
+    "description": "IBM Fusion es un conjunto integral de servicios de datos de aplicaciones para Red Hat OpenShift.",
+    "category": [
+      "Almacenamiento"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Red Hat OpenShift",
+      "VMware",
+      "Nube híbrida",
+      "En premisas",
+      "DevOps"
+    ],
+    "integrations": [],
+    "tags": [
+      "storage",
+      "automation",
+      "integration",
+      "monitoring",
+      "security",
+      "compliance",
+      "analytics",
+      "data-pipeline",
+      "database",
+      "networking",
+      "incident-management"
+    ],
+    "keywords": [
+      "desarrollo y operaciones",
+      "monitoreo de infraestructura",
+      "base de datos",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "integración de sistemas",
+      "redes y conectividad",
+      "automatización de procesos",
+      "almacenamiento",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/storage-fusion"
+  },
+  {
+    "product_name": "Storage area network (SAN)",
+    "description": "Las soluciones SAN se escalan para ayudarle a mover más datos, a la vez que son compatibles con los requisitos de virtualización, nube híbrida y big data.",
+    "category": [
+      "Almacenamiento"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Nube híbrida",
+      "Multinube",
+      "IBM Z"
+    ],
+    "integrations": [],
+    "tags": [
+      "storage",
+      "automation",
+      "integration",
+      "monitoring",
+      "security",
+      "analytics",
+      "networking",
+      "optimization"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "seguridad informática",
+      "analítica de datos",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos",
+      "almacenamiento"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/storage-area-network"
+  },
+  {
+    "product_name": "Storage Ceph",
+    "description": "IBM Storage Ceph es una plataforma de almacenamiento definida por software y de código abierto respaldada por IBM que ofrece almacenamiento escalable de objetos, bloques y archivos en un único sistema.",
+    "category": [
+      "Almacenamiento"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Kubernetes",
+      "VMware",
+      "AWS",
+      "Linux",
+      "IAM",
+      "SIEM"
+    ],
+    "integrations": [],
+    "tags": [
+      "storage",
+      "automation",
+      "integration",
+      "monitoring",
+      "security",
+      "compliance",
+      "analytics",
+      "networking"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos",
+      "almacenamiento",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/storage-ceph"
+  },
+  {
+    "product_name": "Storage Defender",
+    "description": "IBM Storage Defender es un conjunto de software para la resiliencia de datos. Forma parte de la cartera de IBM Storage.",
+    "category": [
+      "Almacenamiento"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "SIEM"
+    ],
+    "integrations": [],
+    "tags": [
+      "storage",
+      "integration",
+      "security",
+      "database"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "base de datos",
+      "seguridad informática",
+      "integración de sistemas",
+      "almacenamiento",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/storage-defender"
+  },
+  {
+    "product_name": "Storage DS8000",
+    "description": "IBM Storage DS8000 es el sistema de almacenamiento más rápido, fiable y seguro para servidores IBM Z e IBM Power.",
+    "category": [
+      "Almacenamiento"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Red Hat OpenShift",
+      "IBM Cloud",
+      "Nube híbrida",
+      "IBM Z",
+      "IBM Power"
+    ],
+    "integrations": [],
+    "tags": [
+      "storage",
+      "automation",
+      "integration",
+      "monitoring",
+      "security",
+      "compliance",
+      "analytics",
+      "disaster-recovery",
+      "networking",
+      "encryption",
+      "incident-management"
+    ],
+    "keywords": [
+      "monitoreo de infraestructura",
+      "recuperación ante desastres",
+      "seguridad informática",
+      "cumplimiento normativo",
+      "computación en la nube",
+      "integración de sistemas",
+      "redes y conectividad",
+      "cifrado de datos",
+      "automatización de procesos",
+      "almacenamiento",
+      "gestión de registros",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/ds8000"
+  },
+  {
+    "product_name": "Storage Insights",
+    "description": "Optimice su infraestructura de almacenamiento mediante esta plataforma de gestión y asistencia del almacenamiento basada en la nube con análisis predictivo.",
+    "category": [
+      "Almacenamiento"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [],
+    "integrations": [],
+    "tags": [
+      "storage",
+      "automation",
+      "integration",
+      "monitoring",
+      "observability",
+      "analytics"
+    ],
+    "keywords": [
+      "observabilidad",
+      "monitoreo de infraestructura",
+      "analítica de datos",
+      "computación en la nube",
+      "integración de sistemas",
+      "automatización de procesos",
+      "almacenamiento",
+      "gestión de APIs"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/storage-insights"
+  },
+  {
+    "product_name": "Storage Scale System",
+    "description": "IBM Storage Scale System es un dispositivo de hardware para implementar IBM Storage Scale en miles de nodos con un rendimiento de TB/s, baja latencia y millones de IOP por nodo.",
+    "category": [
+      "Almacenamiento"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Nube híbrida"
+    ],
+    "integrations": [],
+    "tags": [
+      "storage",
+      "integration",
+      "analytics"
+    ],
+    "keywords": [
+      "computación en la nube",
+      "almacenamiento",
+      "integración de sistemas",
+      "monitoreo de infraestructura"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/storage-scale-system"
+  },
+  {
+    "product_name": "Tape Storage",
+    "description": "Descubra la fiable tecnología de almacenamiento en cinta con air gap, retención a largo plazo, ciberresiliencia y eficiencia energética a un coste inferior al de otros soportes.",
+    "category": [
+      "Almacenamiento"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Nube híbrida",
+      "IAM",
+      "SOC"
+    ],
+    "integrations": [],
+    "tags": [
+      "storage",
+      "integration",
+      "security",
+      "disaster-recovery",
+      "networking",
+      "encryption"
+    ],
+    "keywords": [
+      "recuperación ante desastres",
+      "redes y conectividad",
+      "computación en la nube",
+      "seguridad informática",
+      "monitoreo de infraestructura",
+      "integración de sistemas",
+      "cifrado de datos",
+      "almacenamiento"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/tape"
+  },
+  {
+    "product_name": "SevOne Network Performance Management",
+    "description": "IBM SevOne Network Performance Management es un software de monitorización y análisis que proporciona visibilidad e información en tiempo real sobre redes complejas.",
+    "category": [
+      "DevOps"
+    ],
+    "capabilities": [],
+    "use_cases": [],
+    "technologies": [
+      "Apache Spark",
+      "Aprendizaje automático",
+      "Nube híbrida",
+      "Multinube"
+    ],
+    "integrations": [],
+    "tags": [
+      "devops",
+      "integration",
+      "monitoring",
+      "observability",
+      "analytics",
+      "networking"
+    ],
+    "keywords": [
+      "observabilidad",
+      "monitoreo de infraestructura",
+      "redes y conectividad",
+      "computación en la nube",
+      "integración de sistemas"
+    ],
+    "source_url": "https://www.ibm.com/es-es/products/sevone-network-performance-management"
+  }
+]

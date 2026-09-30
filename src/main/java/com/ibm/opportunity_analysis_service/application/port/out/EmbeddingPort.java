@@ -5,6 +5,6 @@ import com.ibm.opportunity_analysis_service.domain.entity.ResultadoAnalisisGrani
 
 import java.util.List;
 
-public interface GranitePort {
-    List<ResultadoAnalisisGranite> analizar(List<ProcesoSercop> procesos);
+public interface EmbeddingPort {
+    List<Float> generarEmbedding(String texto);
 }
