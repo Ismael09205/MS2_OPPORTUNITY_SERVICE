@@ -1,10 +1,10 @@
 package com.ibm.opportunity_analysis_service.adapter.in;
 
 import com.ibm.opportunity_analysis_service.application.service.*;
+import com.ibm.opportunity_analysis_service.domain.entity.EmbeddingProductoIbm;
 import com.ibm.opportunity_analysis_service.domain.entity.ProductoIbm;
-import com.ibm.opportunity_analysis_service.domain.entity.ResultadoAnalisisGranite;
-import com.ibm.opportunity_analysis_service.domain.entity.ResultadoFiltroSercop;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,19 +21,17 @@ import java.util.Map;
         private final GenerarEmbeddingService generarEmbeddingService;
         private final CalcularSimilitudService calcularSimilitudService;
         private final CargarCatalogoIbmService cargarCatalogoIbmService;
+        private final GenerarEmbeddingProductosIbmService generarEmbeddingProductosIbmService;
 
-    public AnalysisController(ObtenerProcesosSercopService service, FiltrarProcesosSercopService filtrarProcesosSercopService, GenerarEmbeddingService generarEmbeddingService, CalcularSimilitudService calcularSimilitudService, CargarCatalogoIbmService cargarCatalogoIbmService) {
+    public AnalysisController(ObtenerProcesosSercopService service, FiltrarProcesosSercopService filtrarProcesosSercopService, GenerarEmbeddingService generarEmbeddingService, CalcularSimilitudService calcularSimilitudService, CargarCatalogoIbmService cargarCatalogoIbmService, GenerarEmbeddingProductosIbmService generarEmbeddingProductosIbmService) {
         this.service = service;
         this.filtrarProcesosSercopService = filtrarProcesosSercopService;
         this.generarEmbeddingService = generarEmbeddingService;
         this.calcularSimilitudService = calcularSimilitudService;
         this.cargarCatalogoIbmService = cargarCatalogoIbmService;
+        this.generarEmbeddingProductosIbmService = generarEmbeddingProductosIbmService;
     }
 
-    @GetMapping("/muestra")
-        public List<ResultadoFiltroSercop> obtenerMuestra() {
-        return filtrarProcesosSercopService.obtenerMuestraFiltrada(20, 100);
-        }
 
         @GetMapping("/prueba-embedding")
         public Map<String, Object> probarEmbedding(@RequestParam String texto) {
@@ -54,36 +52,9 @@ import java.util.Map;
                 "totalCandidatosProcesados", totalCandidatos
         );
     }
-    @GetMapping("/prueba-similitud")
-    public List<Map<String, Object>> probarSimilitud() {
-
-        String textoSercop = "Servicio de desarrollo e implementación de una plataforma de software para gestión empresarial";
-
-        List<String> textosIbm = List.of(
-                "Plataforma de software para automatización y desarrollo de aplicaciones empresariales",
-                "Soluciones de infraestructura tecnológica y servicios de computación en la nube",
-                "Orden de compra para adquirir neumáticos para vehículos todo terreno",
-                "Servicio de limpieza y mantenimiento de instalaciones",
-                "Soluciones de inteligencia artificial para automatización y análisis de datos"
-        );
-
-        List<Float> embeddingSercop = generarEmbeddingService.generar(textoSercop);
-
-        List<Map<String, Object>> resultados = textosIbm.stream()
-                .map(textoIbm -> {
-                    List<Float> embeddingIbm = generarEmbeddingService.generar(textoIbm);
-
-                    double similitud = calcularSimilitudService.calcular(embeddingSercop, embeddingIbm);
-
-                    return Map.<String, Object>of(
-                            "textoIbm", textoIbm,
-                            "dimensiones", embeddingIbm.size(),
-                            "similitudCoseno", similitud
-                    );
-                })
-                .toList();
-
-        return resultados;
+    @PostMapping("/embeddings/productos-ibm")
+    public List<EmbeddingProductoIbm> generarEmbeddingsProductosIbm() {
+        return generarEmbeddingProductosIbmService.generarTodos();
     }
     @GetMapping("/cargar-catalogo-ibm")
     public Map<String, Object> cargarCatalogoIbm() throws IOException {
