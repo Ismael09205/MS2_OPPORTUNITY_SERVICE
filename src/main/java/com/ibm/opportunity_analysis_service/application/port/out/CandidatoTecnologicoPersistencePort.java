@@ -7,6 +7,6 @@ import java.util.Optional;
 public interface CandidatoTecnologicoPersistencePort {
 
     CandidatoTecnologico guardar(CandidatoTecnologico candidatoTecnologico);
-
     Optional<CandidatoTecnologico> buscarPorOcid(String ocid);
+
 }
