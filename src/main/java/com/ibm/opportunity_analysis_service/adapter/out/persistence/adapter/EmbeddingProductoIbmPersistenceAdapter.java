@@ -5,6 +5,7 @@ import com.ibm.opportunity_analysis_service.adapter.out.persistence.repository.E
 import com.ibm.opportunity_analysis_service.application.mapper.EmbeddingProductoIbmMapper;
 import com.ibm.opportunity_analysis_service.application.port.out.EmbeddingProductoIbmPersistencePort;
 import com.ibm.opportunity_analysis_service.domain.entity.EmbeddingProductoIbm;
+import com.ibm.opportunity_analysis_service.domain.entity.ResultadoSimilitudIbm;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -55,5 +56,39 @@ public class EmbeddingProductoIbmPersistenceAdapter implements EmbeddingProducto
     public Optional<EmbeddingProductoIbm> buscarPorProductoYModelo(Long productoIbmId, String modelo) {
         return embeddingProductoIbmJpaRepository.findByProductoIbmIdAndModelo(productoIbmId, modelo)
                 .map(embeddingProductoIbmMapper::toDomain);
+    }
+
+    @Override
+    public List<ResultadoSimilitudIbm> buscarSimilares(float[] embedding, int limite) {
+
+        String vector = convertirVector(embedding);
+
+        return embeddingProductoIbmJpaRepository
+                .buscarSimilares(vector, limite)
+                .stream()
+                .map(resultado -> new ResultadoSimilitudIbm(
+                        ((Number) resultado[0]).longValue(),
+                        (String) resultado[1],
+                        ((Number) resultado[2]).doubleValue()
+                ))
+                .toList();
+    }
+
+    private String convertirVector(float[] embedding) {
+
+        StringBuilder vector = new StringBuilder("[");
+
+        for (int i = 0; i < embedding.length; i++) {
+
+            if (i > 0) {
+                vector.append(",");
+            }
+
+            vector.append(embedding[i]);
+        }
+
+        vector.append("]");
+
+        return vector.toString();
     }
 }

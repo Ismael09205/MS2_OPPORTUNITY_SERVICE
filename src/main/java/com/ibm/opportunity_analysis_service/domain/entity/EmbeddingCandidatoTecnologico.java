@@ -7,12 +7,11 @@ import java.time.OffsetDateTime;
 @Getter
 @Setter
 public class EmbeddingCandidatoTecnologico {
+
     private Long id;
-    private String titulo;
-    private Long candidatoTecnologicoOcid;
-    private String textoEmbedding;
+    private String ocid;
     private String modelo;
+    private String textoEmbedding;
     private float[] embedding;
     private OffsetDateTime fechaGeneracion;
-
 }

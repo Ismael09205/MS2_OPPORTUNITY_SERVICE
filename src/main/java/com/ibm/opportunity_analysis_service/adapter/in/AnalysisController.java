@@ -22,18 +22,32 @@ import java.util.Map;
         private final CalcularSimilitudService calcularSimilitudService;
         private final CargarCatalogoIbmService cargarCatalogoIbmService;
         private final GenerarEmbeddingProductosIbmService generarEmbeddingProductosIbmService;
+        private final AnalizarSimilitudService analizarSimilitudService;
+    private final GenerarEmbeddingCandidatoService generarEmbeddingCandidatoService;
 
-    public AnalysisController(ObtenerProcesosSercopService service, FiltrarProcesosSercopService filtrarProcesosSercopService, GenerarEmbeddingService generarEmbeddingService, CalcularSimilitudService calcularSimilitudService, CargarCatalogoIbmService cargarCatalogoIbmService, GenerarEmbeddingProductosIbmService generarEmbeddingProductosIbmService) {
+    public AnalysisController(ObtenerProcesosSercopService service, FiltrarProcesosSercopService filtrarProcesosSercopService, GenerarEmbeddingService generarEmbeddingService, CalcularSimilitudService calcularSimilitudService, CargarCatalogoIbmService cargarCatalogoIbmService, GenerarEmbeddingProductosIbmService generarEmbeddingProductosIbmService, AnalizarSimilitudService analizarSimilitudService, GenerarEmbeddingCandidatoService generarEmbeddingCandidatoService) {
         this.service = service;
         this.filtrarProcesosSercopService = filtrarProcesosSercopService;
         this.generarEmbeddingService = generarEmbeddingService;
         this.calcularSimilitudService = calcularSimilitudService;
         this.cargarCatalogoIbmService = cargarCatalogoIbmService;
         this.generarEmbeddingProductosIbmService = generarEmbeddingProductosIbmService;
+        this.analizarSimilitudService = analizarSimilitudService;
+        this.generarEmbeddingCandidatoService = generarEmbeddingCandidatoService;
+    }
+    @PostMapping("/similitud")
+    public Map<String, Object> analizarSimilitud() {
+
+        analizarSimilitudService.analizar();
+
+        return Map.of(
+                "mensaje",
+                "Similitudes calculadas correctamente"
+        );
     }
 
 
-        @GetMapping("/prueba-embedding")
+    @GetMapping("/prueba-embedding")
         public Map<String, Object> probarEmbedding(@RequestParam String texto) {
             List<Float> embedding = generarEmbeddingService.generar(texto);
 
@@ -64,6 +78,16 @@ import java.util.Map;
         return Map.of(
                 "mensaje", "Catalogo IBM cargado correctamente",
                 "totalProductos", productos.size()
+        );
+    }
+
+    @PostMapping("/embeddings/candidatos")
+    public Map<String, Object> generarEmbeddingsCandidatos() {
+
+        generarEmbeddingCandidatoService.generarEmbeddings();
+
+        return Map.of(
+                "mensaje", "Embeddings de candidatos generados correctamente"
         );
     }
     }

@@ -6,7 +6,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
 
 filtro-oportunidades:
 
@@ -60,6 +60,6 @@ filtro-oportunidades:
     - servidores publicos
     - red vial
 granite:
-  url: http://localhost:11435
+  url: http://localhost:11434
   modelo: granite-embedding:278m
   tamano-lote: 5
