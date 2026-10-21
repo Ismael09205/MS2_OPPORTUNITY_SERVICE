@@ -60,27 +60,28 @@ public class GenerarEmbeddingProductosIbmService {
 
     private String construirTextoEmbedding(ProductoIbm producto) {
 
-        return """
-                Producto: %s
-                Descripcion: %s
-                Categorias: %s
-                Capacidades: %s
-                Casos de uso: %s
-                Tecnologias: %s
-                Integraciones: %s
-                Tags: %s
-                Keywords: %s
-                """.formatted(
-                producto.getNombre(),
-                producto.getDescripcion(),
-                unir(producto.getCategorias()),
-                unir(producto.getCapacidades()),
-                unir(producto.getCasosUso()),
-                unir(producto.getTecnologias()),
-                unir(producto.getIntegraciones()),
-                unir(producto.getTags()),
-                unir(producto.getKeywords())
-        );
+        StringBuilder sb = new StringBuilder();
+        sb.append("Producto: ").append(producto.getNombre()).append(". ");
+        if (producto.getDescripcion() != null && !producto.getDescripcion().isBlank()) {
+            sb.append("Descripcion: ").append(producto.getDescripcion()).append(". ");
+        }
+        if (producto.getCategorias() != null && !producto.getCategorias().isEmpty()) {
+            sb.append("Categorias: ").append(unir(producto.getCategorias())).append(". ");
+        }
+        if (producto.getCapacidades() != null && !producto.getCapacidades().isEmpty()) {
+            sb.append("Capacidades: ").append(unir(producto.getCapacidades())).append(". ");
+        }
+        if (producto.getCasosUso() != null && !producto.getCasosUso().isEmpty()) {
+            sb.append("Casos de uso: ").append(unir(producto.getCasosUso())).append(". ");
+        }
+        if (producto.getTecnologias() != null && !producto.getTecnologias().isEmpty()) {
+            sb.append("Tecnologias: ").append(unir(producto.getTecnologias())).append(". ");
+        }
+        if (producto.getKeywords() != null && !producto.getKeywords().isEmpty()) {
+            sb.append("Palabras clave: ").append(unir(producto.getKeywords())).append(".");
+        }
+
+        return sb.toString().trim();
     }
 
     private String unir(List<String> valores) {

@@ -8,8 +8,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Setter
 @ConfigurationProperties(prefix = "granite")
 public class ConfiguracionGranite {
-
     private String url;
     private String modelo;
-    private int tamanoLote;
+    private String modeloLlm;
+    /** Evaluador LLM activo: "granite" usa Ollama local, "bob" usa lógica determinista interna. */
+    private String evaluador;
 }

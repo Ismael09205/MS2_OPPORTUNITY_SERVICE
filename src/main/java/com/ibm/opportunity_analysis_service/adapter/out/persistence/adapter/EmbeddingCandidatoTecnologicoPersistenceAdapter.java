@@ -1,11 +1,8 @@
 package com.ibm.opportunity_analysis_service.adapter.out.persistence.adapter;
 
 import com.ibm.opportunity_analysis_service.adapter.out.persistence.entities.EmbeddingCandidatoTecEntity;
-import com.ibm.opportunity_analysis_service.adapter.out.persistence.repository.CandidatoTecnologicoJpaRepository;
 import com.ibm.opportunity_analysis_service.adapter.out.persistence.repository.EmbeddingCandidatoTecnologicoJpaRepository;
-import com.ibm.opportunity_analysis_service.application.mapper.CandidatoTecnologicoMapper;
-import com.ibm.opportunity_analysis_service.application.port.out.EmbeddingCadidatoPort;
-import com.ibm.opportunity_analysis_service.domain.entity.CandidatoTecnologico;
+import com.ibm.opportunity_analysis_service.application.port.out.EmbeddingCandidatoPort;
 import com.ibm.opportunity_analysis_service.domain.entity.EmbeddingCandidatoTecnologico;
 import org.springframework.stereotype.Component;
 
@@ -13,25 +10,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
-public class EmbeddingCandidatoTecnologicoPersistenceAdapter implements EmbeddingCadidatoPort {
+public class EmbeddingCandidatoTecnologicoPersistenceAdapter implements EmbeddingCandidatoPort {
 
-    private final CandidatoTecnologicoJpaRepository candidatoTecnologicoJpaRepository;
     private final EmbeddingCandidatoTecnologicoJpaRepository embeddingCandidatoTecnologicoJpaRepository;
-    private final CandidatoTecnologicoMapper candidatoTecnologicoMapper;
 
-    public EmbeddingCandidatoTecnologicoPersistenceAdapter(CandidatoTecnologicoJpaRepository candidatoTecnologicoJpaRepository, EmbeddingCandidatoTecnologicoJpaRepository embeddingCandidatoTecnologicoJpaRepository, CandidatoTecnologicoMapper candidatoTecnologicoMapper) {
-        this.candidatoTecnologicoJpaRepository = candidatoTecnologicoJpaRepository;
+    public EmbeddingCandidatoTecnologicoPersistenceAdapter(EmbeddingCandidatoTecnologicoJpaRepository embeddingCandidatoTecnologicoJpaRepository) {
         this.embeddingCandidatoTecnologicoJpaRepository = embeddingCandidatoTecnologicoJpaRepository;
-        this.candidatoTecnologicoMapper = candidatoTecnologicoMapper;
-    }
-
-    @Override
-    public List<CandidatoTecnologico> obtenerCandidatosTecnologicos() {
-
-        return candidatoTecnologicoJpaRepository.findAll()
-                .stream()
-                .map(candidatoTecnologicoMapper::toDomain)
-                .toList();
     }
 
     @Override

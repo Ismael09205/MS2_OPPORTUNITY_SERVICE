@@ -11,14 +11,22 @@ import java.util.Optional;
 public interface EmbeddingProductoIbmJpaRepository extends JpaRepository<EmbeddingProductoIbmJpaEntity, Long> {
 
     Optional<EmbeddingProductoIbmJpaEntity> findByProductoIbmIdAndModelo(Long productoIbmId, String modelo);
+
+    void deleteByProductoIbmIdIn(List<Long> productoIbmIds);
+    /**
+     * Similitud coseno calculada por pgvector (1 - distancia coseno), mejores `limite` productos.
+     */
     @Query(value = """
         SELECT p.id,
                p.nombre,
-               1 - (e.embedding <=> CAST(:embedding AS vector)) AS similitud
+               (1 - (e.embedding <=> CAST(:embedding AS vector))) AS similitud
         FROM embedding_producto_ibm e
         INNER JOIN producto_ibm p ON p.id = e.producto_ibm_id
-        ORDER BY e.embedding <=> CAST(:embedding AS vector)
+        ORDER BY similitud DESC
         LIMIT :limite
         """, nativeQuery = true)
-    List<Object[]> buscarSimilares(@Param("embedding") String embedding, @Param("limite") int limite);
+    List<Object[]> buscarPorSimilitudCoseno(
+            @Param("embedding") String embedding,
+            @Param("limite") int limite
+    );
 }

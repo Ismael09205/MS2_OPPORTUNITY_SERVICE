@@ -9,7 +9,6 @@ import com.ibm.opportunity_analysis_service.domain.entity.ResultadoSimilitudIbm;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Optional;
 
 @Component
 public class EmbeddingProductoIbmPersistenceAdapter implements EmbeddingProductoIbmPersistencePort {
@@ -23,21 +22,23 @@ public class EmbeddingProductoIbmPersistenceAdapter implements EmbeddingProducto
     }
 
     @Override
-    public EmbeddingProductoIbm guardar(EmbeddingProductoIbm embeddingProductoIbm) {
-        EmbeddingProductoIbmJpaEntity entity = embeddingProductoIbmMapper.toEntity(embeddingProductoIbm);
-
-        EmbeddingProductoIbmJpaEntity guardado = embeddingProductoIbmJpaRepository.save(entity);
-
-        return embeddingProductoIbmMapper.toDomain(guardado);
-    }
-
-    @Override
     public List<EmbeddingProductoIbm> guardarTodos(List<EmbeddingProductoIbm> embeddings) {
-        List<EmbeddingProductoIbmJpaEntity> entities = embeddings.stream()
-                .map(embeddingProductoIbmMapper::toEntity)
+        List<EmbeddingProductoIbmJpaEntity> aGuardar = embeddings.stream()
+                .map(e -> {
+                    EmbeddingProductoIbmJpaEntity entity = embeddingProductoIbmJpaRepository
+                            .findByProductoIbmIdAndModelo(e.getProductoIbmId(), e.getModelo())
+                            .orElseGet(() -> embeddingProductoIbmMapper.toEntity(e));
+
+                    entity.setProductoIbmId(e.getProductoIbmId());
+                    entity.setModelo(e.getModelo());
+                    entity.setTextoEmbedding(e.getTextoEmbedding());
+                    entity.setEmbedding(e.getEmbedding());
+                    entity.setFechaGeneracion(e.getFechaGeneracion());
+                    return entity;
+                })
                 .toList();
 
-        List<EmbeddingProductoIbmJpaEntity> guardados = embeddingProductoIbmJpaRepository.saveAll(entities);
+        List<EmbeddingProductoIbmJpaEntity> guardados = embeddingProductoIbmJpaRepository.saveAll(aGuardar);
 
         return guardados.stream()
                 .map(embeddingProductoIbmMapper::toDomain)
@@ -53,18 +54,12 @@ public class EmbeddingProductoIbmPersistenceAdapter implements EmbeddingProducto
     }
 
     @Override
-    public Optional<EmbeddingProductoIbm> buscarPorProductoYModelo(Long productoIbmId, String modelo) {
-        return embeddingProductoIbmJpaRepository.findByProductoIbmIdAndModelo(productoIbmId, modelo)
-                .map(embeddingProductoIbmMapper::toDomain);
-    }
-
-    @Override
     public List<ResultadoSimilitudIbm> buscarSimilares(float[] embedding, int limite) {
 
         String vector = convertirVector(embedding);
 
         return embeddingProductoIbmJpaRepository
-                .buscarSimilares(vector, limite)
+                .buscarPorSimilitudCoseno(vector, limite)
                 .stream()
                 .map(resultado -> new ResultadoSimilitudIbm(
                         ((Number) resultado[0]).longValue(),

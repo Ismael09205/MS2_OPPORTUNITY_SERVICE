@@ -1,0 +1,25 @@
+{
+  "name": "opportunity-analysis-mcp",
+  "version": "1.0.0",
+  "description": "MCP Server para opportunity_analysis_service",
+  "type": "module",
+  "bin": {
+    "opportunity-analysis-mcp": "./build/index.js"
+  },
+  "scripts": {
+    "build": "tsc && chmod 755 build/index.js",
+    "start": "node build/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "axios": "^1.7.9",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "typescript": "^5.7.3"
+  },
+  "files": [
+    "build"
+  ]
+}

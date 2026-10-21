@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface ProductoIbmPersistencePort {
 
-    ProductoIbm guardar(ProductoIbm productoIbm);
-
     List<ProductoIbm> guardarTodos(List<ProductoIbm> productosIbm);
 
     List<ProductoIbm> buscarTodos();
+
+    java.util.Optional<ProductoIbm> buscarPorId(Long id);
 }

@@ -8,58 +8,23 @@ spring:
     hibernate:
       ddl-auto: update
 
-filtro-oportunidades:
-
-  categorias:
-
-    software:
-      terminos:
-        - software
-        - aplicaciones web
-        - aplicaciones moviles
-        - informatica
-        - sistema informatico
-        - desarrollo de software
-        - plataforma digital
-
-    cloud:
-      terminos:
-        - cloud
-        - nube
-        - saas
-        - paas
-        - iaas
-
-    inteligencia-artificial:
-      terminos:
-        - inteligencia artificial
-        - machine learning
-        - aprendizaje automatico
-        - ia generativa
-
-    infraestructura:
-      terminos:
-        - servidor
-        - servidores
-        - datacenter
-        - centro de datos
-        - virtualizacion
-
-    redes:
-      terminos:
-        - red informatica
-        - redes informaticas
-        - router
-        - switch
-        - telecomunicaciones
-
-  exclusiones:
-    - seguridad fisica
-    - vigilancia privada
-    - servidor publico
-    - servidores publicos
-    - red vial
 granite:
-  url: http://localhost:11434
+  url: http://localhost:11435
   modelo: granite-embedding:278m
-  tamano-lote: 5
+  modelo-llm: granite3.1-dense:8b
+  # "bob"     → logica determinista interna.
+  # "granite" → llama al modelo Granite via Ollama.
+  evaluador: bob
+
+pipeline:
+  scheduler:
+    enabled: true
+    delay-ms: 60000
+    initial-delay-ms: 15000
+    evaluacion-delay-ms: 300000
+    evaluacion-initial-delay-ms: 60000
+
+opportunity-analysis:
+  qualification:
+    habilitado: true
+    monto-minimo-usd: 15000

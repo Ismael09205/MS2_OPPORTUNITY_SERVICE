@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.JdbcTypeCode;
@@ -17,14 +18,14 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "producto_ibm")
+@Table(name = "producto_ibm", uniqueConstraints = @UniqueConstraint(name = "uk_producto_ibm_nombre", columnNames = "nombre"))
 public class ProductoIbmEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String nombre;
 
     @Column(columnDefinition = "TEXT")
