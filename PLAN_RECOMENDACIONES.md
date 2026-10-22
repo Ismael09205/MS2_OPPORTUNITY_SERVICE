@@ -7,6 +7,54 @@
 
 ---
 
+## Decisiones tomadas
+
+| ID | Decisión |
+|---|---|
+| **A** | `GET /recomendaciones` devuelve **solo** recomendaciones con `estado=EVALUADA`. Las preselecciones se exponen aparte (`?estado=preseleccion` o endpoint `/recomendaciones/pendientes`). |
+| **B** | El ranking combina **estado + confianza + score compuesto**: evaluadas primero, y dentro de cada bloque factor configurable por confianza (ALTO 1.0 / MEDIO 0.85 / BAJO 0.6) sobre `score_compuesto`. |
+| **C** | Fórmula definitiva: **`0.70·coseno + bonusMonto + bonusMétodo + bonusAlcance`** (la que ya está en el código y persistida). Se corrige `README_SIMILITUD.md`; no hay que recalcular scores. |
+| **D** | **No** se exponen descartes en los listados: solo oportunidades (`esOportunidadIbm=true`). *Matiz:* el detalle on-demand de un OCID concreto sí conserva el motivo (`/recomendaciones/{ocid}` en modo Granite), para que Bob no invente razones — pero nunca aparece en listas ni en el resumen del MCP. |
+
+---
+
+## Protocolo de trabajo (aplica a cada una de las 6 fases)
+
+Para cada fase se ejecutan tres pasos obligatorios:
+
+1. **Antes de tocar código:** presentar la situación (qué problema hay, por qué afecta a la calidad de la recomendación cuando un proceso SERCOP es o no oportunidad real de IBM) y las opciones disponibles para resolverla, con pros/contras de cada una.
+2. **Preguntar todo lo que no esté claro.** Si una decisión cambia el comportamiento visible (qué ve el usuario, qué significa `esOportunidadIbm`, cómo se ordena, qué se muestra de los descartes, criterios de elegibilidad), **no se decide solo**: se explica y se pregunta antes de implementar.
+3. **Al terminar la fase:** resumen de lo implementado — archivos modificados/creados, decisiones tomadas durante la ejecución, cómo verificarlo (curl/test) y qué queda pendiente o incompleto.
+
+Criterio rector de todas las fases: **mejorar la acierto de "¿este proceso SERCOP es realmente una oportunidad de negocio para IBM?"**, medido contra el gold set de la Fase 0.
+
+---
+
+## Diagnóstico medido (2026-10-21, `sercop_db`)
+
+Cifras reales que cuantifican los hallazgos:
+
+| Medida | Valor | Lectura |
+|---|---|---|
+| Procesos en `proceso_contratacion` | **381** | base de trabajo |
+| Recomendaciones en `recomendacion` | **46** | 24 `true` / 22 `false` |
+| De las 24 `true`, **cuántas son preselección heurística** | **23 (96 %)** | **H1 confirmado y cuantificado:** casi todo lo que hoy se muestra como "oportunidad para IBM" no ha pasado por LLM ni por Bob. Solo 1 está realmente evaluada. |
+| Filas `esOportunidadIbm=true` con `nivelConfianza='N/A'` | **1** (`ocds-5wno2w-SIE-UITEY-2026-034-541976`) | Inconsistencia: las reglas del prompt dicen `N/A ⇒ false`. Hallazgo **H14**. |
+| Distribución de `metodo` | `open` 290, `direct` 91 | **H7 agravado:** no existe ningún `infima_cuantia`, así que `metodosDescartados` **no descarta ni un proceso**; y el `default → 0.05` del switch **nunca se ejecuta**. |
+| Montos | ≥15k: 295 · <15k: 86 · **sin monto: 34** | 34 procesos (9 %) no pasan ni el filtro de monto ni lo marcan como desconocido → H8. |
+| Recomendaciones `false` evaluadas | 22 | Son descartes reales del LLM/Bob, buen material de contraste para el gold set. |
+| **Base 100 % TI** | `categoria_cpc` ∈ {LICENCIAS_SOFTWARE 127, SUSCRIPCIONES_SAAS 107, BASES_DATOS_PLATAFORMAS 64, DESARROLLO_CONSULTORIA_TI 44, CLOUD_COMPUTING 39} — CHECK constraint | **H15:** MS1 ya filtra por categoría en la ingesta. |
+| Procesos con palabras clave excluidas | **0 de 381** | **H15:** `palabrasClaveExcluidas` no descarta **nada**. |
+| Procesos con método excluido (`infima_cuantia`) | **0 de 381** | **H15:** `metodosDescartados` tampoco. Los "filtros duros" del README no están probados por ningún dato. |
+| Procesos que mencionan un producto IBM por nombre | **2 de 381** | Cero ventas fáciles: la recomendación depende de la similitud semántica + el juicio del evaluador. |
+| Procesos que mencionan competidor **sin** mencionar IBM | **40 (10 %)** | La regla "depende del espacio real" (Q4 del criterio) es la frontera de mayor impacto. |
+| `tipo_interno` contiene el **método** de contratación en español ("Concurso público", "Subasta Inversa Electrónica"), no una categoría | 381 | **H16:** `generarTextoEmbedding` lo etiqueta como `Categoria: {tipoInterno}` → el texto que se vectoriza miente sobre un campo. Afecta a la calidad del embedding. |
+| Mojibake en nombres de producto del catálogo | ej. `Sterling B2B Integration SaaSâ​` | **H17:** texto corrupto que se guarda, se vectoriza y se le entrega a Bob. |
+| **Keyword `"ia"` de `palabrasClaveEnterprise` buscada por subcadena** | casa dentro de `licen**cia**s`, `licen**cia**miento`, `ofimá**tica**` → cualquier proceso de licencias suma +1 keyword "enterprise" automáticamente | **H18 (medido 2026-10-21 sobre los 42 keywords, bloques S6 del gold set):** la excepción "monto <15k con ≥2 keywords enterprise" está inflada; dos procesos de 12k y 14,8k "pasan" Q2 solo por esa coincidencia. |
+| Encaje real del top-3 sobre casos del gold set | ej. "Renovación de licencias Microsoft 365" → MaaS360 / Trusteer / Sterling; "licencia Office 365" → Sterling / OpenShift / AIX | Señal de que el ranking actual falla exactamente donde el criterio exige decidir (estrato S2/S3). Es lo que el baseline de la Fase 0 va a cuantificar. |
+
+---
+
 ## Diagnóstico (qué encontré al leer el código)
 
 Hallazgos que justifican las fases. Todos verificados en el código actual, no en suposiciones.
@@ -33,11 +81,12 @@ Hallazgos que justifican las fases. Todos verificados en el código actual, no e
 
 **Objetivo:** poder decir antes/después si las recomendaciones mejoraron.
 
-| # | Tarea | Archivos |
-|---|---|---|
-| 0.1 | Crear un gold set: muestrear entre 40 y 60 procesos reales de la BD y etiquetarlos a mano: `ocid, es_oportunidad_esperado, producto_esperado, nota`. Incluir deliberadamente: claros commodity (deben salir `false`), claros enterprise (deben salir `true`), mixtos (deben salir `MEDIO`) y casos borde (monto nuloso, método raro). | `src/test/resources/goldset_oportunidades.csv` |
-| 0.2 | Test de calidad que corre el pipeline sobre el gold set y reporta: precisión, recall, acierto del producto, distribución de confianza y lista de falsos positivos/negativos con su motivo. | `src/test/java/.../CalidadRecomendacionesIT.java` |
-| 0.3 | Registrar el baseline actual (números de la corrida de 0.2) en este documento. | este archivo, sección "Baseline" |
+| # | Tarea | Archivos | Estado |
+|---|---|---|---|
+| 0.0 | **Criterio escrito de oportunidad IBM** (marco de catálogo de software, no "¿es TI?"), con las decisiones del usuario, familias F1-F8 y casos borde. | `docs/criterio_oportunidad_ibm.md` | ✅ 2026-10-21 — **v1.3**, 30 decisiones registradas en §7; queda **1 pendiente** (contratación `direct`) |
+| 0.1 | Gold set: **63** procesos reales etiquetados por el usuario en bloques interactivos — muestra base 55 estratificada (S1 12 / S2 12 / S3 8 / S4 8 / S5 8 / S6 7) + espiga S7 (8 candidatos a ALTO buscados fuera de la muestra). | `src/test/resources/goldset_oportunidades.csv`, `src/test/resources/generar_goldset.sql` | ✅ 2026-10-21 — **63/63 etiquetados**: ALTO 3 · MEDIO 8 · BAJO 0 · NO 52 |
+| 0.2 | Test de calidad que compara el gold set contra `recomendacion` en la BD: cobertura, precisión sobre evaluados, recall de cobertura, matriz etiqueta vs confianza y listado de falsos positivos/negativos. `@Tag("local")`, se omite si la BD no está disponible. | `src/test/java/.../CalidadRecomendacionesTest.java` | ✅ 2026-10-21 — verificado; ajustado para validar base=55 y espiga S7 por separado |
+| 0.3 | Registrar el baseline en este documento. | este archivo, sección "Baseline" | ✅ 2026-10-21 — baseline medido abajo |
 
 **Criterio de aceptación:** `./gradlew test` ejecuta el gold set y publica las métricas. Baseline guardado.
 
@@ -55,9 +104,13 @@ Hallazgos que justifican las fases. Todos verificados en el código actual, no e
 | 1.4 | En `AnalizarSimilitudService.analizar()`: si el proceso **no** es elegible y tenía similitudes persistidas, eliminarlas y marcar la recomendación como `DESCARTADA_ALCANCE` con el motivo (hoy solo `continue`). | `AnalizarSimilitudService`, `SimilitudPersistencePort` (nuevo `eliminarPorOcid`) | H4 |
 | 1.5 | Fallback del LLM: en vez de `esOportunidadIbm = !candidatosTop.isEmpty()`, persistir `estado=ERROR_EVALUACION`, `esOportunidadIbm=false` y **no** tratarlo como definitivo (permitir reintento en `recomendarPorOcid` y en el scheduler). | `RecomendarOportunidadesService` líneas 266-276 | H3 |
 | 1.6 | Lookup por OCID: añadir `ProcesoSercopPersistencePort.buscarPorOcid(String)` (+ JPQL/`findByOcid`) y sustituir los tres `obtenerTodos()+filter`. | `ProcesoSercopPersistencePort`, `ProcesoSercopJpaRepository`, `ProcesoSercopPersistenceAdapter`, `RecomendarOportunidadesService` | H5 |
-| 1.7 | Decisión de producto (ver pregunta abierta A): el endpoint `GET /recomendaciones` debe distinguir preselecciones de evaluadas (filtro por `estado` y/o campo nuevo en la respuesta). | `AnalysisController`, `RecomendacionJpaRepository.findOportunidadesIbm`, `MCP_SERVER/src/index.ts` | H1 |
+| 1.7 | Aplicar **decisión A**: `GET /recomendaciones` pasa a devolver solo `estado=EVALUADA`; añadir `?estado=preseleccion` (o endpoint `/recomendaciones/pendientes`) para las preselecciones, y que el MCP lo distinga. | `AnalysisController`, `RecomendacionJpaRepository.findOportunidadesIbm`, `MCP_SERVER/src/index.ts` | H1 |
+| 1.8 | Rehacer el relleno perezoso de `obtenerOportunidadesIbm`: hoy, ante un cache miss, genera preselecciones y vuelve a leer — con la decisión A esas filas quedarían filtradas y el endpoint devolvería una lista corta o vacía sin explicación. En su lugar: disparar evaluación LLM **asíncrona** de los pendientes (mismo patrón que `precalcularRecomendacionesAsync`) y devolver lo disponible + `pendientesCount` para que el usuario sepa que se está procesando. | `RecomendarOportunidadesService.obtenerOportunidadesIbm`, `RecomendacionJpaRepository` (nuevo conteo de pendientes) | H1, sin lista corta sin explicar |
+| 1.9 | Consistencia de la etiqueta: rechazar/persistir como `ERROR_EVALUACION` cualquier combinación inválida (`esOportunidadIbm=true` con `nivelConfianza='N/A'`, que hoy existe — H14) y añadir una **restricción** que lo impida (CHECK o validación en `RecomendacionPersistenceAdapter`). | `RecomendacionOportunidad`, `RecomendacionPersistenceAdapter`, migración DDL | H14 |
+| 1.10 | Revisión de `metodosDescartados` y `calcularBonusMetodo` con los valores reales: la muestra solo tiene `open` (290) y `direct` (91), ningún `infima_cuantia` — verificar si el filtro de método existe para otro feed o está muerto, y si `metodosPermitidos`/`default 0.05` deben existir. *Decisión del usuario al llegar la fase.* | `ConfiguracionCriteriosOportunidad`, `AnalizarSimilitudService` | H7 ampliado |
+| 1.11 | **H18:** matchear `palabrasClaveEnterprise` por **límites de palabra** (y normalizando acentos) en vez de `String.contains`, empezando por la keyword `"ia"` que casa dentro de *licen**cia**s / licen**cia**miento / ofimá**tica***. Recontar cuántos procesos superan realmente Q2 con ≥2 keywords y comparar con el conteo actual (medir con el gold set antes/después). | `ConfiguracionCriteriosOportunidad`, método que evalúa `palabrasClaveEnterprise` | H18, corte de monto |
 
-**Criterio de aceptación:** test nuevo que (a) una preselección nunca sale sin pasar el validador, (b) un proceso hoy-elegible que deja de serlo pierde sus similitudes, (c) un error del LLM no produce `esOportunidadIbm=true`, (d) la latencia de `/recomendaciones/{ocid}` no escala con el total de procesos. Medir con el gold set: sin regresión de recall.
+**Criterio de aceptación:** test nuevo que (a) una preselección nunca sale sin pasar el validador, (b) un proceso hoy-elegible que deja de serlo pierde sus similitudes, (c) un error del LLM no produce `esOportunidadIbm=true`, (d) la latencia de `/recomendaciones/{ocid}` no escala con el total de procesos, (e) `GET /recomendaciones` sin parámetros nunca devuelve filas `PRESELECCION_VECTORIAL` (esas solo vía `?estado=preseleccion`) y, cuando devuelve menos de `limit` por falta de evaluadas, lo indica con `pendientesCount` en lugar de devolver una lista corta sin explicación. Medir con el gold set: sin regresión de recall.
 
 ---
 
@@ -67,15 +120,16 @@ Hallazgos que justifican las fases. Todos verificados en el código actual, no e
 
 | # | Tarea | Archivos | Relación |
 |---|---|---|---|
-| 2.1 | Unificar la fórmula. Decidir si el peso es 0.70 + `bonusAlcance` (código) o 0.75 sin alcance (README), dejarlo **configurable** y corregir el documento que quede desalineado. Si cambia el peso, recalcular `score_compuesto` (hay precedente en `docs/migracion_escala_coseno.sql`). | `AnalizarSimilitudService` (mover constantes a `ConfiguracionCriteriosOportunidad`), `README_SIMILITUD.md` §3 | H6 |
+| 2.1 | Aplicar **decisión C**: mantener `0.70·coseno + bonusMonto + bonusMétodo + bonusAlcance`, sacar los pesos a constantes/configurables y **corregir `README_SIMILITUD.md`** (§3 fórmula, §3 ejemplo numérico con 0.75 y cualquier mención de 0.65/0.75). No hace falta recalcular `score_compuesto` persistido: ya está con 0.70. **Ver igualmente con SQL** que las filas guardadas realmente cumplan 0.70 (las creadas antes de los cambios de fórmula guardan 0.65·coseno o la versión 0.75): si hay filas con escala vieja, corregirlas con un `UPDATE` puntual y documentarlo en `docs/`. | `AnalizarSimilitudService` (mover constantes a `ConfiguracionCriteriosOportunidad`), `README_SIMILITUD.md` §3 | H6 |
 | 2.2 | Normalizar el bonus de método con una tabla configurable mapeando los valores reales de SERCOP → bonus, y poner `metodosPermitidos` a uso real (o eliminarlo). | `ConfiguracionCriteriosOportunidad`, `AnalizarSimilitudService.calcularBonusMetodo`, `application.yaml` | H7 |
 | 2.3 | Política para monto nulo: no descartar en automático, pero sí marcar `montoConocido=false` y hacer que el bonus/puntuación lo refleje; exponerlo en la recomendación. | `ValidadorAlcanceIbmService`, `RecomendacionOportunidad` | H8 |
-| 2.4 | Ranking compuesto en la lista: priorizar `estado=EVALUADA` sobre `PRESELECCION` y ponderar por confianza (factor configurable: ALTO 1.0 / MEDIO 0.85 / BAJO 0.6). Alternativa mínima: dos bloques en la respuesta (evaluadas primero). | `RecomendacionJpaRepository.findOportunidadesIbm` | H9 |
+| 2.4 | Aplicar **decisión B** en `findOportunidadesIbm`: (1) primero `estado=EVALUADA` (obligatorio por decisión A), (2) dentro del bloque, ordenar por `score_compuesto × factor_confianza` con factores configurables (ALTO 1.0 / MEDIO 0.85 / BAJO 0.6). Mantener el SQL como consulta nativa y exponer el `score_orden` calculado en la respuesta. | `RecomendacionJpaRepository.findOportunidadesIbm`, `ConfiguracionCriteriosOportunidad` | H9 |
 | 2.5 | Mover los umbrales de la preselección (0.75/0.68/delta) a configuración y calibrarlos con el gold set de la Fase 0. | `ConfiguracionCriteriosOportunidad`, `RecomendarOportunidadesService` líneas 119-126 | H1 |
 | 2.6 | Invalidación por catálogo: incluir una `version_catalogo` (hash o `count + max(fecha)` de `producto_ibm`) en el hash de similitud y limpiar `recomendacion` cuando cambie. | `AnalizarSimilitudService.calcularHash`, `CatalogoIbmBootstrapService`, `README_SIMILITUD.md` §3 | H13 |
 | 2.7 | *(Solo si el gold set lo pide)* diversificar el top-5 para que no sean 5 productos de la misma familia (MMR simple sobre `score_vectorial`). | `AnalizarSimilitudService` | opcional |
+| 2.8 | Corregir `generarTextoEmbedding`: hoy escribe `Categoria: {tipoInterno}` pero `tipo_interno` es el **método** de contratación → cambiar a `Metodo: {tipoInterno}` (o eliminarlo, ya que `metodo` open/direct ya se usa en el bonus). **[DECIDIR: al cambiar el texto hay que re-vectorizar los 381 procesos y invalidar hashes — decisión del usuario al llegar la fase.]** | `GenerarEmbeddingCandidatoService.generarTextoEmbedding` (línea ~109), `README_SIMILITUD.md` §1 | H16 |
 
-**Criterio de aceptación:** `./gradlew test` verde; corrida del gold set con precisión ≥ baseline; el top-6 de `GET /recomendaciones` no contiene preselecciones sin evaluar por encima de evaluadas con confianza ALTO.
+**Criterio de aceptación:** `./gradlew test` verde; corrida del gold set con precisión ≥ baseline; el top-6 de `GET /recomendaciones` contiene solo `estado=EVALUADA` y su orden coincide con `score_compuesto × factor_confianza`.
 
 ---
 
@@ -88,7 +142,8 @@ Hallazgos que justifican las fases. Todos verificados en el código actual, no e
 | 3.1 | Ampliar `CandidatosRecomendacionDto` con: `metodo`, `fecha` + `diasDesdePublicacion` (existe `ProcesoSercop.fecha`), `scoreCompuesto` por candidato, `bonusAplicados`, `resultadoValidacion` (elegible, motivo, bonusAlcance) y `recomendacionPrevia` (estado + confianza + fecha). | `CandidatosRecomendacionDto`, `RecomendarOportunidadesService.obtenerCandidatosCrudos` | H10 |
 | 3.2 | Ejecutar el validador también en `/candidatos/{ocid}` y devolver `elegible:false` + motivo, para que Bob comunique el descarte en lugar de inventarlo. | `RecomendarOportunidadesService.obtenerCandidatosCrudos` | H10 |
 | 3.3 | Devolver los 5 candidatos con su `scoreCompuesto`, no solo la similitud vectorial. | `CandidatosRecomendacionDto.CandidatoConDetalle` | H10 |
-| 3.4 | Exponer el descarte en la lista: añadir `motivoDescarte`/`estado` a la respuesta de `GET /recomendaciones` (transparencia: por qué algo no es oportunidad). | `RecomendacionOportunidad`, `AnalysisController` | H11 |
+| 3.4 | **Decisión D (no exponer descartes en listados):** no se agrega `motivoDescarte` a `GET /recomendaciones`; la lista sigue siendo solo oportunidades. El motivo queda reservado al detalle on-demand de un OCID concreto (`GET /recomendaciones/{ocid}` en modo Granite y `resultadoValidacion` en `/candidatos/{ocid}`) para que Bob no invente razones cuando el usuario insiste en un caso. | `CandidatosRecomendacionDto` (3.1-3.2), `RecomendarOportunidadesService` | H10 |
+| 3.5 | Saneamiento de caracteres en los nombres del catálogo (`Sterling B2B Integration SaaSâ​`, `Sterling Secure File Transferâ​`): normalizar al cargar (`CargarCatalogoIbmService`) **y** corregir las filas ya persistidas, porque ese texto llega al prompt de Bob. | `CargarCatalogoIbmService`, SQL de corrección en `docs/` | H17 |
 
 **Criterio de aceptación:** `curl /candidatos/{ocid}` devuelve proceso + validador + top-5 con score compuesto; un OCID descartado explica el motivo.
 
@@ -102,11 +157,11 @@ Hallazgos que justifican las fases. Todos verificados en el código actual, no e
 |---|---|---|---|
 | 4.1 | Reescribir el prompt de `obtener_recomendacion_por_ocid` con plantilla ejecutiva fija: **Veredicto** (sí/no + confianza) · **Por qué encaja** (2-3 bullets citando el texto del pliego) · **Producto IBM recomendado** · **Estrategia comercial** (venta directa / consorcio con partners / largo plazo) · **Condiciones y riesgos** (monto, método, región, competencia, plazos) · **Siguiente paso** concreto. | `MCP_SERVER/src/index.ts` (líneas 61-92) | H10, H11 |
 | 4.2 | Reglas de honestidad en el prompt: si `estado=PRESELECCION_VECTORIAL` → "evaluación profunda pendiente"; si `ERROR_EVALUACION` → reportar el fallo y no inventar; nunca presentar una preselección como veredicto. | `MCP_SERVER/src/index.ts` | H1 |
-| 4.3 | Enriquecer `obtener_todas_las_recomendaciones`: incluir `titulo`, `region`, `fecha`/días restantes, `score_compuesto`, `estado` y confianza, en vez de `justificacion.slice(0,200)`. Arreglar los textos que asumen Granite en modo Bob. | `MCP_SERVER/src/index.ts` (107-162) | H11 |
-| 4.4 | Nueva herramienta MCP + endpoint REST con **filtros**: producto/tema, rango de monto, región, método, confianza y estado (evaluadas / pendientes). | `AnalysisController` (GET `/recomendaciones?...`), `RecomendacionJpaRepository`, `MCP_SERVER/src/index.ts` | H12 |
+| 4.3 | Enriquezar `obtener_todas_las_recomendaciones`: incluir `titulo`, `region`, `fecha`/días restantes, `score_compuesto` calculado con el factor de confianza y `estado=EVALUADA` (por decisión A la herramienta ya no debe filtrar `r.esOportunidadIbm` en cliente, el backend lo garantiza), en vez de `justificacion.slice(0,200)`. Arreglar los textos que asumen Granite en modo Bob y añadir `pendientesCount` cuando la lista venga corta. | `MCP_SERVER/src/index.ts` (107-162) | H11 |
+| 4.4 | Nueva herramienta MCP + endpoint REST con **filtros**: producto/tema, rango de monto, región, método, confianza y estado (evaluadas / preselecciones pendientes — el parámetro `estado` de la decisión A). | `AnalysisController` (GET `/recomendaciones?...`), `RecomendacionJpaRepository`, `MCP_SERVER/src/index.ts` | H12 |
 | 4.5 | Verificar que `EVALUADOR=granite` sigue leyendo `/recomendaciones/{ocid}` con los campos nuevos y no se rompe. | `MCP_SERVER/src/index.ts` (49-55) | coherencia |
 
-**Criterio de aceptación:** conversación de prueba en Bob: (1) resumen de la lista legible y accionable, (2) profundizar un OCID da la plantilla completa, (3) un OCID descartado lo explica con motivo, (4) una preselección se declara pendiente.
+**Criterio de aceptación:** conversación de prueba en Bob: (1) resumen de la lista legible y accionable (solo evaluadas, con `pendientesCount` si falta), (2) profundizar un OCID da la plantilla completa, (3) si el usuario pregunta por un OCID puntual descartado, Bob lo explica con el motivo real sin inventarlo (no aparece en listas), (4) una preselección se declara pendiente de evaluación.
 
 ---
 
@@ -114,7 +169,7 @@ Hallazgos que justifican las fases. Todos verificados en el código actual, no e
 
 | # | Tarea | Detalle |
 |---|---|---|
-| 5.1 | Ampliar unitarios | `ValidadorAlcanceIbmServiceTest` (monto nulo, exclusiones nuevas), `ProcesoSercopPipelineServiceTest` (idempotencia), nuevo `RecomendendarOportunidadesServiceTest` (preselección validada, fallback, reintento). |
+| 5.1 | Ampliar unitarios | `ValidadorAlcanceIbmServiceTest` (monto nulo, exclusiones nuevas), `ProcesoSercopPipelineServiceTest` (idempotencia), nuevo `RecomendarOportunidadesServiceTest` (preselección validada, fallback, reintento). |
 | 5.2 | Suite de calidad | Ejecutar el gold set de la Fase 0 en cada fase y comparar con el baseline. |
 | 5.3 | Verificación manual | Curls de `README_FUNCIONALIDAD.md` + `GET /procesos/estado-pipeline` tras cada fase. |
 | 5.4 | Build completo | `./gradlew test` y `cd MCP_SERVER && npm run build`. |
@@ -138,15 +193,34 @@ Fases 3 y 4 pueden avanzar en paralelo con la Fase 2 si se entrega primero el DT
 
 ---
 
-## Preguntas abiertas (a decidir antes de codificar la Fase 1)
+## Decisiones A-D
 
-**A. ¿Qué ve el usuario en `GET /recomendaciones` mientras el pipeline aún no ha evaluado?**
-1. Solo recomendaciones evaluadas (`estado=EVALUADA`) y las preselecciones en un bloque/parámetro aparte → más honesto, pero la lista puede quedar corta al principio.
-2. Todo mezclado pero con `estado` visible en cada item → más simple, el usuario aprende a leerlo.
-3. Solo evaluadas y, si no hay, responder "procesando" con el avance → mejor experiencia, más trabajo.
+Ya resueltas y aplicadas al plan: ver sección **Decisiones tomadas** al inicio del documento.
 
-**B. ¿El orden de la lista prioriza confianza o score compuesto?** (ver 2.4: hoy solo score, y un BAJO puede encabezar).
+---
 
-**C. ¿Fórmula de score definitiva?** 0.70 + `bonusAlcance` (actual en código) u 0.75 sin alcance (README). Si se cambia, hay que recalcular los `score_compuesto` guardados.
+## Baseline (Fase 0 — medido 2026-10-21)
 
-**D. ¿Se exponen los descartes al usuario?** (transparencia: "por qué no es oportunidad") o solo las oportunidades.
+Reproducir: `./gradlew test --tests 'com.ibm.opportunity_analysis_service.CalidadRecomendacionesTest'`
+Gold set: **63 procesos** (base 55 + espiga 8), **63/63 etiquetados** → **11 oportunidades reales** (3 ALTO + 8 MEDIO) y **52 NO**.
+
+| Métrica | Valor inicial (baseline) |
+|---|---|
+| Cobertura (¿cuántos tienen recomendación en BD?) | **11,1 %** — 7 de 63 |
+| Recomendaciones marcadas `esOportunidadIbm=true` | 5 |
+| **Precisión sobre evaluados** (de las que el sistema dice que son oportunidad, cuántas lo son) | **0,0 %** — 0 verdaderos / **5 falsos positivos** |
+| **Recall de cobertura** (de las 11 oportunidades reales, cuántas detecta) | **0,0 %** — 0 de 11; 10 de ellas **aún sin evaluar** |
+| Acierto del producto IBM recomendado | sin dato: no hay ni un verdadero positivo |
+| Distribución real ALTO / MEDIO / BAJO | 3 / 8 / 0 |
+| Falsos positivos (los 5, todos `Preselección por afinidad vectorial`, score ≈0,653-0,657, delta 0,014-0,041) | ANDEC (M365) · UNACH (Adobe) · GADPI (ingeniería civil) · GADMLM (consultoría ciberseguridad) · RPM (agente IA + BI libre) |
+| Falsos negativos (11 oportunidades reales sin detectar) | SENAE (Palantir+IaaS, 17,2M, dice `N/A`) · Parlamento Andino · Balzar · EEPGSA (Oracle) · ESPE (NDR) · EERSSA (chatbot) · Min. Gobierno · ARCSA · **U. Cuenca (ALTO)** · **UTN (ALTO)** · **UEMPRENDE (ALTO)** |
+| Matriz etiqueta humana vs `nivelConfianza` | ALTO → `SIN_RECOMENDACION`=3 · MEDIO → `N/A`=1, `SIN_RECOMENDACION`=7 · NO → `BAJO`=1, `MEDIO`=4, `N/A`=1, `SIN_RECOMENDACION`=46 |
+| Latencia `GET /recomendaciones/{ocid}` | pendiente de medir (tarea 1.6/H5) |
+
+**Lectura del baseline:** el sistema no acierta ni una. Las 5 que publica como oportunidad son preselecciones vectoriales sin evaluar (5/5 falsas), y las 11 oportunidades reales no las detecta ninguna (10 porque nunca llegaron al LLM, 1 — SENAE — porque el LLM las descartó). El error no está en "apuntar mal", sino en **publicar la preselección sin pasar por el criterio** (H1), que es exactamente lo que ataca la Fase 1.
+
+---
+
+## Punto de partida
+
+Estado: **Fase 0 completada** (criterio v1.3 + gold set 63/63 + baseline medido, tarea 0.3). Siguiente: **Fase 1** (integridad de la señal: que `es_oportunidad_ibm=true` signifique algo) — corrige H1-H5, H14 y H18, y habilita las decisiones A y B. Antes de tocar código, cada tarea de la Fase 1 se presenta con sus opciones y se deciden con el usuario.
