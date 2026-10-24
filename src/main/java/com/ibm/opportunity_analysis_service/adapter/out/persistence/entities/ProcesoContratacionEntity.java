@@ -41,4 +41,11 @@ public class ProcesoContratacionEntity {
         private String tipoInterno;
         private String titulo;
 
+        /**
+         * Categoría CPC (p.ej. CLOUD_COMPUTING, DESARROLLO_CONSULTORIA_TI). La columna ya
+         * existía en la BD pero no estaba mapeada; la necesita la regla dura R1.
+         */
+        @Column(name = "categoria_cpc", columnDefinition = "TEXT")
+        private String categoriaCpc;
+
 }

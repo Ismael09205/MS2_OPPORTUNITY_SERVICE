@@ -27,6 +27,7 @@ public class ProcesoSercopMapper {
         proceso.setRegion(entidad.getRegion());
         proceso.setTipoInterno(entidad.getTipoInterno());
         proceso.setTitulo(entidad.getTitulo());
+        proceso.setCategoriaCpc(entidad.getCategoriaCpc());
 
         return proceso;
     }

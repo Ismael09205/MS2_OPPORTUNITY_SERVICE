@@ -24,26 +24,20 @@ public class ConfiguracionCriteriosOportunidad {
      */
     private BigDecimal montoMinimoUsd = new BigDecimal("15000");
 
-    /**
-     * Métodos o tipos de contratación que habilitan competencia / servicios corporativos.
-     * Si está vacío, no se restringe por método.
-     */
-    private List<String> metodosPermitidos = new ArrayList<>(List.of(
-            "open",
-            "licitacion",
-            "licitación",
-            "cotizacion",
-            "cotización",
-            "subasta inversa",
-            "subasta_inversa",
-            "consultoria",
-            "consultoría",
-            "concurso publico",
-            "concurso_publico"
-    ));
+    // Tarea 1.10 (H7 ampliado, decisión del usuario 2026-10-22): aquí existía un campo
+    // `metodosPermitidos` declarado pero NUNCA leído por el código, y se eliminó deliberadamente:
+    //  (1) no estaba en uso — `AnalizarSimilitudService.calcularBonusMetodo` usa un switch
+    //      hardcodeado, no esa lista;
+    //  (2) si alguien lo activara como filtro duro excluiría `direct`, y en el gold set 7 de las
+    //      11 oportunidades reales (incluidas las 3 ALTO) son `direct`.
+    // Decisión: la contratación `direct` NO es cortante; solo penaliza en el score (tarea 2.2).
+    // Si en el futuro se quiere restringir por método, esa regla debe decidirse primero.
 
     /**
      * Métodos expresamente descartados (ej. ínfima cuantía para suministros de micro-escala).
+     * Único filtro de método que SÍ es cortante. Con la muestra actual (solo `open` y `direct`)
+     * no descartó ningún proceso — medido 2026-10-21, 0 de 381 — pero se conserva porque
+     * `infima_cuantia` existe en otros feeds de SERCOP.
      */
     private List<String> metodosDescartados = new ArrayList<>(List.of(
             "infima_cuantia",

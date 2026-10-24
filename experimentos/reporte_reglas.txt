@@ -1,0 +1,65 @@
+============================================================================================
+VALIDACIÓN DE REGLAS DURAS — 120 casos etiquetados (gold v1 + v2) — solo lectura
+============================================================================================
+Casos evaluados: 120 | sin fila en BD (no evaluables): 0
+
+MUERTES POR REGLA (deberían ser todas gold=NO):
+  regla                  muertes   NO  ALTO/MEDIO  REVISAR
+  R1_CAT_CONSULTORIA          11   11           0        0
+  R2_ANTIVIRUS                 7    7           0        0
+  R3_CADDIB                    4    4           0        0
+  R4_CONTENIDO                 5    5           0        0
+  R5_RENOV_MONOMARCA           6    6           0        0
+
+FUGAS: 0 — ninguna regla mata un ALTO/MEDIO. ✓
+
+EFECTO TOTAL: reglas matan 33 de 120 casos etiquetados
+  - correctos (gold=NO) : 33
+  - fugas (ALTO/MEDIO)  : 0
+  - REVISAR matados     : 0
+  - queda para el LLM   : 87 -> {'NO': 65, 'MEDIO': 13, 'ALTO': 5, 'REVISAR': 4}
+
+POSITIVOS QUE CONTIENEN PALABRAS CLAVE PERO LAS REGLAS LOS SALVARON:
+  (ninguno)
+
+DETALLE DE MUERTES POR REGLA:
+  R1_CAT_CONSULTORIA (11):
+    - [NO] CPC-EPMMM-2026-001-585764
+    - [NO] RE-PU-FMS-2026-001-283676
+    - [NO] SIE-ISSPOL-2026-02-3201
+    - [NO] LICS-EPMT-SD-2026-02-479584
+    - [NO] LICS-EPMSA-2026-01-259318
+    - [NO] CPC-AGUASHUAQUILLASEP-2026-001-1281401
+    - [NO] LICO-GADMPA-2026-0003-39712
+    - [NO] CPC-SAE-2026-00003-49857
+    - [NO] CPC-RPM-2026-01-385526
+    - [NO] RE-CEP-CGFAE-2026-007-2679
+    - [NO] SIE-UE-TLG-2026-001-1212648
+  R2_ANTIVIRUS (7):
+    - [NO] SIE-EERSSA-2026-026-3240
+    - [NO] SIE-UTC-2026-003-2671
+    - [NO] SIE-CARCHI-2026-021-2481
+    - [NO] SIE-DIGTAH-2026-004-2572
+    - [NO] RE-CEP-CJ-2026-002-48787
+    - [NO] SIE-GADMQ-2026-009-2453
+    - [NO] SIE-HGMS-2026-014-899249
+  R3_CADDIB (4):
+    - [NO] SIE-GADBAS-2026-005-2863
+    - [NO] SIE-EPMMOP-2026-047-741823
+    - [NO] SIE-GADPP-2026-11-2426
+    - [NO] SIE-GADMAZ-2026-019-2422
+  R4_CONTENIDO (5):
+    - [NO] RE-PU-ESPAMMFL-2026-03-25643
+    - [NO] RE-PU-UG-2026-002-55840
+    - [NO] RE-PU-IAEN-2026-001-2575
+    - [NO] LICS-UEA-2026-003-124342
+    - [NO] RE-PU-UTMACH-2026-002-60177
+  R5_RENOV_MONOMARCA (6):
+    - [NO] SIE-UTA-2026-035-3205
+    - [NO] SIE-ANDEC-2026-002-467908
+    - [NO] SIE-UAFE-2026-0001-105932
+    - [NO] LICB-CNT-2026-6859-236009
+    - [NO] RE-PU-HFIB-2026-001-29399
+    - [NO] SIE-CPEC-2026-003-3264
+
+============================================================================================

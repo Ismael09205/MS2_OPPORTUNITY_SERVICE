@@ -1,0 +1,123 @@
+[
+  {
+    "ocid": "ocds-5wno2w-SIE-EMASEO-EP-2026-014-276265",
+    "nivel_ejemplo": "ALTO",
+    "prompt": "Evalúa el siguiente proceso SERCOP.\n\n=== DATOS DE LA CONTRATACIÓN PÚBLICA (SERCOP) ===\nOCID: ocds-5wno2w-SIE-EMASEO-EP-2026-014-276265\nTítulo: SIE-EMASEO-EP-2026-014-276265\nDescripción: CONTRATACIÓN DE SERVICIO DE CIBERSEGURIDAD EDR/XDR/NDR PARA EMASEO EP\nTipo/Categoría: Subasta Inversa Electrónica\nComprador: EMPRESA PUBLICA METROPOLITANA DE ASEO\nMétodo de Contratación: open\nMonto Referencial: 99350.0 USD\n\n=== CANDIDATOS IBM Y AFINIDAD VECTORIAL ===\n1. Producto: Trusteer (Similitud Vectorial: 0.6190)\n   Descripción: Autenticar clientes, detectar fraudes y proteger contra usuarios malintencionados en todos los canales\n\n2. Producto: Cloud Cyber Recovery (Similitud Vectorial: 0.6170)\n   Descripción: Las soluciones de ciberrecuperación de IBM ofrecen una infraestructura resiliente, sencilla y aislada con air gaps, recuperación ante desastres y un plan de continuidad del negocio frente al ransomware.\n\n3. Producto: Cloud Internet Services (Similitud Vectorial: 0.6040)\n   Descripción: IBM Cloud Internet Services ofrece funciones de seguridad, fiabilidad y rendimiento diseñadas para proteger el contenido y las aplicaciones web de cara al público.\n\n=== DIAGNÓSTICO DE SEÑAL VECTORIAL ===\n- Puntaje Máximo: 0.6190 | Dispersión (Delta Top1 - Top3): 0.0150\n- ALERTA DE RUIDO SEMÁNTICO: Los puntajes están muy apretados (< 0.035 de diferencia) y por debajo de 0.72. NO califiques 'ALTO' a menos que el pliego mencione requerimientos unívocos.\n\nAnaliza esta contratación pública y responde con el JSON del veredicto.",
+    "respuesta": {
+      "decision": "SI",
+      "nivel": "ALTO",
+      "producto_recomendado": null,
+      "justificacion": "Encaje con la familia esperada ."
+    }
+  },
+  {
+    "ocid": "ocds-5wno2w-RE-CEP-CNE-2026-005-2546",
+    "nivel_ejemplo": "MEDIO",
+    "prompt": "Evalúa el siguiente proceso SERCOP.\n\n=== DATOS DE LA CONTRATACIÓN PÚBLICA (SERCOP) ===\nOCID: ocds-5wno2w-RE-CEP-CNE-2026-005-2546\nTítulo: RE-CEP-CNE-2026-005-2546\nDescripción: CONTRATAR EL SERVICIO DE ANÁLISIS Y GESTIÓN DEINCIDENTES DE SEGURIDAD INFORMÁTICA, LICENCIAMIENTO ANTIMALWARE PARA LAINFRAESTRUCTURA Y APLICACIONES PARA LAS ELECCIONES SECCIONALES Y CPCCS2027\nTipo/Categoría: Contratos entre Entidades Públicas o sus subsidiarias\nComprador: CONSEJO NACIONAL ELECTORAL\nMétodo de Contratación: direct\nMonto Referencial: 381091.9 USD\n\n=== CANDIDATOS IBM Y AFINIDAD VECTORIAL ===\n1. Producto: Application Discovery and Delivery Intelligence (Similitud Vectorial: 0.6560)\n   Descripción: Software para analizar y visualizar aplicaciones, datos y trabajos en z/OS.\n\n2. Producto: Cognos Analytics (Similitud Vectorial: 0.6410)\n   Descripción: IBM Cognos Analytics le ayuda a explorar datos, elaborar informes y crear paneles de control con perspectivas impulsadas por IA, lo que le permite comprender las tendencias y tomar decisiones fundamentadas.\n\n3. Producto: DevOps Code ClearCase (Similitud Vectorial: 0.6400)\n   Descripción: IBM DevOps ClearCase proporciona acceso controlado a una variedad de activos de software.\n\n=== DIAGNÓSTICO DE SEÑAL VECTORIAL ===\n- Puntaje Máximo: 0.6560 | Dispersión (Delta Top1 - Top3): 0.0160\n- ALERTA DE RUIDO SEMÁNTICO: Los puntajes están muy apretados (< 0.035 de diferencia) y por debajo de 0.72. NO califiques 'ALTO' a menos que el pliego mencione requerimientos unívocos.\n\nAnaliza esta contratación pública y responde con el JSON del veredicto.",
+    "respuesta": {
+      "decision": "SI",
+      "nivel": "MEDIO",
+      "producto_recomendado": null,
+      "justificacion": "Bajado de ALTO: antimalware commodity + metodo direct resta competitividad; gestion de incidentes da encaje parcial (SOC/QRadar) -> MEDIO (2026-10-23)"
+    }
+  },
+  {
+    "ocid": "ocds-5wno2w-CPC-ESPOCH-2026-02-53390",
+    "nivel_ejemplo": "MEDIO",
+    "prompt": "Evalúa el siguiente proceso SERCOP.\n\n=== DATOS DE LA CONTRATACIÓN PÚBLICA (SERCOP) ===\nOCID: ocds-5wno2w-CPC-ESPOCH-2026-02-53390\nTítulo: CPC-ESPOCH-2026-02-53390\nDescripción: Contratación para servicios de consultoría para modelamiento y automatización de procesos institucionales en plataformas BPMS, para el fortalecimiento de la gestión de Dirección de Procesos y Mejora Continua de la ESPOCH\nTipo/Categoría: Concurso publico\nComprador: ESCUELA SUPERIOR POLITECNICA DE CHIMBORAZO\nMétodo de Contratación: open\nMonto Referencial: 79000.0 USD\n\n=== CANDIDATOS IBM Y AFINIDAD VECTORIAL ===\n1. Producto: Cloud Pak for Business Automation (Similitud Vectorial: 0.6480)\n   Descripción: IBM Cloud Pak for Business Automation es un conjunto modular de componentes de software integrados para la gestión y automatización de operaciones.\n\n2. Producto: SPSS (Similitud Vectorial: 0.6360)\n   Descripción: Encuentre oportunidades, mejore la eficiencia y minimice el riesgo gracias a las capacidades avanzadas de análisis estadístico del software IBM® SPSS.\n\n3. Producto: Cloud for SAP (Similitud Vectorial: 0.6340)\n   Descripción: SAP for IBM Cloud es un conjunto de ofertas de infraestructura y servicios gestionados que simplifican y aceleran la entrega de software SAP en la nube.\n\n=== DIAGNÓSTICO DE SEÑAL VECTORIAL ===\n- Puntaje Máximo: 0.6480 | Dispersión (Delta Top1 - Top3): 0.0140\n- ALERTA DE RUIDO SEMÁNTICO: Los puntajes están muy apretados (< 0.035 de diferencia) y por debajo de 0.72. NO califiques 'ALTO' a menos que el pliego mencione requerimientos unívocos.\n\nAnaliza esta contratación pública y responde con el JSON del veredicto.",
+    "respuesta": {
+      "decision": "SI",
+      "nivel": "MEDIO",
+      "producto_recomendado": null,
+      "justificacion": "Bajado de ALTO: objeto central = consultoria de modelamiento (regla bloque 5) con CP4BA como componente -> mixto vía partner MEDIO (2026-10-23)"
+    }
+  },
+  {
+    "ocid": "ocds-5wno2w-RE-CEP-MDMQ-2026-46006-41357",
+    "nivel_ejemplo": "MEDIO",
+    "prompt": "Evalúa el siguiente proceso SERCOP.\n\n=== DATOS DE LA CONTRATACIÓN PÚBLICA (SERCOP) ===\nOCID: ocds-5wno2w-RE-CEP-MDMQ-2026-46006-41357\nTítulo: RE-CEP-MDMQ-2026-46006-41357\nDescripción: ?CONTRATACIÓN DE SERVICIOS GESTIONADOS DE CIBERSEGURIDADMEDIANTE UN CENTRO DE OPERACIONES DE SEGURIDAD SOC PARA EL GAD DEL DMQ?\nTipo/Categoría: Contratos entre Entidades Públicas o sus subsidiarias\nComprador: GOBIERNO AUTONOMO DESCENTRALIZADO DEL DISTRITO METROPOLITANO DE QUITO\nMétodo de Contratación: direct\nMonto Referencial: 2096320.0 USD\n\n=== CANDIDATOS IBM Y AFINIDAD VECTORIAL ===\n1. Producto: MQ (Similitud Vectorial: 0.7050)\n   Descripción: IBM MQ es una familia de productos middleware para mensajería de punto a punto y de publicación/suscripción. MQ está disponible como SaaS en IBM Cloud, como dispositivo de hardware y como solución autoalojada, incluido en z/OS.\n\n2. Producto: Guardium (Similitud Vectorial: 0.6440)\n   Descripción: IBM Guardium ayuda a las organizaciones a detectar, analizar y responder a los riesgos de seguridad de datos, protege la información confidencial y garantiza el cumplimiento de los requisitos normativos.\n\n3. Producto: QRadar (Similitud Vectorial: 0.6410)\n   Descripción: IBM QRadar, una suite de seguridad modular, ayuda a los equipos de seguridad a obtener visibilidad para detectar, investigar y responder rápidamente a las amenazas.\n\n=== DIAGNÓSTICO DE SEÑAL VECTORIAL ===\n- Puntaje Máximo: 0.7050 | Dispersión (Delta Top1 - Top3): 0.0640\n\nAnaliza esta contratación pública y responde con el JSON del veredicto.",
+    "respuesta": {
+      "decision": "SI",
+      "nivel": "MEDIO",
+      "producto_recomendado": null,
+      "justificacion": "SOC = ciberseguridad enterprise con QRadar; baja de ALTO por servicio gestionado + direct (2026-10-23)"
+    }
+  },
+  {
+    "ocid": "ocds-5wno2w-RE-CEP-SB-2026-002-2421",
+    "nivel_ejemplo": "REVISAR",
+    "prompt": "Evalúa el siguiente proceso SERCOP.\n\n=== DATOS DE LA CONTRATACIÓN PÚBLICA (SERCOP) ===\nOCID: ocds-5wno2w-RE-CEP-SB-2026-002-2421\nTítulo: RE-CEP-SB-2026-002-2421\nDescripción: RENOVACIÓN DE LOS SERVICIOS ENLA NUBE IAAS - PAAS Y SOPORTE TÉCNICO PARA LA SUPERINTENDENCIA DEBANCOS\nTipo/Categoría: Contratos entre Entidades Públicas o sus subsidiarias\nComprador: SUPERINTENDENCIA DE BANCOS\nMétodo de Contratación: direct\nMonto Referencial: 928327.32 USD\n\n=== CANDIDATOS IBM Y AFINIDAD VECTORIAL ===\n1. Producto: Sterling B2B Integration SaaSâ (Similitud Vectorial: 0.6430)\n   Descripción: IBM Sterling B2B Integration SaaS, anteriormente conocido como IBM Sterling Supply Chain Business Network, forma parte de la cartera de soluciones IBM Sterling Data Exchange.\n\n2. Producto: Sterling B2B Integration Value-Added Network (Similitud Vectorial: 0.6260)\n   Descripción: IBM Sterling B2B Integration Value-Added Network (VAN) forma parte de la cartera de soluciones IBM Sterling Data Exchange que da soporte a las transacciones EDI, lo que le permite intercambiar de forma fiable datos estructurados con clientes, proveedores, distribuidores u otros socios comerciales.\n\n3. Producto: Cloud Pak for AIOps (Similitud Vectorial: 0.6240)\n   Descripción: IBM Cloud Pak for AIOps es una plataforma de AIOps y una solución de gestión de operaciones de TI que les permite a los operadores de TI ubicar la IA en el centro de la cadena de herramientas de ITOps.\n\n=== DIAGNÓSTICO DE SEÑAL VECTORIAL ===\n- Puntaje Máximo: 0.6430 | Dispersión (Delta Top1 - Top3): 0.0190\n- ALERTA DE RUIDO SEMÁNTICO: Los puntajes están muy apretados (< 0.035 de diferencia) y por debajo de 0.72. NO califiques 'ALTO' a menos que el pliego mencione requerimientos unívocos.\n\nAnaliza esta contratación pública y responde con el JSON del veredicto.",
+    "respuesta": {
+      "decision": "REVISAR",
+      "nivel": "NA",
+      "producto_recomendado": null,
+      "justificacion": "Información insuficiente para decidir sin el pliego."
+    }
+  },
+  {
+    "ocid": "ocds-5wno2w-SIE-UEAEP-2026-0001-1041295",
+    "nivel_ejemplo": "NO",
+    "prompt": "Evalúa el siguiente proceso SERCOP.\n\n=== DATOS DE LA CONTRATACIÓN PÚBLICA (SERCOP) ===\nOCID: ocds-5wno2w-SIE-UEAEP-2026-0001-1041295\nTítulo: SIE-UEAEP-2026-0001-1041295\nDescripción: CONTRATACIÓN DE LICENCIAS DE PLATAFORMA DE ESTUDIOS QUE INCLUYA LIBRO INTERACTIVO PARA LOS ESTUDIANTES DE LA UEA DEL PROGRAMA DE FORMACIÓN EN UNA SEGUNDA LENGUA Y CENTRO DE IDIOMAS, A CARGO DE LA EMPRESA PUBLICA AMAZÓNICA UEA EP, PARA EL PRIMER Y SEGUNDO CICLO DEL AÑO 2026\nTipo/Categoría: Subasta Inversa Electrónica\nComprador: EMPRESA PUBLICA AMAZONICA UEA EP\nMétodo de Contratación: open\nMonto Referencial: 130625.0 USD\n\n=== CANDIDATOS IBM Y AFINIDAD VECTORIAL ===\n1. Producto: Cloud Pak for AIOps (Similitud Vectorial: 0.5840)\n   Descripción: IBM Cloud Pak for AIOps es una plataforma de AIOps y una solución de gestión de operaciones de TI que les permite a los operadores de TI ubicar la IA en el centro de la cadena de herramientas de ITOps.\n\n2. Producto: Sterling B2B Integration SaaSâ (Similitud Vectorial: 0.5840)\n   Descripción: IBM Sterling B2B Integration SaaS, anteriormente conocido como IBM Sterling Supply Chain Business Network, forma parte de la cartera de soluciones IBM Sterling Data Exchange.\n\n3. Producto: Sterling B2B Integration Value-Added Network (Similitud Vectorial: 0.5770)\n   Descripción: IBM Sterling B2B Integration Value-Added Network (VAN) forma parte de la cartera de soluciones IBM Sterling Data Exchange que da soporte a las transacciones EDI, lo que le permite intercambiar de forma fiable datos estructurados con clientes, proveedores, distribuidores u otros socios comerciales.\n\n=== DIAGNÓSTICO DE SEÑAL VECTORIAL ===\n- Puntaje Máximo: 0.5840 | Dispersión (Delta Top1 - Top3): 0.0070\n- ALERTA DE RUIDO SEMÁNTICO: Los puntajes están muy apretados (< 0.035 de diferencia) y por debajo de 0.72. NO califiques 'ALTO' a menos que el pliego mencione requerimientos unívocos.\n\nAnaliza esta contratación pública y responde con el JSON del veredicto.",
+    "respuesta": {
+      "decision": "NO",
+      "nivel": "NA",
+      "producto_recomendado": null,
+      "justificacion": "Fuera del alcance del catálogo IBM."
+    }
+  },
+  {
+    "ocid": "ocds-5wno2w-SIE-CPEC-2026-003-3264",
+    "nivel_ejemplo": "NO",
+    "prompt": "Evalúa el siguiente proceso SERCOP.\n\n=== DATOS DE LA CONTRATACIÓN PÚBLICA (SERCOP) ===\nOCID: ocds-5wno2w-SIE-CPEC-2026-003-3264\nTítulo: SIE-CPEC-2026-003-3264\nDescripción: RENOVACIÓN DE LICENCIAS DE SOFTWARE MICROSOFT 365 Y ADOBE CLOUD PARA CONQUITO\nTipo/Categoría: Subasta Inversa Electrónica\nComprador: CORPORACION DE PROMOCION ECONOMICA CONQUITO\nMétodo de Contratación: open\nMonto Referencial: 23137.0 USD\n\n=== CANDIDATOS IBM Y AFINIDAD VECTORIAL ===\n1. Producto: Cloud Cyber Recovery (Similitud Vectorial: 0.6440)\n   Descripción: Las soluciones de ciberrecuperación de IBM ofrecen una infraestructura resiliente, sencilla y aislada con air gaps, recuperación ante desastres y un plan de continuidad del negocio frente al ransomware.\n\n2. Producto: Cloud for SAP (Similitud Vectorial: 0.6410)\n   Descripción: SAP for IBM Cloud es un conjunto de ofertas de infraestructura y servicios gestionados que simplifican y aceleran la entrega de software SAP en la nube.\n\n3. Producto: Cloudability (Similitud Vectorial: 0.6390)\n   Descripción: IBM Cloudability is a cloud financial management platform that improves visibility, optimization, governance and more across cloud environments.\n\n=== DIAGNÓSTICO DE SEÑAL VECTORIAL ===\n- Puntaje Máximo: 0.6440 | Dispersión (Delta Top1 - Top3): 0.0050\n- ALERTA DE RUIDO SEMÁNTICO: Los puntajes están muy apretados (< 0.035 de diferencia) y por debajo de 0.72. NO califiques 'ALTO' a menos que el pliego mencione requerimientos unívocos.\n\nAnaliza esta contratación pública y responde con el JSON del veredicto.",
+    "respuesta": {
+      "decision": "NO",
+      "nivel": "NA",
+      "producto_recomendado": null,
+      "justificacion": "Renovacion M365 + Adobe Cloud = doble commodity monomarca (2026-10-23)"
+    }
+  },
+  {
+    "ocid": "ocds-5wno2w-SIE-GADMAZ-2026-019-2422",
+    "nivel_ejemplo": "NO",
+    "prompt": "Evalúa el siguiente proceso SERCOP.\n\n=== DATOS DE LA CONTRATACIÓN PÚBLICA (SERCOP) ===\nOCID: ocds-5wno2w-SIE-GADMAZ-2026-019-2422\nTítulo: SIE-GADMAZ-2026-019-2422\nDescripción: ADQUISICIÓN DE PAQUETES INFORMÁTICOS BIM Y CAD PARA DISEÑO Y MODELACIÓN PARA LA DIRECCIÓN DE PLANIFICACIÓN\nTipo/Categoría: Subasta Inversa Electrónica\nComprador: GAD MUNICIPAL DE AZOGUES\nMétodo de Contratación: open\nMonto Referencial: 22620.0 USD\n\n=== CANDIDATOS IBM Y AFINIDAD VECTORIAL ===\n1. Producto: Planning Analytics (Similitud Vectorial: 0.6510)\n   Descripción: De los planes a las decisiones con herramientas de planificación y análisis con IA y con tecnología del motor IBM® TM1\n\n2. Producto: ILOG CPLEX Optimizer (Similitud Vectorial: 0.6100)\n   Descripción: Produzca decisiones precisas y lógicas para problemas de planificación y asignación de recursos utilizando los potentes algoritmos de IBM ILOG CPLEX Optimizer.\n\n3. Producto: Application Discovery and Delivery Intelligence (Similitud Vectorial: 0.5990)\n   Descripción: Software para analizar y visualizar aplicaciones, datos y trabajos en z/OS.\n\n=== DIAGNÓSTICO DE SEÑAL VECTORIAL ===\n- Puntaje Máximo: 0.6510 | Dispersión (Delta Top1 - Top3): 0.0520\n\nAnaliza esta contratación pública y responde con el JSON del veredicto.",
+    "respuesta": {
+      "decision": "NO",
+      "nivel": "NA",
+      "producto_recomendado": null,
+      "justificacion": "BIM/CAD de competidor (2026-10-23)"
+    }
+  },
+  {
+    "ocid": "ocds-5wno2w-RE-PU-UTMACH-2026-002-60177",
+    "nivel_ejemplo": "NO",
+    "prompt": "Evalúa el siguiente proceso SERCOP.\n\n=== DATOS DE LA CONTRATACIÓN PÚBLICA (SERCOP) ===\nOCID: ocds-5wno2w-RE-PU-UTMACH-2026-002-60177\nTítulo: RE-PU-UTMACH-2026-002-60177\nDescripción: SUSCRIPCIÓN DE LA BASE DE DATOS WEB OF SCIENCE PARA LA BIBLIOTECA GENERAL DE LA UNIVERSIDAD TÉCNICA DE MACHALA\nTipo/Categoría: Bienes y Servicios únicos\nComprador: Universidad Tecnica de Machala\nMétodo de Contratación: direct\nMonto Referencial: 22815.0 USD\n\n=== CANDIDATOS IBM Y AFINIDAD VECTORIAL ===\n1. Producto: watsonx.data (Similitud Vectorial: 0.6510)\n   Descripción: Watsonx.data es un lakehouse de datos híbrido y abierto que unifica el acceso a datos y automatiza el gobierno para sacar el máximo partido a sus datos para IA y BI.\n\n2. Producto: Cloud Databases for Elasticsearch (Similitud Vectorial: 0.6350)\n   Descripción: IBM Cloud Databases for Elasticsearch es una oferta de servicio de Elasticsearch totalmente gestionada en IBM Cloud. Combina la flexibilidad de un motor de búsqueda semántica con la potencia de indexación de una base de datos de documentos JSON y las capacidades de Vector DB a través de una serie de características integradas.\n\n3. Producto: watsonx.data intelligence (Similitud Vectorial: 0.6170)\n   Descripción: IBM watsonx.data intelligence aprovecha los metadatos para descubrir, seleccionar y gobernar activos de datos en entornos de nube pública, privada, híbrida o local.\n\n=== DIAGNÓSTICO DE SEÑAL VECTORIAL ===\n- Puntaje Máximo: 0.6510 | Dispersión (Delta Top1 - Top3): 0.0340\n- ALERTA DE RUIDO SEMÁNTICO: Los puntajes están muy apretados (< 0.035 de diferencia) y por debajo de 0.72. NO califiques 'ALTO' a menos que el pliego mencione requerimientos unívocos.\n\nAnaliza esta contratación pública y responde con el JSON del veredicto.",
+    "respuesta": {
+      "decision": "NO",
+      "nivel": "NA",
+      "producto_recomendado": null,
+      "justificacion": "Web of Science = contenido propietario Clarivate (patron v1) (2026-10-23)"
+    }
+  },
+  {
+    "ocid": "ocds-5wno2w-SIE-GADMQ-2026-009-2453",
+    "nivel_ejemplo": "NO",
+    "prompt": "Evalúa el siguiente proceso SERCOP.\n\n=== DATOS DE LA CONTRATACIÓN PÚBLICA (SERCOP) ===\nOCID: ocds-5wno2w-SIE-GADMQ-2026-009-2453\nTítulo: SIE-GADMQ-2026-009-2453\nDescripción: CONTRATACIÓN DEL SERVICIO DE RENOVACIÓN DE LICENCIAS DE FIREWALL Y ANTIVIRUS SOPHOS PARA LA PROTECCIÓN DE LA INFRAESTRUCTURA TECNOLÓGICA DEL GOBIERNO AUTÓNOMO DESCENTRALIZADO MUNICIPAL DEL CANTÓN QUEVEDO\nTipo/Categoría: Subasta Inversa Electrónica\nComprador: GOBIERNO AUTONOMO DESCENTRALIZADO MUNICIPAL DEL CANTON QUEVEDO\nMétodo de Contratación: open\n\n=== CANDIDATOS IBM Y AFINIDAD VECTORIAL ===\n1. Producto: Trusteer (Similitud Vectorial: 0.6370)\n   Descripción: Autenticar clientes, detectar fraudes y proteger contra usuarios malintencionados en todos los canales\n\n2. Producto: Vault (Similitud Vectorial: 0.6340)\n   Descripción: Standardize secrets management with identity-based security from Vault that lets you centrally discover, store, access, rotate, and distribute dynamic secrets.\n\n3. Producto: Cloud Cyber Recovery (Similitud Vectorial: 0.6150)\n   Descripción: Las soluciones de ciberrecuperación de IBM ofrecen una infraestructura resiliente, sencilla y aislada con air gaps, recuperación ante desastres y un plan de continuidad del negocio frente al ransomware.\n\n=== DIAGNÓSTICO DE SEÑAL VECTORIAL ===\n- Puntaje Máximo: 0.6370 | Dispersión (Delta Top1 - Top3): 0.0220\n- ALERTA DE RUIDO SEMÁNTICO: Los puntajes están muy apretados (< 0.035 de diferencia) y por debajo de 0.72. NO califiques 'ALTO' a menos que el pliego mencione requerimientos unívocos.\n\nAnaliza esta contratación pública y responde con el JSON del veredicto.",
+    "respuesta": {
+      "decision": "NO",
+      "nivel": "NA",
+      "producto_recomendado": null,
+      "justificacion": "Firewall + antivirus Sophos: marca + appliance + renovacion (2026-10-23)"
+    }
+  },
+  {
+    "ocid": "ocds-5wno2w-CPC-GADMC--2026-003-35903",
+    "nivel_ejemplo": "NO",
+    "prompt": "Evalúa el siguiente proceso SERCOP.\n\n=== DATOS DE LA CONTRATACIÓN PÚBLICA (SERCOP) ===\nOCID: ocds-5wno2w-CPC-GADMC--2026-003-35903\nTítulo: CPC-GADMC--2026-003-35903\nDescripción: CONSULTORÍA PARA EL SERVICIO DE DIGITALIZACIÓN, DEPURACIÓN E INDEXACIÓN DE LOS DATOS Y ARCHIVOS FÍSICOS DEL REGISTRO DE LA PROPIEDAD Y MERCANTIL DEL CANTON CATAMAYO, MEDIANTE UN SISTEMA DESARROLLADO CON PLATAFORMA DE PAGOS POR CANALES ELECTRÓNICOS YSERVICIOS DIGITALIZADOS, PARA LA OFICINA DE AVALÚOS Y CATASTROS DEL GAD MUNICIPAL DEL CANTÓN CATAMAYO\nTipo/Categoría: Concurso publico\nComprador: GOBIERNO AUTONOMO DESCENTRALIZADO MUNICIPAL DE CATAMAYO\nMétodo de Contratación: open\nMonto Referencial: 135000.0 USD\n\n=== CANDIDATOS IBM Y AFINIDAD VECTORIAL ===\n1. Producto: Digital Asset Haven (Similitud Vectorial: 0.5940)\n   Descripción: IBM Digital Asset Haven proporciona una base segura y escalable que ofrece custodia, transacciones, gobierno y liquidación de recursos digitales a través de múltiples blockchains.\n\n2. Producto: watsonx.data intelligence (Similitud Vectorial: 0.5940)\n   Descripción: IBM watsonx.data intelligence aprovecha los metadatos para descubrir, seleccionar y gobernar activos de datos en entornos de nube pública, privada, híbrida o local.\n\n3. Producto: DataPower Gateway (Similitud Vectorial: 0.5890)\n   Descripción: IBM DataPower Gateway es una plataforma de integración y seguridad diseñada para cargas de trabajo en la nube, móviles, web, API, SOA y B2B.\n\n=== DIAGNÓSTICO DE SEÑAL VECTORIAL ===\n- Puntaje Máximo: 0.5940 | Dispersión (Delta Top1 - Top3): 0.0050\n- ALERTA DE RUIDO SEMÁNTICO: Los puntajes están muy apretados (< 0.035 de diferencia) y por debajo de 0.72. NO califiques 'ALTO' a menos que el pliego mencione requerimientos unívocos.\n\nAnaliza esta contratación pública y responde con el JSON del veredicto.",
+    "respuesta": {
+      "decision": "NO",
+      "nivel": "NA",
+      "producto_recomendado": null,
+      "justificacion": "Consultoria de digitalizacion = servicio operativo, patron CAPUIL de v1 (2026-10-23)"
+    }
+  }
+]

@@ -63,4 +63,39 @@ public class RecomendacionEntity {
 
     @Column(name = "fecha_generacion", nullable = false)
     private OffsetDateTime fechaGeneracion;
+
+    /**
+     * Origen del registro (Fase 1, tarea 1.1). Guardado como String (VARCHAR) para que el
+     * CHECK de la migración pueda validar los valores y un despliegue viejo no rompa ante un
+     * valor nuevo. null solo en filas legadas previas a la Fase 1.
+     */
+    @Column(name = "estado", length = 32)
+    private String estado;
+
+    @Column(name = "fecha_evaluacion")
+    private OffsetDateTime fechaEvaluacion;
+
+    /**
+     * Firma de la información del proceso al abstenerse (REQUIERE_REVISION, Opción C):
+     * hash de título+descripción para detectar si llegó información nueva antes de re-evaluar.
+     * null en filas que no están (o nunca estuvieron) en la cola de revisión.
+     */
+    @Column(name = "firma_info_revision", length = 64)
+    private String firmaInfoRevision;
+
+    /**
+     * Fallos seguidos de evaluación LLM (política de reintento, 2026-10-24). Se incrementa al
+     * persistir ERROR_EVALUACION y vuelve a 0 con cualquier veredicto. {@code >= 6} = caso
+     * estancado, excluido de la cola de reintentos hasta revisión manual.
+     * Ver {@code application.util.PoliticaReintento}.
+     */
+    @Column(name = "intentos_reintento", nullable = false)
+    private Integer intentosReintento;
+
+    /**
+     * Próximo intento de evaluación programado (backoff 5m→15m→1h→4h→8h). null = sin
+     * reprogramación: o bien no hay fallo, o bien el caso agotó sus intentos.
+     */
+    @Column(name = "proximo_intento_at")
+    private OffsetDateTime proximoIntentoAt;
 }

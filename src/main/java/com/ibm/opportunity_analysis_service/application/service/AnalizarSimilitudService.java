@@ -2,10 +2,13 @@ package com.ibm.opportunity_analysis_service.application.service;
 
 import com.ibm.opportunity_analysis_service.application.port.out.EmbeddingCandidatoPort;
 import com.ibm.opportunity_analysis_service.application.port.out.EmbeddingProductoIbmPersistencePort;
+import com.ibm.opportunity_analysis_service.application.port.out.RecomendacionPersistencePort;
 import com.ibm.opportunity_analysis_service.application.port.out.SimilitudPersistencePort;
 import com.ibm.opportunity_analysis_service.application.service.config.ConfiguracionGranite;
 import com.ibm.opportunity_analysis_service.domain.entity.EmbeddingCandidatoTecnologico;
+import com.ibm.opportunity_analysis_service.domain.entity.EstadoRecomendacion;
 import com.ibm.opportunity_analysis_service.domain.entity.ProcesoSercop;
+import com.ibm.opportunity_analysis_service.domain.entity.RecomendacionOportunidad;
 import com.ibm.opportunity_analysis_service.domain.entity.ResultadoSimilitudIbm;
 import com.ibm.opportunity_analysis_service.domain.entity.SimilitudProcesoProducto;
 import lombok.extern.slf4j.Slf4j;
@@ -27,6 +30,7 @@ public class AnalizarSimilitudService {
     private final EmbeddingCandidatoPort embeddingCandidatoPort;
     private final EmbeddingProductoIbmPersistencePort embeddingProductoIbmPersistencePort;
     private final SimilitudPersistencePort similitudPersistencePort;
+    private final RecomendacionPersistencePort recomendacionPersistencePort;
     private final ValidadorAlcanceIbmService validadorAlcanceIbmService;
     private final ConfiguracionGranite configuracionGranite;
 
@@ -38,12 +42,14 @@ public class AnalizarSimilitudService {
             EmbeddingCandidatoPort embeddingCandidatoPort,
             EmbeddingProductoIbmPersistencePort embeddingProductoIbmPersistencePort,
             SimilitudPersistencePort similitudPersistencePort,
+            RecomendacionPersistencePort recomendacionPersistencePort,
             ValidadorAlcanceIbmService validadorAlcanceIbmService,
             ConfiguracionGranite configuracionGranite) {
         this.obtenerProcesosSercopService = obtenerProcesosSercopService;
         this.embeddingCandidatoPort = embeddingCandidatoPort;
         this.embeddingProductoIbmPersistencePort = embeddingProductoIbmPersistencePort;
         this.similitudPersistencePort = similitudPersistencePort;
+        this.recomendacionPersistencePort = recomendacionPersistencePort;
         this.validadorAlcanceIbmService = validadorAlcanceIbmService;
         this.configuracionGranite = configuracionGranite;
     }
@@ -65,6 +71,10 @@ public class AnalizarSimilitudService {
             var validacion = validadorAlcanceIbmService.validar(proceso);
             if (!validacion.isEsElegible()) {
                 log.debug("Proceso {} no elegible: {}", proceso.getOcid(), validacion.getMotivoDescarte());
+                // Tarea 1.4 (H4): antes solo hacía `continue` y las similitudes huérfanas seguían
+                // sosteniendo la preselección. Ahora se materializa el descarte: se borran las
+                // similitudes y la recomendación pasa a DESCARTADA_ALCANCE con su motivo real.
+                descartarSiHabiaRastro(proceso, validacion.getMotivoDescarte());
                 continue;
             }
 
@@ -115,6 +125,43 @@ public class AnalizarSimilitudService {
     }
 
     /**
+     * Tarea 1.4 (H4): materializa el descarte de un proceso que dejó de ser elegible.
+     * Borra sus similitudes huérfanas y, si tenía recomendación, la marca DESCARTADA_ALCANCE
+     * con el motivo real del validador. Si no tenía ni similitudes ni recomendación, no hace nada
+     * (no conviene crear filas de descarte para los ~300 procesos que nunca fueron candidatos).
+     */
+    private void descartarSiHabiaRastro(ProcesoSercop proceso, String motivo) {
+        boolean teniaSimilitudes = !similitudPersistencePort.buscarPorOcid(proceso.getOcid()).isEmpty();
+        boolean teniaRecomendacion = recomendacionPersistencePort.buscarPorOcid(proceso.getOcid()).isPresent();
+
+        if (!teniaSimilitudes && !teniaRecomendacion) {
+            return;
+        }
+
+        if (teniaSimilitudes) {
+            int borradas = similitudPersistencePort.eliminarPorOcid(proceso.getOcid());
+            log.info("Similitudes huérfanas eliminadas para OCID {} ({} filas): proceso no elegible.",
+                    proceso.getOcid(), borradas);
+        }
+
+        RecomendacionOportunidad descartada = new RecomendacionOportunidad();
+        descartada.setOcid(proceso.getOcid());
+        descartada.setTitulo(proceso.getTitulo() != null ? proceso.getTitulo() : "Sin título");
+        descartada.setDescripcion(proceso.getDescripcion() != null ? proceso.getDescripcion() : "");
+        descartada.setComprador(proceso.getComprador() != null ? proceso.getComprador() : "Entidad no especificada");
+        descartada.setMontoReferencial(proceso.getMonto() != null ? proceso.getMonto() : proceso.getPresupuesto());
+        descartada.setEsOportunidadIbm(false);
+        descartada.setProductoRecomendado(null);
+        descartada.setNivelConfianza("N/A");
+        descartada.setJustificacion(motivo);
+        descartada.setEstrategiaComercial("Descartado: El requerimiento se encuentra fuera del alcance del portafolio tecnológico corporativo de IBM.");
+        descartada.setEstado(EstadoRecomendacion.DESCARTADA_ALCANCE);
+        descartada.setFechaEvaluacion(java.time.OffsetDateTime.now());
+        recomendacionPersistencePort.guardarOActualizar(descartada, 0.0);
+        log.info("Recomendación OCID {} marcada DESCARTADA_ALCANCE: {}", proceso.getOcid(), motivo);
+    }
+
+    /**
      * Normaliza el monto referencial del proceso a un bonus entre 0 y 0.15.
      * Un proceso de 10M USD o más obtiene el bonus máximo.
      */
@@ -130,6 +177,15 @@ public class AnalizarSimilitudService {
     /**
      * Bonus por método de contratación: licitación abierta > contrato directo.
      * Las licitaciones abiertas son más competitivas y relevantes para IBM.
+     *
+     * Tarea 1.10 (decisión del usuario 2026-10-22): la contratación `direct` <b>no es cortante</b>
+     * —no descarta la oportunidad ni resta nivel de confianza—, solo baja su posición en el
+     * ranking. Es coherente con el gold set: 7 de las 11 oportunidades reales son `direct`,
+     * incluidas las 3 ALTO (U. Cuenca, UTN, UEMPRENDE).
+     *
+     * Medido 2026-10-21 sobre los 381 procesos: solo existen `open` (290) y `direct` (91), así
+     * que la rama `default -> 0.05` jamás se ejecuta con este feed. La tabla configurable que
+     * sustituya este switch es la tarea 2.2 (Fase 2); aquí no se mueven los valores.
      */
     private double calcularBonusMetodo(ProcesoSercop proceso) {
         if (proceso.getMetodo() == null) return 0.0;

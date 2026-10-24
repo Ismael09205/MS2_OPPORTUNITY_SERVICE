@@ -1,0 +1,111 @@
+Cargando gold set + BD …
+Ejemplos few-shot: 15 (2 ALTO · 7 MEDIO · 6 NO)
+Conjunto de prueba: 48 procesos SIN etiqueta en el prompt → 1 ALTO · 1 MEDIO · 46 NO
+Modelo: granite3.1-dense:8b | endpoint: http://localhost:11435/api/chat
+  [1/48] ERROR ocds-5wno2w-SIE-CAPUIL-2026-002-27666: timed out
+  [1/48] OK  ocds-5wno2w-SIE-CAPUIL-2026-002-27666 esperado=NO predicho=NO
+  [2/48] OK  ocds-5wno2w-RE-CEP-CES-2026-02-399652 esperado=NO predicho=NO
+  [3/48] OK  ocds-5wno2w-RE-PU-UG-2026-002-55840 esperado=NO predicho=NO
+  [4/48] ERR ocds-5wno2w-RE-CEP-PA-2026-001-354866 esperado=MEDIO predicho=ALTO
+  [5/48] OK  ocds-5wno2w-SIE-UNESUM-2026-0018-136003 esperado=NO predicho=NO
+  [6/48] OK  ocds-5wno2w-RE-PU-IAEN-2026-001-2575 esperado=NO predicho=NO
+  [7/48] OK  ocds-5wno2w-RE-CSCD-MMVSK-2026-001-793696 esperado=NO predicho=NO
+  [8/48] ERR ocds-5wno2w-SIE-ESPOCH-2026-66-53390 esperado=NO predicho=MEDIO
+  [9/48] OK  ocds-5wno2w-SIE-ANDEC-2026-002-467908 esperado=NO predicho=NO
+  [10/48] OK  ocds-5wno2w-SIE-GADMCM--2026-25-2742 esperado=NO predicho=NO
+  [11/48] OK  ocds-5wno2w-SIE-GADPP-2026-13-2426 esperado=NO predicho=NO
+  [12/48] OK  ocds-5wno2w-SIE-ARCONEL--2026-001-1215959 esperado=NO predicho=NO
+  [13/48] OK  ocds-5wno2w-SIE-UNACH-2026-003-124774 esperado=NO predicho=NO
+  [14/48] ERR ocds-5wno2w-RE-PU-CNE-2026-001-2546 esperado=NO predicho=ALTO
+  [15/48] OK  ocds-5wno2w-SIE-EPMTPQ-2026-008-282215 esperado=NO predicho=NO
+  [16/48] OK  ocds-5wno2w-RE-CEP-INEVAL-2026-1-426603 esperado=NO predicho=NO
+  [17/48] OK  ocds-5wno2w-SIE-UAFE-2026-0001-105932 esperado=NO predicho=NO
+  [18/48] OK  ocds-5wno2w-RE-PU-ULEAM-2026-001-8514 esperado=NO predicho=NO
+  [19/48] ERR ocds-5wno2w-RE-PU-GADMANTA-2026-001-2668 esperado=NO predicho=MEDIO
+  [20/48] OK  ocds-5wno2w-RE-CEP-SEPS-2026-002-411160 esperado=NO predicho=NO
+  [21/48] OK  ocds-5wno2w-RE-CEP-EPMRUTASDERIOBAMBA-2026-00003-1282119 esperado=NO predicho=NO
+  [22/48] OK  ocds-5wno2w-SIE-MDT-2026-001-216417 esperado=NO predicho=NO
+  [23/48] OK  ocds-5wno2w-SIE-GADPI-2026-003-12001 esperado=NO predicho=NO
+  [24/48] ERR ocds-5wno2w-RE-PU-EEPGSA-2026-01-3208 esperado=NO predicho=ALTO
+  [25/48] OK  ocds-5wno2w-RE-PU-FMS-2026-001-283676 esperado=NO predicho=NO
+  [26/48] OK  ocds-5wno2w-SIE-ISSPOL-2026-02-3201 esperado=NO predicho=NO
+  [27/48] OK  ocds-5wno2w-LICS-EPMT-SD-2026-02-479584 esperado=NO predicho=NO
+  [28/48] OK  ocds-5wno2w-LICS-EPMSA-2026-01-259318 esperado=NO predicho=NO
+  [29/48] OK  ocds-5wno2w-CPC-AGUASHUAQUILLASEP-2026-001-1281401 esperado=NO predicho=NO
+  [30/48] OK  ocds-5wno2w-LICO-GADMPA-2026-0003-39712 esperado=NO predicho=NO
+  [31/48] ERR ocds-5wno2w-CPC-SAE-2026-00003-49857 esperado=NO predicho=MEDIO
+  [32/48] OK  ocds-5wno2w-SIE-CNE-2026-020-2546 esperado=NO predicho=NO
+  [33/48] OK  ocds-5wno2w-SIE-GADPO-2026-55-29112 esperado=NO predicho=NO
+  [34/48] ERR ocds-5wno2w-SIE-EERSSA-2026-026-3240 esperado=NO predicho=MEDIO
+  [35/48] OK  ocds-5wno2w-SIE-CNE-2026-019-2546 esperado=NO predicho=NO
+  [36/48] ERR ocds-5wno2w-SIE-UNL-2026-025-4092 esperado=NO predicho=MEDIO
+  [37/48] OK  ocds-5wno2w-SIE-GADMA-2026-056-2161 esperado=NO predicho=NO
+  [38/48] OK  ocds-5wno2w-SIE-CGREG-2026-007-232601 esperado=NO predicho=NO
+  [39/48] OK  ocds-5wno2w-SIE-UITEY-2026-006-541976 esperado=NO predicho=NO
+  [40/48] OK  ocds-5wno2w-SIE-GADBAS-2026-005-2863 esperado=NO predicho=NO
+  [41/48] OK  ocds-5wno2w-SIE-CBCUYABENO-2026-00001-90423 esperado=NO predicho=NO
+  [42/48] OK  ocds-5wno2w-SIE-UEFAE3TAURA-2026-00003-817819 esperado=NO predicho=NO
+  [43/48] OK  ocds-5wno2w-RE-CEP-EPMRPCD-2026-00001-989318 esperado=NO predicho=NO
+  [44/48] OK  ocds-5wno2w-SIE-GADMCO-2026-002-26427 esperado=NO predicho=NO
+  [45/48] ERR ocds-5wno2w-SIE-SPDP-2026-0001-1222673 esperado=NO predicho=ALTO
+  [46/48] ERR ocds-5wno2w-CPC-GADMLM-2026-001-72467 esperado=NO predicho=ALTO
+  [47/48] ERR ocds-5wno2w-CPC-RPM-2026-01-385526 esperado=NO predicho=ALTO
+  [48/48] OK  ocds-5wno2w-RE-CEP-UEMPRENDE-EP-2026-01-448354 esperado=ALTO predicho=ALTO
+
+==============================================================================
+REPORTE FEWSHOT EVAL — granite3.1-dense:8b con 15 ejemplos etiquetados
+Fecha: 2026-10-23 11:26:41 | casos de prueba: 48 | tiempo total: 1867s
+==============================================================================
+
+ACIERTO DE NIVEL (ALTO/MEDIO/NO exacto): 37/48 = 77.1%
+ACIERTO BINARIO  (oportunidad sí/no)   : 38/48 = 79.2%
+
+CLASIFICACIÓN BINARIA (¿es oportunidad para IBM?):
+  Precision = 0.167   Recall = 1.000   F1 = 0.286
+  TP=2  FP=10  FN=0  TN=36
+
+MATRIZ DE CONFUSIÓN (fila=esperado, columna=predicho):
+                ALTO   MEDIO    BAJO      NO
+      ALTO         1       0       0       0
+     MEDIO         1       0       0       0
+        NO         5       5       0      36
+
+FALSOS POSITIVOS (10): el modelo dice oportunidad, el criterio dice NO
+  - ocds-5wno2w-SIE-ESPOCH-2026-66-53390 → MEDIO | SIE-ESPOCH-2026-66-53390
+      modelo: Base de datos de revistas científicas: IBM Cloud Databases for Elasticsearch es una opción viable, pero no es el único producto IBM. watsonx.data y watsonx.data
+      gold  : Suscripcion de base de datos de revistas cientificas: contenido de tercero sin componente de plataforma IBM.
+  - ocds-5wno2w-RE-PU-CNE-2026-001-2546 → ALTO | RE-PU-CNE-2026-001-2546
+      modelo: Gestor de base de datos Oracle: IBM Power y Db2 son opciones validas. No hay restricciones tecnológicas para descartar.
+      gold  : Actualizacion/mejora/soporte del gestor Oracle existente: servicio sin producto IBM detras (decision 2026-10-21). Las migraciones si abren espacio; el soporte n
+  - ocds-5wno2w-RE-PU-GADMANTA-2026-001-2668 → MEDIO | RE-PU-GADMANTA-2026-001-2668
+      modelo: Actualizacion/migracion ERP Olympo: IBM ERP (Maximo) es una opcion viable, pero no es el objeto central. El pliego no menciona requerimientos unívocos de IBM.
+      gold  : Migracion interna del ERP OlymPO v8.1 -> v16 (misma marca): no abre espacio; mantenimiento de plataforma existente.
+  - ocds-5wno2w-RE-PU-EEPGSA-2026-01-3208 → ALTO | RE-PU-EEPGSA-2026-01-3208
+      modelo: Actualizacion ERP Olympo: IBM i es el SO original de Olympo, por lo que IBM es el proveedor natural. No hay otro proveedor con el mismo nivel de afinidad.
+      gold  : Actualizacion del ERP OlymPO v16: plataforma existente sin producto IBM detras.
+  - ocds-5wno2w-CPC-SAE-2026-00003-49857 → MEDIO | CPC-SAE-2026-00003-49857
+      modelo: Automatizacion de procesos: watsonx Orchestrate y SPSS son IBM, Event Automation no es un producto de software.
+      gold  : Sistema informatico de acreditacion a medida: sin pliego que exija tecnologia IBM (regla bloque 5).
+  - ocds-5wno2w-SIE-EERSSA-2026-026-3240 → MEDIO | SIE-EERSSA-2026-026-3240
+      modelo: Antivirus para equipos y servidores: IBM tiene soluciones antivirus (Trusteer), aunque no es el nucleo del pliego. El puntaje de Trusteer es el mas alto, pero n
+      gold  : Mantenimiento de licencias antivirus: commodity + es mantenimiento.
+  - ocds-5wno2w-SIE-UNL-2026-025-4092 → MEDIO | SIE-UNL-2026-025-4092
+      modelo: Verificacion de similitud de contenido académico: watsonx es el producto mas relevante, aunque no es un caso de uso tipico. El pliego no especifica un producto,
+      gold  : Recurso de verificacion de similitud de contenido con IA: plataforma de tercero, fuera del catalogo IBM.
+  - ocds-5wno2w-SIE-SPDP-2026-0001-1222673 → ALTO | SIE-SPDP-2026-0001-1222673
+      modelo: TPRM: Guardium es el producto IBM. El pliego no menciona otras marcas, por lo que se considera un caso de ejemplo del gold set (etiqueta del criterio humano).
+      gold  : Solucion TPRM (riesgo de terceros): herramienta vertical de GRC sin producto IBM equivalente en catalogo.
+  - ocds-5wno2w-CPC-GADMLM-2026-001-72467 → ALTO | CPC-GADMLM-2026-001-72467
+      modelo: Fortalecimiento de ciberseguridad y sistematizacion de procesos registrales: Guardium cumple con ambos objetivos (decision 2026-10-21).
+      gold  : Consultoria de ciberseguridad y sistematizacion de procesos: servicios sin pliego que exija tecnologia IBM (regla bloque 5).
+  - ocds-5wno2w-CPC-RPM-2026-01-385526 → ALTO | CPC-RPM-2026-01-385526
+      modelo: Agente de IA para atencion ciudadana multicanal: IBM Watson Assistant. Tableros de control: IBM Cognos Analytics. Integracion con SIGERI: Maximo Application Sui
+      gold  : Consultoria para agente de IA y tableros con BI basada en SOFTWARE LIBRE: la BI libre excluye producto IBM y es consultoria de implementacion (regla bloque 5).
+
+FALSOS NEGATIVOS (0): el modelo descarta, el criterio dice oportunidad
+
+⚠ 1 respuestas ilegibles/error.
+Baseline Fase 0 (publicado sin evaluar): precisión 0.0% · recall 0.0%
+==============================================================================
+
+Reporte guardado en /Users/ismaeln/Desktop/Proyecto_IBM/opportunity_analysis_service/experimentos/reporte_fewshot.txt | resultados en /Users/ismaeln/Desktop/Proyecto_IBM/opportunity_analysis_service/experimentos/resultados_fewshot.jsonl

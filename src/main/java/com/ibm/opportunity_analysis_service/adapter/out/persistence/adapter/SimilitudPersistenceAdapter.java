@@ -50,8 +50,25 @@ public class SimilitudPersistenceAdapter implements SimilitudPersistencePort {
     }
 
     @Override
+    public int eliminarPorOcid(String ocid) {
+        int eliminadas = repository.findByOcid(ocid).size();
+        repository.deleteByOcid(ocid);
+        return eliminadas;
+    }
+
+    @Override
     public List<String> obtenerSiguientesAEvaluar(int limit) {
         return repository.findSiguientesAEvaluar(limit);
+    }
+
+    @Override
+    public List<String> obtenerPendientesDeEvaluacion(int limit) {
+        return repository.findPendientesDeEvaluacion(limit);
+    }
+
+    @Override
+    public long contarPendientesDeEvaluacion() {
+        return repository.countPendientesDeEvaluacion();
     }
 
     @Override

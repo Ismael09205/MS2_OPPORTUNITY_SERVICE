@@ -1,6 +1,7 @@
 package com.ibm.opportunity_analysis_service.adapter.in;
 
 import com.ibm.opportunity_analysis_service.adapter.in.dto.EstadoPipelineDto;
+import com.ibm.opportunity_analysis_service.adapter.in.dto.PaginaRecomendacionesDto;
 import com.ibm.opportunity_analysis_service.adapter.in.dto.ResultadoSincronizacionDto;
 import com.ibm.opportunity_analysis_service.application.service.AnalizarSimilitudService;
 import com.ibm.opportunity_analysis_service.application.service.CargarCatalogoIbmService;
@@ -123,11 +124,56 @@ public class AnalysisController {
         );
     }
 
+    /**
+     * Tarea 1.7 (decisión A): solo recomendaciones con estado=EVALUADA. Las preselecciones
+     * vectoriales se exponen en {@code /recomendaciones/pendientes}. `pendientesCount` explica
+     * por qué la lista puede venir corta (tarea 1.8).
+     */
     @GetMapping("/recomendaciones")
-    public List<RecomendacionOportunidad> obtenerOportunidadesIbm(
+    public PaginaRecomendacionesDto obtenerOportunidadesIbm(
             @RequestParam(defaultValue = "6") int limit,
             @RequestParam(defaultValue = "0") int offset) {
         return recomendarOportunidadesService.obtenerOportunidadesIbm(limit, offset);
+    }
+
+    /**
+     * Tarea 1.7 (decisión A): preselecciones vectoriales y errores de evaluación pendientes de
+     * juicio profundo. Nunca deben presentarse como veredicto al usuario.
+     */
+    @GetMapping("/recomendaciones/pendientes")
+    public List<RecomendacionOportunidad> obtenerRecomendacionesPendientes(
+            @RequestParam(defaultValue = "6") int limit,
+            @RequestParam(defaultValue = "0") int offset) {
+        return recomendarOportunidadesService.obtenerPendientes(limit, offset);
+    }
+
+    /**
+     * Cola humana de revisión (plan REVISAR): casos REQUIERE_REVISION con la causa del LLM,
+     * ordenados por abstención más antigua primero. Base de la herramienta MCP resolver_revision.
+     */
+    @GetMapping("/recomendaciones/revisar")
+    public List<RecomendacionOportunidad> obtenerColaRevision(
+            @RequestParam(defaultValue = "20") int limit,
+            @RequestParam(defaultValue = "0") int offset) {
+        return recomendarOportunidadesService.obtenerColaRevision(limit, offset);
+    }
+
+    /**
+     * Resolución humana de un caso de la cola: decision=SI (requiere nivel ALTO|MEDIO, queda
+     * EVALUADA) o decision=NO (queda DESCARTADA_ALCANCE). 404 si el OCID no está en la cola.
+     */
+    @PostMapping("/recomendaciones/revisar/resolver")
+    public ResponseEntity<Object> resolverRevision(
+            @RequestParam String ocid,
+            @RequestParam String decision,
+            @RequestParam(required = false) String nivel) {
+        try {
+            return recomendarOportunidadesService.resolverRevision(ocid, decision, nivel)
+                    .<ResponseEntity<Object>>map(ResponseEntity::ok)
+                    .orElseGet(() -> ResponseEntity.notFound().build());
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+        }
     }
 
     @PostMapping("/recomendaciones/precalcular")

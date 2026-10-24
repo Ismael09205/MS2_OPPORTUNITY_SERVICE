@@ -1,0 +1,58 @@
+==============================================================================
+REPORTE CORRIDA 6 — gold set v2 CONGELADO | reglas + LLM (prompt C4) | split 20/80 | seed=42
+Fecha: 2026-10-23 23:43:35 | prueba: 46 casos | 883s
+==============================================================================
+
+ACIERTO DE CLASE EXACTA (incluye REVISAR): 38/46 = 82.6%
+
+METRICAS DE PRODUCTO:
+  Precision de SI (dice oportunidad -> lo es)      : 1.000  (TP=1, FP=0)
+  Fuga de positivos (dice NO, es oportunidad)      : 1   <- error grave
+  Captura por cola (positivo -> REVISAR, aceptable): 1
+  Costo de revision (NO -> REVISAR, cola inutil)   : 5
+  Revisar bien capturado (gold REVISAR -> REVISAR) : 2/3
+  Acierto de NO (descartes correctos)              : 35/40
+    - por regla (sin LLM)                          : 12/12 (fugas por regla: 0)
+    - por LLM                                      : 23/28
+  Tasa total de REVISAR predecida                  : 8/46 = 17.4%
+
+MATRIZ (fila=gold, columna=prediccion):
+                   ALTO      MEDIO    REVISAR         NOSI_SIN_NIVEL      ERROR   INVALIDA
+      ALTO            0          0          1          0          0          0          0
+     MEDIO            0          1          0          1          0          0          0
+   REVISAR            0          0          2          1          0          0          0
+        NO            0          0          5         35          0          0          0
+
+FALSOS POSITIVOS (NO -> ALTO/MEDIO) (0):
+
+FUGAS (positivo -> NO) (1):
+  - ocds-5wno2w-SIE-EMGIRS-2026-036-325307 | gold=MEDIO pred=NO | SIE-EMGIRS-2026-036-325307
+      modelo: Renovación de equipos de seguridad perimetral + acceso inalámbrico = marca + hardware + renovación (2026-10-23)
+      gold  : Mixto: seguridad perimetral (encaje IBM) + equipamiento (hardware) -> MEDIO (2026-10-23)
+
+POSITIVOS A REVISAR (captura por cola) (1):
+  - ocds-5wno2w-RE-CEP-EPMAPS-2026-001-258814 | gold=ALTO pred=REVISAR | RE-CEP-EPMAPS-2026-001-258814
+      modelo: Revisar: puntaje alto, pero no se especifica plataforma de ciberseguridad empresarial; pliego debería mencionar requerimientos unívocos.
+      gold  : 
+
+COSTO DE REVISION (NO -> REVISAR) (5):
+  - ocds-5wno2w-RE-PU-MDMQ-2026-1401-41357 | gold=NO pred=REVISAR | RE-PU-MDMQ-2026-1401-41357
+      modelo: Arrendamiento de plataforma de gestión de trámites + coactiva = mixto vía partner (2026-10-23)
+      gold  : 
+  - ocds-5wno2w-SIE-UITEY-2026-034-541976 | gold=NO pred=REVISAR | SIE-UITEY-2026-034-541976
+      modelo: Baja similitud, pero requerimientos de IA generativa no se especifican en el pliego (2026-10-23)
+      gold  : Objeto central = contenido de tercero (citas/revistas); IA generativa es componente, no objeto (H18) (2026-10-23)
+  - ocds-5wno2w-CPC-GADMCT-2026-001-54709 | gold=NO pred=REVISAR | CPC-GADMCT-2026-001-54709
+      modelo: Plataforma institucional = servicio operativo, patron CAPUIL de v1 (2026-10-23)
+      gold  : Plataforma institucional a medida, regla bloque 5 (2026-10-23)
+  - ocds-5wno2w-SIE-UEFAE4-2026-003-1195773 | gold=NO pred=REVISAR | SIE-UEFAE4-2026-003-1195773
+      modelo: Ambigüedad en la descripción del proceso. Necesario pliego detallado para decidir.
+      gold  : Plataforma virtual sin detalle = vertical educativa; decidido NO por el usuario (2026-10-23)
+  - ocds-5wno2w-CPC-GADMC-CH-2026-003-39596 | gold=NO pred=REVISAR | CPC-GADMC-CH-2026-003-39596
+      modelo: Consultoria de implementacion + registro de propiedad + catastro + digitalizacion = mixto vía partner (2026-10-23)
+      gold  : Consultoria de desarrollo a medida (regla bloque 5) (2026-10-23)
+
+DIFERENTES DE NIVEL (ALTO<->MEDIO) (0):
+
+Comparativa: C5 (reglas+LLM, sin seed) costo_rev=8 tasa_rev=23.9% | C4 (solo LLM) costo_rev=6 tasa_rev=19.6% acierto_NO=85%
+==============================================================================

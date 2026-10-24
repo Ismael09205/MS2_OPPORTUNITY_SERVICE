@@ -7,6 +7,7 @@ import com.ibm.opportunity_analysis_service.domain.entity.ProcesoSercop;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class ProcesoSercopPersistenceAdapter implements ProcesoSercopPersistencePort {
@@ -25,5 +26,10 @@ public class ProcesoSercopPersistenceAdapter implements ProcesoSercopPersistence
                 .stream()
                 .map(mapper::toDomain)
                 .toList();
+    }
+
+    @Override
+    public Optional<ProcesoSercop> buscarPorOcid(String ocid) {
+        return repository.findByOcidIgnoreCase(ocid).map(mapper::toDomain);
     }
 }

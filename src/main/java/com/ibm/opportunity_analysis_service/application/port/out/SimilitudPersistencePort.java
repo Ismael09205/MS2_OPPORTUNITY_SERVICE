@@ -24,11 +24,30 @@ public interface SimilitudPersistencePort {
     List<SimilitudProcesoProducto> buscarPorOcid(String ocid);
 
     /**
+     * Elimina todas las similitudes persistidas de un OCID (tarea 1.4): cuando el proceso deja de
+     * ser elegible, sus similitudes huérfanas ya no deben sostener una preselección.
+     *
+     * @return número de filas eliminadas
+     */
+    int eliminarPorOcid(String ocid);
+
+    /**
      * Devuelve los siguientes N OCIDs con mayor score compuesto que aun no tienen
      * recomendacion generada. Usado para lazy generation: Granite solo trabaja
      * cuando el usuario pide mas resultados.
      */
     List<String> obtenerSiguientesAEvaluar(int limit);
+
+    /**
+     * Tarea 1.5: OCIDs pendientes de evaluación profunda (sin fila, PRESELECCION_VECTORIAL
+     * o ERROR_EVALUACION). Es la cola que usa el scheduler para reintentar fallos de LLM.
+     */
+    List<String> obtenerPendientesDeEvaluacion(int limit);
+
+    /**
+     * Tarea 1.8: total de OCIDs pendientes de evaluación (para exponer `pendientesCount`).
+     */
+    long contarPendientesDeEvaluacion();
 
     /**
      * Devuelve el total de OCIDs distintos con similitud calculada.

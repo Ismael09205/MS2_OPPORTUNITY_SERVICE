@@ -1,0 +1,118 @@
+Cargando gold set v2 CONGELADO + BD ...
+Ejemplos: 11/57 (~20%) -> {'ALTO': 1, 'MEDIO': 3, 'REVISAR': 1, 'NO': 6}
+Prueba: 46 casos SIN etiqueta (~80%) -> {'NO': 40, 'ALTO': 1, 'MEDIO': 2, 'REVISAR': 3}
+Modelo: granite3.1-dense:8b | endpoint: http://localhost:11435/api/chat
+  [1/46] DIF ocds-5wno2w-RE-PU-MDMQ-2026-1401-41357 esperado=NO predicho=REVISAR
+  [2/46] DIF ocds-5wno2w-RE-PU-MDMQ-2026-3601-41357 esperado=NO predicho=REVISAR
+  [3/46] DIF ocds-5wno2w-RE-CEP-EPMAPS-2026-001-258814 esperado=ALTO predicho=REVISAR
+  [4/46] OK  ocds-5wno2w-SIE-GADM-IBARRA-2026-017-2783 esperado=NO predicho=NO
+  [5/46] OK  ocds-5wno2w-LICB-CNT-2026-6859-236009 esperado=NO predicho=NO
+  [6/46] DIF ocds-5wno2w-SIE-EMGIRS-2026-036-325307 esperado=MEDIO predicho=REVISAR
+  [7/46] OK  ocds-5wno2w-SIE-EPMTMG-2026-008-432955 esperado=NO predicho=NO
+  [8/46] DIF ocds-5wno2w-SIE-CBDMQ-2026-024-2525 esperado=REVISAR predicho=NO
+  [9/46] OK  ocds-5wno2w-RE-CEP-CJ-2026-003-48787 esperado=NO predicho=NO
+  [10/46] OK  ocds-5wno2w-SIE-CBDMQ-2026-032-2525 esperado=NO predicho=NO
+  [11/46] OK  ocds-5wno2w-RE-CEP-BANEC-2026-01-722820 esperado=REVISAR predicho=REVISAR
+  [12/46] OK  ocds-5wno2w-SIE-HGMS-2026-019-899249 esperado=NO predicho=NO
+  [13/46] DIF ocds-5wno2w-SIE-UITEY-2026-034-541976 esperado=NO predicho=REVISAR
+  [14/46] DIF ocds-5wno2w-CPC-GADMCT-2026-001-54709 esperado=NO predicho=REVISAR
+  [15/46] OK  ocds-5wno2w-SIE-EPMMOP-2026-047-741823 esperado=NO predicho=NO
+  [16/46] OK  ocds-5wno2w-SIE-CBDMQ-2026-002-2525 esperado=NO predicho=NO
+  [17/46] DIF ocds-5wno2w-RE-CEP-CGFAE-2026-007-2679 esperado=NO predicho=REVISAR
+  [18/46] OK  ocds-5wno2w-SIE-EPMRPCD-2026-00001-989318 esperado=NO predicho=NO
+  [19/46] OK  ocds-5wno2w-SIE-UTN-2026-07-83514 esperado=NO predicho=NO
+  [20/46] OK  ocds-5wno2w-SIE-UTN-2026-08-83514 esperado=NO predicho=NO
+  [21/46] OK  ocds-5wno2w-SIE-ESPOCHEP-2026-014-975714 esperado=NO predicho=NO
+  [22/46] OK  ocds-5wno2w-LICS-MIMG-2026-001-44856 esperado=NO predicho=NO
+  [23/46] DIF ocds-5wno2w-LICS-GADMCHONE-2026-08-43412 esperado=MEDIO predicho=SI_SIN_NIVEL
+  [24/46] OK  ocds-5wno2w-RE-PU-HFIB-2026-001-29399 esperado=NO predicho=NO
+  [25/46] OK  ocds-5wno2w-SIE-UPEC-2026-006-24327 esperado=NO predicho=NO
+  [26/46] OK  ocds-5wno2w-SIE-CRCG-2026-002-97147 esperado=NO predicho=NO
+  [27/46] OK  ocds-5wno2w-SIE-UE-TLG-2026-001-1212648 esperado=NO predicho=NO
+  [28/46] OK  ocds-5wno2w-SIE-UTC-2026-003-2671 esperado=NO predicho=NO
+  [29/46] OK  ocds-5wno2w-SIE-UEAC-2026-001-1218530 esperado=NO predicho=NO
+  [30/46] DIF ocds-5wno2w-SIE-UEFAE4-2026-003-1195773 esperado=NO predicho=REVISAR
+  [31/46] OK  ocds-5wno2w-SIE-COMIL12CAPTCALLES-2026-003-1236070 esperado=NO predicho=NO
+  [32/46] OK  ocds-5wno2w-SIE-CARCHI-2026-021-2481 esperado=NO predicho=NO
+  [33/46] OK  ocds-5wno2w-SIE-CBDMQ-2026-033-2525 esperado=NO predicho=NO
+  [34/46] OK  ocds-5wno2w-SIE-ESANGU-2026-005-81606 esperado=NO predicho=NO
+  [35/46] OK  ocds-5wno2w-LICS-UEA-2026-003-124342 esperado=NO predicho=NO
+  [36/46] DIF ocds-5wno2w-CPC-IESS-2026-00002-39594 esperado=NO predicho=REVISAR
+  [37/46] OK  ocds-5wno2w-SIE-GADPP-2026-11-2426 esperado=NO predicho=NO
+  [38/46] OK  ocds-5wno2w-LICS-UEA-2026-001-124342 esperado=NO predicho=NO
+  [39/46] OK  ocds-5wno2w-RE-PU-UTMACH-2026-001-60177 esperado=NO predicho=NO
+  [40/46] OK  ocds-5wno2w-RE-PU-ESPAMMFL-2026-01-25643 esperado=NO predicho=NO
+  [41/46] DIF ocds-5wno2w-CPC-GADMC-CH-2026-003-39596 esperado=NO predicho=REVISAR
+  [42/46] OK  ocds-5wno2w-SIE-GAD-MCS-2026-24-57127 esperado=REVISAR predicho=REVISAR
+  [43/46] OK  ocds-5wno2w-SIE-DIGTAH-2026-004-2572 esperado=NO predicho=NO
+  [44/46] OK  ocds-5wno2w-RE-CEP-CJ-2026-002-48787 esperado=NO predicho=NO
+  [45/46] OK  ocds-5wno2w-SIE-HGMS-2026-014-899249 esperado=NO predicho=NO
+  [46/46] OK  ocds-5wno2w-SIE-EMOVEP-2026-024-315805 esperado=NO predicho=NO
+
+==============================================================================
+REPORTE CORRIDA 3 — gold set v2 CONGELADO | 3 vias (SI/NO/REVISAR) | split 20/80
+Fecha: 2026-10-23 13:05:07 | prueba: 46 casos | 1157s
+==============================================================================
+
+ACIERTO DE CLASE EXACTA (incluye REVISAR): 34/46 = 73.9%
+
+METRICAS DE PRODUCTO:
+  Precision de SI (dice oportunidad -> lo es)      : 0.000  (TP=0, FP=0)
+  Fuga de positivos (dice NO, es oportunidad)      : 0   <- error grave
+  Captura por cola (positivo -> REVISAR, aceptable): 2
+  Costo de revision (NO -> REVISAR, cola inutil)   : 8
+  Revisar bien capturado (gold REVISAR -> REVISAR) : 2/4
+  Acierto de NO (descartes correctos)              : 32/40
+  Tasa total de REVISAR predecida                  : 12/46 = 26.1%
+
+MATRIZ (fila=gold, columna=prediccion):
+                   ALTO      MEDIO    REVISAR         NOSI_SIN_NIVEL      ERROR   INVALIDA
+      ALTO            0          0          1          0          0          0          0
+     MEDIO            0          0          1          0          1          0          0
+   REVISAR            0          0          2          1          0          0          0
+        NO            0          0          8         32          0          0          0
+
+FALSOS POSITIVOS (NO -> ALTO/MEDIO) (0):
+
+FUGAS (positivo -> NO) (0):
+
+POSITIVOS A REVISAR (captura por cola) (2):
+  - ocds-5wno2w-RE-CEP-EPMAPS-2026-001-258814 | gold=ALTO pred=REVISAR | RE-CEP-EPMAPS-2026-001-258814
+      modelo: Alta similitud con Guardium, pero no se menciona explícitamente. Revisar con el pliego.
+      gold  : 
+  - ocds-5wno2w-SIE-EMGIRS-2026-036-325307 | gold=MEDIO pred=REVISAR | SIE-EMGIRS-2026-036-325307
+      modelo: Alcance mixto: seguridad perimetral + acceso inalámbrico; revisar pliego para determinar si IBM es el proveedor.
+      gold  : Mixto: seguridad perimetral (encaje IBM) + equipamiento (hardware) -> MEDIO (2026-10-23)
+
+COSTO DE REVISION (NO -> REVISAR) (8):
+  - ocds-5wno2w-RE-PU-MDMQ-2026-1401-41357 | gold=NO pred=REVISAR | RE-PU-MDMQ-2026-1401-41357
+      modelo: Arrendamiento de plataforma de gestión de trámites + recaudo = mixto (2026-10-23)
+      gold  : 
+  - ocds-5wno2w-RE-PU-MDMQ-2026-3601-41357 | gold=NO pred=REVISAR | RE-PU-MDMQ-2026-3601-41357
+      modelo: Geoinformación = contenido propietario de editorial (SciELO, WoS, Scopus, Wolfram, etc.) o software de terceros sin equivalente IBM (2026-10-23)
+      gold  : 
+  - ocds-5wno2w-SIE-UITEY-2026-034-541976 | gold=NO pred=REVISAR | SIE-UITEY-2026-034-541976
+      modelo: Alta similitud, pero revisar pliego para requerimientos unívocos (2026-10-23)
+      gold  : Objeto central = contenido de tercero (citas/revistas); IA generativa es componente, no objeto (H18) (2026-10-23)
+  - ocds-5wno2w-CPC-GADMCT-2026-001-54709 | gold=NO pred=REVISAR | CPC-GADMCT-2026-001-54709
+      modelo: Ambigüedad en el objeto central: plataforma institucional para gestión municipal; revisar (2026-10-23)
+      gold  : Plataforma institucional a medida, regla bloque 5 (2026-10-23)
+  - ocds-5wno2w-RE-CEP-CGFAE-2026-007-2679 | gold=NO pred=REVISAR | RE-CEP-CGFAE-2026-007-2679
+      modelo: Arrendamiento de paquetes informáticos SAAS/IAAS + desarrollo de sistema integrado + IA = mixto vía partner (2026-10-23)
+      gold  : Desarrollo a medida de sistema SIEC; decidido NO por el usuario (2026-10-23)
+  - ocds-5wno2w-SIE-UEFAE4-2026-003-1195773 | gold=NO pred=REVISAR | SIE-UEFAE4-2026-003-1195773
+      modelo: Información insuficiente para decidir sin el pliego.
+      gold  : Plataforma virtual sin detalle = vertical educativa; decidido NO por el usuario (2026-10-23)
+  - ocds-5wno2w-CPC-IESS-2026-00002-39594 | gold=NO pred=REVISAR | CPC-IESS-2026-00002-39594
+      modelo: Alcance mixto: Verify + Trusteer + watsonx.governance; revisar con el pliego (2026-10-23)
+      gold  : Consultoria de auditoria/certificacion, regla bloque 5; decidido NO por el usuario (2026-10-23)
+  - ocds-5wno2w-CPC-GADMC-CH-2026-003-39596 | gold=NO pred=REVISAR | CPC-GADMC-CH-2026-003-39596
+      modelo: Algunos componentes de IBM encajan, pero no hay suficiente información para decidir responsablemente.
+      gold  : Consultoria de desarrollo a medida (regla bloque 5) (2026-10-23)
+
+DIFERENTES DE NIVEL (ALTO<->MEDIO) (0):
+
+Comparativa: Corrida 1 (binaria, v1): P=1.000 R=0.400 | Corrida 2 (binaria, v1): P=0.167 R=1.000
+==============================================================================
+
+Reporte: /Users/ismaeln/Desktop/Proyecto_IBM/opportunity_analysis_service/experimentos/reporte_v2.txt | resultados: /Users/ismaeln/Desktop/Proyecto_IBM/opportunity_analysis_service/experimentos/resultados_v2.jsonl

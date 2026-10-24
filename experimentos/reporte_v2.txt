@@ -1,0 +1,65 @@
+==============================================================================
+REPORTE CORRIDA 3 — gold set v2 CONGELADO | 3 vias (SI/NO/REVISAR) | split 20/80
+Fecha: 2026-10-23 13:05:07 | prueba: 46 casos | 1157s
+==============================================================================
+
+ACIERTO DE CLASE EXACTA (incluye REVISAR): 34/46 = 73.9%
+
+METRICAS DE PRODUCTO:
+  Precision de SI (dice oportunidad -> lo es)      : 0.000  (TP=0, FP=0)
+  Fuga de positivos (dice NO, es oportunidad)      : 0   <- error grave
+  Captura por cola (positivo -> REVISAR, aceptable): 2
+  Costo de revision (NO -> REVISAR, cola inutil)   : 8
+  Revisar bien capturado (gold REVISAR -> REVISAR) : 2/4
+  Acierto de NO (descartes correctos)              : 32/40
+  Tasa total de REVISAR predecida                  : 12/46 = 26.1%
+
+MATRIZ (fila=gold, columna=prediccion):
+                   ALTO      MEDIO    REVISAR         NOSI_SIN_NIVEL      ERROR   INVALIDA
+      ALTO            0          0          1          0          0          0          0
+     MEDIO            0          0          1          0          1          0          0
+   REVISAR            0          0          2          1          0          0          0
+        NO            0          0          8         32          0          0          0
+
+FALSOS POSITIVOS (NO -> ALTO/MEDIO) (0):
+
+FUGAS (positivo -> NO) (0):
+
+POSITIVOS A REVISAR (captura por cola) (2):
+  - ocds-5wno2w-RE-CEP-EPMAPS-2026-001-258814 | gold=ALTO pred=REVISAR | RE-CEP-EPMAPS-2026-001-258814
+      modelo: Alta similitud con Guardium, pero no se menciona explícitamente. Revisar con el pliego.
+      gold  : 
+  - ocds-5wno2w-SIE-EMGIRS-2026-036-325307 | gold=MEDIO pred=REVISAR | SIE-EMGIRS-2026-036-325307
+      modelo: Alcance mixto: seguridad perimetral + acceso inalámbrico; revisar pliego para determinar si IBM es el proveedor.
+      gold  : Mixto: seguridad perimetral (encaje IBM) + equipamiento (hardware) -> MEDIO (2026-10-23)
+
+COSTO DE REVISION (NO -> REVISAR) (8):
+  - ocds-5wno2w-RE-PU-MDMQ-2026-1401-41357 | gold=NO pred=REVISAR | RE-PU-MDMQ-2026-1401-41357
+      modelo: Arrendamiento de plataforma de gestión de trámites + recaudo = mixto (2026-10-23)
+      gold  : 
+  - ocds-5wno2w-RE-PU-MDMQ-2026-3601-41357 | gold=NO pred=REVISAR | RE-PU-MDMQ-2026-3601-41357
+      modelo: Geoinformación = contenido propietario de editorial (SciELO, WoS, Scopus, Wolfram, etc.) o software de terceros sin equivalente IBM (2026-10-23)
+      gold  : 
+  - ocds-5wno2w-SIE-UITEY-2026-034-541976 | gold=NO pred=REVISAR | SIE-UITEY-2026-034-541976
+      modelo: Alta similitud, pero revisar pliego para requerimientos unívocos (2026-10-23)
+      gold  : Objeto central = contenido de tercero (citas/revistas); IA generativa es componente, no objeto (H18) (2026-10-23)
+  - ocds-5wno2w-CPC-GADMCT-2026-001-54709 | gold=NO pred=REVISAR | CPC-GADMCT-2026-001-54709
+      modelo: Ambigüedad en el objeto central: plataforma institucional para gestión municipal; revisar (2026-10-23)
+      gold  : Plataforma institucional a medida, regla bloque 5 (2026-10-23)
+  - ocds-5wno2w-RE-CEP-CGFAE-2026-007-2679 | gold=NO pred=REVISAR | RE-CEP-CGFAE-2026-007-2679
+      modelo: Arrendamiento de paquetes informáticos SAAS/IAAS + desarrollo de sistema integrado + IA = mixto vía partner (2026-10-23)
+      gold  : Desarrollo a medida de sistema SIEC; decidido NO por el usuario (2026-10-23)
+  - ocds-5wno2w-SIE-UEFAE4-2026-003-1195773 | gold=NO pred=REVISAR | SIE-UEFAE4-2026-003-1195773
+      modelo: Información insuficiente para decidir sin el pliego.
+      gold  : Plataforma virtual sin detalle = vertical educativa; decidido NO por el usuario (2026-10-23)
+  - ocds-5wno2w-CPC-IESS-2026-00002-39594 | gold=NO pred=REVISAR | CPC-IESS-2026-00002-39594
+      modelo: Alcance mixto: Verify + Trusteer + watsonx.governance; revisar con el pliego (2026-10-23)
+      gold  : Consultoria de auditoria/certificacion, regla bloque 5; decidido NO por el usuario (2026-10-23)
+  - ocds-5wno2w-CPC-GADMC-CH-2026-003-39596 | gold=NO pred=REVISAR | CPC-GADMC-CH-2026-003-39596
+      modelo: Algunos componentes de IBM encajan, pero no hay suficiente información para decidir responsablemente.
+      gold  : Consultoria de desarrollo a medida (regla bloque 5) (2026-10-23)
+
+DIFERENTES DE NIVEL (ALTO<->MEDIO) (0):
+
+Comparativa: Corrida 1 (binaria, v1): P=1.000 R=0.400 | Corrida 2 (binaria, v1): P=0.167 R=1.000
+==============================================================================

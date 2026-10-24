@@ -26,4 +26,12 @@ public class ProcesoSercop {
     private String region;
     private String tipoInterno;
     private String titulo;
+
+    /**
+     * Categoría CPC del proceso (columna {@code categoria_cpc}, p.ej. CLOUD_COMPUTING,
+     * DESARROLLO_CONSULTORIA_TI). Mapeada desde la Fase 1 de recomendaciones REVISAR porque la
+     * regla dura R1 (validada 33/33 sin fugas) se apoya en esta categoría, no en el método de
+     * contratación (tipoInterno).
+     */
+    private String categoriaCpc;
 }
